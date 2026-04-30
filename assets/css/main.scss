@@ -97,6 +97,32 @@ body {
   line-height: 1.7;
 }
 
+/* The big name on the homepage — elegant academic serif (Playfair Display).
+   To try a different look, change the family below to one of:
+     "Cormorant Garamond"  — refined classical serif
+     "EB Garamond"         — warm book-style serif
+     "DM Serif Display"    — modern high-contrast serif
+     "Manrope"             — clean modern sans (geometric)
+*/
+.post .post-title,
+.post .post-title h1,
+h1.post-title,
+h1.post-title span.font-weight-bold {
+  font-family:
+    "Playfair Display",
+    "Lora",
+    Georgia,
+    "Times New Roman",
+    "PingFang SC",
+    "Microsoft YaHei",
+    serif;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+}
+.post .post-title span.font-weight-bold {
+  font-weight: 700;
+}
+
 /* Bold text — keep it dark, NOT theme color, so it doesn't look pink. */
 strong, b {
   color: inherit;

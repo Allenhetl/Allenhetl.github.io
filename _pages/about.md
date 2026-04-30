@@ -11,6 +11,7 @@ profile:
   image_circular: true
   more_info: >
     <p><strong>HE Tianlun (Allen)</strong></p>
+    <p>🏫 <span class="lang-en-only">The Hong Kong University of Science and Technology</span><span class="lang-zh-only">香港科技大学</span></p>
     <p>📍 <span class="lang-en-only">Hong Kong, China</span><span class="lang-zh-only">中国 · 香港</span></p>
     <p>📧 <a href="mailto:theaj@connect.ust.hk">theaj@connect.ust.hk</a></p>
     <p>🐙 <a href="https://github.com/Allenhetl" target="_blank" rel="noopener">github.com/Allenhetl</a></p>
@@ -21,7 +22,7 @@ social: false
 announcements:
   enabled: true
   scrollable: true
-  limit: 5
+  limit: 20
 
 latest_posts:
   enabled: false
@@ -33,7 +34,7 @@ latest_posts:
 
 ## 👋 About Me
 
-Hi! I'm **HE Tianlun (Allen)**, a Year-3 undergraduate at **The Hong Kong University of Science and Technology (HKUST)**.
+Hi! I'm **HE Tianlun (Allen)**, a Year-3 undergraduate at **The Hong Kong University of Science and Technology (HKUST)**, majoring in **Integrative Systems and Design** with a **Minor in Robotics**.
 
 My research interests center on **Embodied AI** — particularly **vision-language-action (VLA) models, memory-augmented policies, world models for robotic manipulation, and sim-to-real reinforcement learning**. I am currently working on *Memory-Augmented VLA*, targeting **ICRA 2027**.
 
@@ -45,7 +46,7 @@ I'm actively looking for **research internships** and **PhD opportunities** in e
 
 ## 👋 关于我
 
-你好！我是 **贺天伦（Allen）**，**香港科技大学**大三学生。
+你好！我是 **贺天伦（Allen）**，**香港科技大学**大三学生，主修**综合系统与设计**，辅修**机器人方向**。
 
 我的研究方向集中在**具身智能（Embodied AI）**，包括**视觉-语言-动作（VLA）模型、记忆增强策略、机器人操作的世界模型，以及 sim-to-real 强化学习**。目前在做 *Memory-Augmented VLA*，计划投稿 **ICRA 2027**。
 
