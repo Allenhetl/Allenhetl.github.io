@@ -1,17 +1,22 @@
 ---
 layout: about
-title: about
+title: Homepage 主页
 permalink: /
-subtitle: Embodied AI · Computer Vision · Robotics
+subtitle: Embodied AI · Robot Learning · Computer Vision
+nav: true
+nav_order: 1
 
 profile:
-  align: right
+  align: left
   image: prof_pic.jpg
   image_circular: true # crops the image to make it circular
   more_info: >
+    <p><strong>HE Tianlun (Allen)</strong></p>
     <p>The Hong Kong University of Science and Technology</p>
+    <p>香港科技大学 · 综合系统与设计 (辅修机器人)</p>
+    <p>📧 <a href="mailto:theaj@connect.ust.hk">theaj@connect.ust.hk</a></p>
 
-selected_papers: true # includes a list of papers marked as "selected={true}"
+selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 
 announcements:
@@ -20,13 +25,23 @@ announcements:
   limit: 5 # leave blank to include all the news in the `_news` folder
 
 latest_posts:
-  enabled: true
-  scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
-  limit: 3 # leave blank to include all the blog posts
+  enabled: false
+  scrollable: true
+  limit: 3
 ---
 
-Hi, I'm **Tianlun (Allen) He**, a student at HKUST working on **Embodied AI**, computer vision, and robot learning.
+## 👋 About Me 关于我
 
-My current interests include vision-language-action models, robot manipulation, and training pipelines for embodied agents (RoboTwin, VLABench, LLaMA-Factory, …).
+Hi! 👋 I'm **HE Tianlun (Allen)**, a Year-3 undergraduate at **The Hong Kong University of Science and Technology (HKUST)**, majoring in **Integrative Systems and Design** with a **Minor in Robotics** (CGA 3.42 / 4.3, MCGA 3.50 / 4.3).
 
-This site is a work in progress — replace `assets/img/prof_pic.jpg` with your headshot, edit `_pages/about.md` to update this bio, and add publications to `_bibliography/papers.bib`.
+My research interests center on **Embodied AI** — particularly **vision-language-action (VLA) models, memory-augmented policies, world models for robotic manipulation, and sim-to-real reinforcement learning**. I am currently working on *Memory-Augmented VLA* (targeting **ICRA 2027**) and a *4D World Model for Robotic Manipulation* (under review at **ICML 2026**).
+
+I'm actively looking for **research internships** and **PhD opportunities** in embodied AI and robot learning. If my experience interests you, I'd be happy to connect.
+
+---
+
+你好！👋 我是 **贺天伦 (Allen)**，**香港科技大学**综合系统与设计专业大三学生（辅修机器人方向）。
+
+我的研究方向集中在**具身智能 (Embodied AI)**，包括**视觉-语言-动作 (VLA) 模型、记忆增强策略、机器人操作的世界模型，以及 sim-to-real 强化学习**。目前正在进行 *Memory-Augmented VLA*（计划投稿 **ICRA 2027**）以及 *4D World Model for Robotic Manipulation*（**ICML 2026** 在投）。
+
+我正在寻找**研究实习**与**博士项目**机会。如果我的经历能引起你的兴趣，欢迎随时联系！

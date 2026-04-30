@@ -2,9 +2,9 @@
 # Fill these in with your real handles; commented lines are off until you set them.
 
 # cv_pdf: /assets/pdf/cv.pdf      # uncomment after putting your CV PDF at assets/pdf/cv.pdf
-# email: your.email@example.com   # uncomment and fill
+email: theaj@connect.ust.hk
 github_username: Allenhetl
 # scholar_userid:                 # your Google Scholar user ID (the part after `user=` in the URL)
 # linkedin_username:              # your LinkedIn vanity name
 # orcid_id:                       # your ORCID
-rss_icon: true
+rss_icon: false
