@@ -9,26 +9,12 @@ ninja.data = [{
     handler: () => {
       window.location.href = "/";
     },
-  },{id: "nav-homepage-主页",
-          title: "Homepage 主页",
-          description: "",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/";
-          },
-        },{id: "nav-news-新闻",
+  },{id: "nav-news-新闻",
           title: "News 新闻",
           description: "",
           section: "Navigation",
           handler: () => {
             window.location.href = "/news/";
-          },
-        },{id: "nav-publications-出版物",
-          title: "Publications 出版物",
-          description: "Publications in reverse-chronological order.",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/publications/";
           },
         },{id: "nav-projects-项目",
           title: "Projects 项目",
@@ -36,6 +22,13 @@ ninja.data = [{
           section: "Navigation",
           handler: () => {
             window.location.href = "/projects/";
+          },
+        },{id: "nav-publications-出版物",
+          title: "Publications 出版物",
+          description: "Publications in reverse-chronological order.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/publications/";
           },
         },{id: "nav-cv-简历",
           title: "CV 简历",
@@ -412,11 +405,20 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/the_godfather/";
-            },},{id: "news-awarded-the-hksar-government-scholarship-fund-talent-development-scholarship-2024-25-获香港特别行政区政府奖学基金-talent-development-scholarship-2024-25-学年",
+            },},{id: "news-joined-hkust-integrative-systems-and-design-isd-with-a-minor-in-robotics-入读香港科技大学-综合系统与设计-isd-专业-辅修机器人方向",
+          title: '🎓 Joined HKUST, Integrative Systems and Design (ISD) with a Minor in Robotics.🎓...',
+          description: "",
+          section: "News",},{id: "news-won-the-champion-title-of-robomaster-2024-rmuc-international-region-with-hkust-team-enterprize-与-hkust-enterprize-战队夺得-robomaster-2024-rmuc-国际赛区冠军",
+          title: '🥇 Won the Champion title of RoboMaster 2024 RMUC International Region with HKUST...',
+          description: "",
+          section: "News",},{id: "news-awarded-the-hksar-government-scholarship-fund-talent-development-scholarship-2024-25-获香港特别行政区政府奖学基金-talent-development-scholarship-2024-25-学年",
           title: '🎓 Awarded the HKSAR Government Scholarship Fund — Talent Development Scholarship (2024/25).🎓 获香港特别行政区政府奖学基金...',
           description: "",
-          section: "News",},{id: "news-champion-of-robomaster-2025-university-league-with-hkust-team-enterprize-stepped-down-as-head-of-mechanical-department-after-two-years-与-hkust-enterprize-战队夺得-robomaster-2025-高校联盟赛冠军-卸任机械部门负责人-任期两年",
-          title: '🏆 Champion of RoboMaster 2025 University League with HKUST Team ENTERPRIZE. Stepped down...',
+          section: "News",},{id: "news-won-the-champion-title-of-robomaster-2025-university-league-with-hkust-team-enterprize-与-hkust-enterprize-战队夺得-robomaster-2025-高校联盟赛冠军",
+          title: '🏆 Won the Champion title of RoboMaster 2025 University League with HKUST Team...',
+          description: "",
+          section: "News",},{id: "news-joined-the-undergraduate-research-program-on-hydraulic-soft-robotic-arms-under-the-supervision-of-prof-rob-加入-rob-教授指导的本科生研究计划-参与液压软体机械臂课题",
+          title: '🤖 Joined the Undergraduate Research Program on hydraulic soft robotic arms under the...',
           description: "",
           section: "News",},{id: "news-embodied-4d-world-model-for-robotic-manipulation-submitted-to-icml-2026-under-review-built-the-multi-view-rgbd-platform-and-4d-manipulation-dataset-论文-embodied-4d-world-model-for-robotic-manipulation-投稿-icml-2026-在投-负责实机部署与多视角-rgbd-数据集构建",
           title: '📄 Embodied 4D World Model for Robotic Manipulation submitted to ICML 2026 (under...',
