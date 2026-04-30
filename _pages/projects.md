@@ -4,7 +4,7 @@ title: Projects 项目
 permalink: /projects/
 description: Selected research and engineering projects.
 nav: true
-nav_order: 4
+nav_order: 3
 display_categories: [work, fun]
 horizontal: false
 ---

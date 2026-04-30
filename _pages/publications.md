@@ -4,7 +4,7 @@ permalink: /publications/
 title: Publications 出版物
 description: Publications in reverse-chronological order.
 nav: true
-nav_order: 3
+nav_order: 4
 ---
 
 <!-- _pages/publications.md -->

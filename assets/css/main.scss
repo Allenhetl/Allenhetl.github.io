@@ -37,3 +37,99 @@
 @use "font-awesome/brands";
 @use "font-awesome/solid";
 @use "font-awesome/regular";
+
+/* ============================================================
+   Custom overrides — must come AFTER all @use rules
+   ============================================================ */
+
+/* 1) Replace the bright magenta accent with a calmer deep blue. */
+:root {
+  --global-theme-color: #2c5282;
+  --global-hover-color: #1a365d;
+  --global-highlight-color: #2c5282;
+}
+html[data-theme="dark"] {
+  --global-theme-color: #63b3ed;
+  --global-hover-color: #90cdf4;
+  --global-highlight-color: #90cdf4;
+}
+
+/* 2) Switch the body/heading typeface to Inter (sans) and Lora (serif).
+   Code blocks use JetBrains Mono. */
+body,
+p,
+li,
+.post-title,
+.post-description,
+.profile,
+.navbar {
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "PingFang SC",
+    "Hiragino Sans GB",
+    "Microsoft YaHei",
+    sans-serif;
+}
+h1, h2, h3, h4, h5, h6,
+.post-title h1,
+.profile .more-info p strong {
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "PingFang SC",
+    "Microsoft YaHei",
+    sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+code, pre, kbd, samp, .highlight {
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+/* Slightly softer body color & line-height for readability */
+body {
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* Bold text — keep it dark, NOT theme color, so it doesn't look pink. */
+strong, b {
+  color: inherit;
+  font-weight: 600;
+}
+
+/* 3) Push the profile photo further to the LEFT on the homepage,
+   without breaking small-screen behaviour. */
+@media (min-width: 576px) {
+  .post .profile.float-left {
+    margin-left: -2.5rem;
+    margin-right: 1.5rem;
+    max-width: 32%;
+  }
+  .post .profile.float-left img {
+    max-width: 100%;
+  }
+}
+
+/* 4) Profile "more-info" lines — tighten and align nicely under the photo. */
+.profile .more-info {
+  text-align: left;
+  padding-left: 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+.profile .more-info p {
+  margin-bottom: 0.25rem;
+}
+.profile .more-info a {
+  color: var(--global-theme-color);
+  text-decoration: none;
+}
+.profile .more-info a:hover {
+  text-decoration: underline;
+}
