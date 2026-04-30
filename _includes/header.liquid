@@ -135,10 +135,70 @@
               </button>
             </li>
           {% endif %}
+          <!-- Language toggle (EN / 中) -->
+          <li class="toggle-container">
+            <button id="lang-toggle" title="Switch language / 切换语言" type="button" aria-label="Switch language">
+              <span class="lang-toggle-label">EN&nbsp;/&nbsp;中</span>
+            </button>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
+
+  <!-- Bilingual visibility CSS + toggle JS -->
+  <style>
+    /* default: show English, hide Chinese */
+    .lang-zh-only { display: none; }
+    body.is-zh .lang-en-only { display: none; }
+    body.is-zh .lang-zh-only { display: inherit; }
+    /* navbar button styling — match the dark-mode toggle look */
+    #lang-toggle {
+      background: transparent;
+      border: 0;
+      padding: 0 .5rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--global-text-color);
+      cursor: pointer;
+    }
+    #lang-toggle:hover { color: var(--global-theme-color); }
+    body.is-zh #lang-toggle .lang-toggle-label::before { content: ""; }
+  </style>
+  <script>
+    (function () {
+      var KEY = 'site-lang';
+      function apply(lang) {
+        if (lang === 'zh') {
+          document.body.classList.add('is-zh');
+          document.documentElement.setAttribute('lang', 'zh-CN');
+        } else {
+          document.body.classList.remove('is-zh');
+          document.documentElement.setAttribute('lang', 'en');
+        }
+      }
+      function init() {
+        var saved = localStorage.getItem(KEY);
+        if (!saved) {
+          saved = (navigator.language || '').toLowerCase().indexOf('zh') === 0 ? 'zh' : 'en';
+        }
+        apply(saved);
+        var btn = document.getElementById('lang-toggle');
+        if (btn) {
+          btn.addEventListener('click', function () {
+            var next = document.body.classList.contains('is-zh') ? 'en' : 'zh';
+            localStorage.setItem(KEY, next);
+            apply(next);
+          });
+        }
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else {
+        init();
+      }
+    })();
+  </script>
   {% if site.enable_progressbar %}
     <!-- Scrolling Progress Bar -->
     <progress id="progress" value="0">
