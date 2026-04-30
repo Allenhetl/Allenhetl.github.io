@@ -413,7 +413,7 @@ ninja.data = [{
           section: "Books",handler: () => {
               window.location.href = "/books/the_godfather/";
             },},{id: "news-awarded-the-hksar-government-scholarship-fund-talent-development-scholarship-2024-25-获香港特别行政区政府奖学基金-talent-development-scholarship-2024-25-学年",
-          title: '🎓 Awarded the HKSAR Government Scholarship Fund — Talent Development Scholarship (2024/25). 🎓...',
+          title: '🎓 Awarded the HKSAR Government Scholarship Fund — Talent Development Scholarship (2024/25).🎓 获香港特别行政区政府奖学基金...',
           description: "",
           section: "News",},{id: "news-champion-of-robomaster-2025-university-league-with-hkust-team-enterprize-stepped-down-as-head-of-mechanical-department-after-two-years-与-hkust-enterprize-战队夺得-robomaster-2025-高校联盟赛冠军-卸任机械部门负责人-任期两年",
           title: '🏆 Champion of RoboMaster 2025 University League with HKUST Team ENTERPRIZE. Stepped down...',
