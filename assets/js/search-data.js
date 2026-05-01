@@ -32,7 +32,7 @@ ninja.data = [{
           },
         },{id: "nav-cv-简历",
           title: "CV 简历",
-          description: "This is a description of the page. You can modify it in &#39;_pages/cv.md&#39;. You can also change or remove the top pdf download button.",
+          description: "HE Tianlun (Allen) — academic CV.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/cv/";
@@ -426,59 +426,62 @@ ninja.data = [{
           section: "News",},{id: "news-started-memory-augmented-vla-urp-project-designing-a-subtask-aware-framework-with-vae-based-compression-for-long-horizon-manipulation-targeting-icra-2027-启动记忆增强-vla-本科生研究计划-基于-vae-的子任务压缩框架-缓解长时序任务的上下文爆炸-计划投稿-icra-2027",
           title: '🚀 Started Memory-Augmented VLA (URP project) — designing a subtask-aware framework with VAE-based...',
           description: "",
-          section: "News",},{id: "projects-magnetic-mechanism-磁力机构",
-          title: 'Magnetic Mechanism / 磁力机构',
-          description: "Mechanism-design course project — magnetic actuator design and prototype.",
+          section: "News",},{id: "news-our-paper-embodied-4d-world-model-for-robotic-manipulation-has-been-accepted-to-icml-2026-arxiv-论文-embodied-4d-world-model-for-robotic-manipulation-被-icml-2026-接收-arxiv",
+          title: '🎉 Our paper Embodied 4D World Model for Robotic Manipulation has been accepted...',
+          description: "",
+          section: "News",},{id: "projects-magnetic-mechanism磁力机构",
+          title: 'Magnetic Mechanism磁力机构',
+          description: "Mechanism-design course project — magnetic actuator design and prototype.机械设计课程项目 — 磁力执行机构方案与样机。",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_magnetic/";
-            },},{id: "projects-bionic-fish-仿生鱼",
-          title: 'Bionic Fish / 仿生鱼',
-          description: "Course project — biologically-inspired underwater swimmer with poster-style overview and built prototype.",
+            },},{id: "projects-bionic-fish仿生鱼",
+          title: 'Bionic Fish仿生鱼',
+          description: "Course project — biologically-inspired underwater swimmer with built prototype.课程项目 — 仿生水下游动机器人，含完整实物样机。",
           section: "Projects",handler: () => {
               window.location.href = "/projects/3_bionic-fish/";
-            },},{id: "projects-6-dof-underwater-robot-潜水器",
-          title: '6-DOF Underwater Robot / 潜水器',
-          description: "Class project — 6-DOF underwater navigation robot with cascade PID control and YOLO-based vision.",
+            },},{id: "projects-6-dof-underwater-autonomous-robot6-自由度水下自主导航机器人",
+          title: '6-DOF Underwater Autonomous Robot6 自由度水下自主导航机器人',
+          description: "Full-stack — mechanical, embedded cascade PID, and YOLO-based underwater perception.全栈开发 — 机械结构、嵌入式级联 PID 控制、基于 YOLO 的水下感知。",
           section: "Projects",handler: () => {
               window.location.href = "/projects/4_submarine/";
-            },},{id: "projects-rfid-smart-cabinet-智能-rfid-试剂柜",
-          title: 'RFID Smart Cabinet / 智能 RFID 试剂柜',
-          description: "Industrial co-development project — RFID-based smart reagent cabinet with custom hardware.",
+            },},{id: "projects-rfid-smart-reagent-cabinet智能-rfid-试剂柜",
+          title: 'RFID Smart Reagent Cabinet智能 RFID 试剂柜',
+          description: "WeShareTech internship — RFID-based smart-weighing system for laboratory reagent management.WeShareTech 实习 — 基于 RFID 的实验室药剂智能称重管理系统。",
           section: "Projects",handler: () => {
               window.location.href = "/projects/5_rfid-cabinet/";
-            },},{id: "projects-omnidirectional-autonomous-wheelchair-全向自主轮椅",
-          title: 'Omnidirectional Autonomous Wheelchair / 全向自主轮椅',
-          description: "Year-2 project — omnidirectional wheelchair platform with autonomous obstacle avoidance.",
+            },},{id: "projects-omnidirectional-autonomous-wheelchair全向自主移动轮椅",
+          title: 'Omnidirectional Autonomous Wheelchair全向自主移动轮椅',
+          description: "Team-led Year-2 project — rudder-wheel chassis with LiDAR-based autonomous navigation.Year 2 团队负责人项目 — 舵轮底盘 + 激光雷达自主导航。",
           section: "Projects",handler: () => {
               window.location.href = "/projects/6_wheelchair/";
-            },},{id: "projects-hkust-robomaster-enterprize-战队概览",
-          title: 'HKUST RoboMaster ENTERPRIZE / 战队概览',
-          description: "Mechanical Department Lead 2023–2025 · RMUC 2024 International Champion · 2025 University League Champion",
+            },},{id: "projects-hkust-robomaster-enterprizehkust-robomaster-enterprize-战队",
+          title: 'HKUST RoboMaster ENTERPRIZEHKUST RoboMaster Enterprize 战队',
+          description: "Mechanical Department Lead — RMUC 2024 International Champion · 2025 University League Champion机械部门负责人 — RMUC 2024 国际赛区冠军 · 2025 高校联盟赛冠军",
           section: "Projects",handler: () => {
               window.location.href = "/projects/rm_1_team/";
-            },},{id: "projects-wheel-leg-infantry-轮腿步兵",
-          title: 'Wheel-leg Infantry / 轮腿步兵',
-          description: "Custom serial-leg infantry — Best Knight Award (RMUC 2024).",
+            },},{id: "projects-wheel-leg-infantry轮腿步兵",
+          title: 'Wheel-leg Infantry轮腿步兵',
+          description: "Custom serial-leg infantry — Best Knight Award, RMUC 2024.自研串联腿步兵 — RMUC 2024 最佳骑士奖。",
           section: "Projects",handler: () => {
               window.location.href = "/projects/rm_2_wheelleg/";
-            },},{id: "projects-sentry",
-          title: 'Sentry',
-          description: "Auto-targeting sentry robot — mechanical design.",
+            },},{id: "projects-sentry-77-号哨兵",
+          title: 'Sentry #77 号哨兵',
+          description: "Auto-targeting sentry robot — mechanical design.自动瞄准哨兵机器人 — 机械设计。",
           section: "Projects",handler: () => {
               window.location.href = "/projects/rm_3_sentry7/";
-            },},{id: "projects-dual-head-sentry-双头哨兵",
-          title: 'Dual-head Sentry / 双头哨兵',
-          description: "Twin-turret sentry variant — newest iteration.",
+            },},{id: "projects-dual-head-sentry双头哨兵",
+          title: 'Dual-head Sentry双头哨兵',
+          description: "Twin-turret sentry variant — newest iteration.双炮塔哨兵新一代 — 最新迭代。",
           section: "Projects",handler: () => {
               window.location.href = "/projects/rm_4_dualsentry/";
-            },},{id: "projects-rudder-wheel-infantry-舵轮步兵",
-          title: 'Rudder-wheel Infantry / 舵轮步兵',
-          description: "Steering-wheel-driven infantry chassis.",
+            },},{id: "projects-rudder-wheel-infantry舵轮步兵",
+          title: 'Rudder-wheel Infantry舵轮步兵',
+          description: "Steering-wheel-driven infantry chassis.舵轮驱动步兵底盘。",
           section: "Projects",handler: () => {
               window.location.href = "/projects/rm_5_rudder/";
-            },},{id: "projects-drone",
-          title: 'Drone',
-          description: "Quadcopter aerial unit for combat support.",
+            },},{id: "projects-drone-66-号无人机",
+          title: 'Drone #66 号无人机',
+          description: "Quadcopter aerial unit for combat support.作战支援四旋翼无人机。",
           section: "Projects",handler: () => {
               window.location.href = "/projects/rm_6_drone/";
             },},{id: "teachings-data-science-fundamentals",
