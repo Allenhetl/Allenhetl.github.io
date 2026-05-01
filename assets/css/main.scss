@@ -262,14 +262,101 @@ html[data-theme="dark"] .hkust-inline-logo {
   letter-spacing: 0.02em;
 }
 
-/* Synchronize dark/light color flip across all text elements so different
-   font sizes / weights don't appear to "ripple" through the page on toggle. */
-html, body, p, h1, h2, h3, h4, h5, h6, a, span, li, strong, b, em,
-.card, .card-title, .card-text, .card-meta, .navbar, .post-title, .desc,
-.profile, .more-info, .category, blockquote, code, pre, table, th, td {
-  transition: color 0.18s ease,
-              background-color 0.18s ease,
-              border-color 0.18s ease;
+/* Dark/light theme toggle — al-folio adds `class="transition"` to <html> for
+   750ms during a toggle and applies `transition: all 750ms` to every element.
+   With elements of different sizes/weights/colors, the eye perceives the long
+   animation as "ripple" — text appears to flip out of sync. Override with an
+   instant snap so all colors flip together at the same paint frame. */
+html.transition,
+html.transition *,
+html.transition *::before,
+html.transition *::after {
+  transition: none !important;
+}
+
+/* ========== /cv/ page polish ========== */
+.cv-hero {
+  border-left: 4px solid var(--global-theme-color);
+}
+.cv-hero-photo img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-right: 1.5rem;
+  border: 3px solid var(--global-theme-color);
+}
+@media (max-width: 575px) {
+  .cv-hero-photo img { width: 76px; height: 76px; margin-right: 1rem; }
+}
+.cv-hero-name {
+  font-weight: 700;
+  font-size: 1.6rem;
+  letter-spacing: -0.01em;
+  color: var(--global-text-color);
+}
+.cv-hero-label {
+  font-size: 1rem;
+  color: var(--global-theme-color);
+  font-weight: 600;
+  margin: 0;
+}
+.cv-hero-meta {
+  font-size: 0.9rem;
+  color: var(--global-text-color-light);
+}
+
+/* CV section card titles — bolder, theme-color accent bar */
+.cv .card .card-title {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--global-text-color);
+  border-bottom: 1px solid var(--global-divider-color);
+  padding-bottom: 0.4rem;
+  margin-bottom: 0.75rem;
+  position: relative;
+  padding-left: 0.6rem;
+}
+.cv .card .card-title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.15em;
+  bottom: 0.45em;
+  width: 3px;
+  background: var(--global-theme-color);
+  border-radius: 2px;
+}
+
+/* Date badges — punchier */
+.cv .badge.danger-color-dark {
+  background-color: var(--global-theme-color) !important;
+  color: #fff !important;
+  font-size: 0.8rem;
+  padding: 0.4rem 0.55rem;
+  border-radius: 4px;
+  letter-spacing: 0.02em;
+}
+
+/* CV titles inside entries (position / award / project name) */
+.cv h6.title.font-weight-bold {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--global-text-color);
+  margin-bottom: 0.15rem;
+}
+
+/* Keep the first contact-info table compact */
+.cv .table-cv td.font-weight-bold b {
+  color: var(--global-theme-color);
+}
+
+/* Bullet items inside CV entries — slight indent + tighter spacing */
+.cv ul.items {
+  padding-left: 1rem;
+  margin-bottom: 0;
+}
+.cv ul.items li {
+  margin-bottom: 0.35rem;
 }
 
 /* Card body breathing room + subtle hover lift */

@@ -16,9 +16,9 @@ horizontal: false
   {% for category in page.display_categories %}
   {% assign cat_label = category %}
   {% case category %}
-    {% when "robomaster" %}{% assign cat_label = "RoboMaster" %}
-    {% when "coursework" %}{% assign cat_label = "Coursework / 课设" %}
-    {% when "year-project" %}{% assign cat_label = "Year Project / 学年项目" %}
+    {% when "robomaster" %}{% assign cat_label = '<span class="lang-en-only">RoboMaster</span><span class="lang-zh-only">RoboMaster</span>' %}
+    {% when "coursework" %}{% assign cat_label = '<span class="lang-en-only">Coursework</span><span class="lang-zh-only">课设</span>' %}
+    {% when "year-project" %}{% assign cat_label = '<span class="lang-en-only">Year Project</span><span class="lang-zh-only">学年项目</span>' %}
   {% endcase %}
   <a id="{{ category }}" href=".#{{ category }}">
     <h2 class="category">{{ cat_label }}</h2>

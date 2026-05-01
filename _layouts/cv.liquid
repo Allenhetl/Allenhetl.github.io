@@ -60,6 +60,24 @@ layout: default
         {% comment %} RenderCV format {% endcomment %}
         {% assign cv = site.data.cv.cv %}
 
+        <!-- Photo + Headline -->
+        {% if cv.image or cv.name %}
+          <div class="card mt-3 p-3 cv-hero">
+            <div class="row align-items-center no-gutters">
+              {% if cv.image and cv.image != "" %}
+                <div class="col-auto cv-hero-photo">
+                  <img src="{{ cv.image | relative_url }}" alt="{{ cv.name }}" class="rounded-circle">
+                </div>
+              {% endif %}
+              <div class="col cv-hero-text">
+                {% if cv.name %}<h2 class="cv-hero-name mb-1">{{ cv.name }}</h2>{% endif %}
+                {% if cv.label %}<p class="cv-hero-label mb-1">{{ cv.label }}</p>{% endif %}
+                {% if cv.location %}<p class="cv-hero-meta mb-0"><i class="fa-solid fa-location-dot"></i> {{ cv.location }}</p>{% endif %}
+              </div>
+            </div>
+          </div>
+        {% endif %}
+
         <!-- Header/Contact Information -->
         {% if cv.name or cv.label or cv.location or cv.email or cv.phone or cv.website %}
           <div class="card mt-3 p-3">

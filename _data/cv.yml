@@ -3,16 +3,23 @@ cv:
   label: Embodied AI · Robot Learning · Computer Vision
   email: theaj@connect.ust.hk
   phone: "+86 18216000982"
-  url: https://allenhetl.github.io
+  website: https://allenhetl.github.io
   location: Hong Kong, China
-  image: ""
-  summary: Year-3 undergraduate at the Hong Kong University of Science and Technology (Integrative Systems and Design, Minor in Robotics; top 10% of cohort). Embodied-AI researcher focused on vision-language-action (VLA) models, world models for manipulation, and sim-to-real reinforcement learning. ICML 2026 publication. Two-year Mechanical Lead at HKUST RoboMaster ENTERPRIZE.
+  image: assets/img/cv-photo.jpg
+  summary: >
+    Year-3 undergraduate at the **Hong Kong University of Science and Technology**
+    (Integrative Systems and Design, Minor in Robotics) — **top 10%** of cohort.
+    Embodied-AI researcher focused on **vision-language-action (VLA) models**, **world models**
+    for manipulation, and **sim-to-real reinforcement learning**.
+    First-author publication at **ICML 2026**. Two-year **Mechanical Lead**
+    at HKUST RoboMaster ENTERPRIZE; **RMUC 2024 International Champion**.
 
   social_networks:
     - network: GitHub
       username: Allenhetl
 
   sections:
+
     Education:
       - institution: The Hong Kong University of Science and Technology
         location: Hong Kong, China
@@ -21,109 +28,134 @@ cv:
         studyType: B.Eng., School of Engineering
         start_date: 2023-09
         end_date: 2027-06
-        score: "Top 10% — CGA 3.42 / 4.3, MCGA 3.50 / 4.3"
+        score: "**Top 10% of cohort** — CGA 3.42 / 4.3, MCGA 3.50 / 4.3"
         highlights:
-          - "Major: Integrative Systems and Design"
-          - "Minor: Robotics"
-          - "HKSAR Talent Development Scholarship 2024/25"
+          - "**Major** — Integrative Systems and Design"
+          - "**Minor** — Robotics"
+          - "**HKSAR Talent Development Scholarship**, 2024/25"
 
     Experience:
-      - company: WeShareTech Limited
-        position: Hardware Development Intern
-        location: China
-        start_date: 2024-10
-        end_date: 2025-01
-        summary: "Electronics / Communication / Hardware — laboratory chemical-reagent management."
-        highlights:
-          - Designed an RFID-based smart-weighing system for chemistry-lab reagent management; automated reagent identification and weight logging.
-          - Owned mechanical structure design (scale body), sensor + RFID module selection, and the system-integration plan.
-          - Built and validated the prototype end-to-end, from CAD to bench testing.
-
       - company: HKUST RoboMaster Team ENTERPRIZE
         position: Head of Mechanical Department
         location: Hong Kong
         start_date: 2023-11
         end_date: 2025-08
-        summary: "Mechanical lead for the team representing HKUST in the DJI-organised RoboMaster collegiate robotics championship."
+        summary: Mechanical lead for the team representing HKUST in the DJI-organised RoboMaster collegiate robotics championship.
         highlights:
-          - Managed an 11-person mechanical team — seasonal technical roadmap, task breakdown, parallel multi-robot R&D scheduling.
-          - Cross-department interface owner with electrical, vision, and hardware teams; drove standardisation of mech-electrical interfaces and routing.
-          - Personal contributions — independent design of serial-leg infantry, rudder-wheel infantry gimbal, and quadcopter UAV (CAD → simulation → manufacture → integration → debug).
-          - Open-sourced multiple core mechanical designs to the RoboMaster community (https://bbs.robomaster.com/article/542).
-          - "Awards while in role — RMUC 2024 International Region Champion · RoboMaster 2025 University League Champion · RMUC 2025 National runner-up · RMUL 2024 regional runner-up."
+          - "**Team management** — directed an 11-person mechanical team; owned seasonal technical roadmap, task breakdown, and parallel multi-robot R&D scheduling."
+          - "**Cross-department interface** with electrical, vision, and hardware; standardised mech-electrical interfaces and routing to cut integration rework."
+          - "**Personal contributions** — independent design of serial-leg infantry, rudder-wheel infantry gimbal, and quadcopter UAV (CAD → simulation → manufacture → integration → debug)."
+          - "**Open-source impact** — multiple core mechanical designs published to the RoboMaster community ([article #542](https://bbs.robomaster.com/article/542))."
+          - "**Awards while in role** — RMUC 2024 International Champion · RoboMaster 2025 University League Champion · RMUC 2025 National runner-up · RMUL 2024 regional runner-up."
+
+      - company: WeShareTech Limited
+        position: Hardware Development Intern
+        location: China · Electronics / Communication / Hardware
+        start_date: 2024-10
+        end_date: 2025-01
+        summary: Laboratory chemical-reagent management — winter co-development project.
+        highlights:
+          - "Designed an **RFID-based smart-weighing system** for chemistry-lab reagent management; automated reagent identification and weight logging."
+          - "Owned **mechanical structure design** (scale body), sensor + RFID module selection, and the system-integration plan."
+          - "Built and validated the **prototype end-to-end**, from CAD to bench testing."
 
     Publications:
       - title: Embodied 4D World Model for Robotic Manipulation
-        authors: He, Tianlun and others
-        venue: ICML 2026
+        publisher: ICML 2026
         date: 2026-04
         url: https://arxiv.org/abs/2602.09878
-        summary: "A 4D world model that takes a single-view RGBD input and produces multi-view-consistent 3D/4D scene representations, enabling 'imagine-then-act' decisions for manipulation."
+        summary: "First-author work. A 4D world model that takes single-view RGBD input and produces multi-view-consistent 3D/4D scene representations, enabling an *imagine-then-act* decision paradigm for manipulation. End-to-end loop from sensor capture, multi-view reconstruction, dataset construction, and model training, to real-robot validation."
 
     Projects:
       - name: "Memory VLA — long-horizon manipulation"
-        date: "2026.02 – ongoing"
-        role: "Research lead"
-        summary: "Hierarchical task decomposition + fixed-capacity Implicit Memory Bank with cross-attention modulation; targeting ICRA 2027."
+        url: ""
+        summary: "Hierarchical task decomposition + fixed-capacity Implicit Memory Bank with cross-attention modulation. Targeting **ICRA 2027**. *Research lead, 2026.02 – ongoing.*"
+        highlights:
+          - "**Architecture** — hierarchical task decomposition, sub-task boundary detector, fixed-capacity Implicit Memory Bank, memory-action cross-attention interface."
+          - "**Implementation** — full PyTorch training & inference pipeline; multi-GPU distributed training; sim-to-real validation on a real arm."
+          - "**Evaluation** — RMBench / VLABench / LIBERO-Long against Mem-0, MEM, MemER, CronusVLA baselines."
 
-      - name: "Embodied 4D World Model for Robotic Manipulation"
-        date: "2025.12 – 2026.02"
-        role: "Research assistant — real-robot platform & multi-view RGBD pipeline"
-        summary: "Built the physical robot platform, multi-camera calibration / time-sync / cross-view alignment pipeline, and 4D manipulation dataset. Validated 'imagine-then-act' on real hardware. Accepted to ICML 2026."
+      - name: "Embodied 4D World Model for Robotic Manipulation (ICML 2026)"
+        url: https://arxiv.org/abs/2602.09878
+        summary: "*Research assistant, 2025.12 – 2026.02.* Built the physical robot platform, multi-camera calibration / time-sync / cross-view alignment pipeline, and 4D manipulation dataset. Validated *imagine-then-act* on real hardware. Accepted to **ICML 2026**."
 
       - name: "Indoor Structural Semantic Segmentation (Sonata + PTV3)"
-        date: "2025.12 – 2026.01"
-        role: "Researcher"
-        summary: "Point-cloud segmentation system for ceiling / wall / floor / bay-window / glass classes. Built a Blender-based 3D point-cloud labelling plugin and end-to-end training pipeline (mIoU evaluation, class-imbalance tuning)."
+        summary: "*Researcher, 2025.12 – 2026.01.* Point-cloud segmentation for ceiling / wall / floor / bay-window / glass classes. Built a Blender-based 3D point-cloud labelling plugin and end-to-end training pipeline (mIoU evaluation, class-imbalance tuning)."
 
       - name: "6-DOF Underwater Autonomous Robot"
-        date: "2025.08 – 2025.12"
-        role: "Full-stack — mechanical + embedded + algorithm"
-        summary: "Six-DOF cascaded PID (position + velocity loop), YOLO-based underwater target detection, mechanical sealing and buoyancy trim, end-to-end perception → planning → execution loop."
+        summary: "*Full-stack — mechanical + embedded + algorithm, 2025.08 – 2025.12.* Six-DOF cascaded PID (position + velocity loop), YOLO-based underwater target detection, mechanical sealing and buoyancy trim — end-to-end perception → planning → execution loop."
 
       - name: "RL-based Bipedal Locomotion (sim-to-real prep)"
-        date: "2024.12 – 2025.06"
-        role: "Research assistant"
-        summary: "PPO training in IsaacGym with curriculum-shaped rewards; built a motor torque test bench and current-torque identification model for sim-to-real transfer."
+        summary: "*Research assistant, 2024.12 – 2025.06.* PPO training in IsaacGym with curriculum-shaped rewards; built a motor torque test bench and current-torque identification model for sim-to-real transfer."
 
       - name: "Omnidirectional Autonomous Wheelchair"
-        date: "2024.09 – 2025.06"
-        role: "Team lead"
-        summary: "Rudder-wheel chassis + LiDAR-based autonomous navigation. Owned mechanical design, kinematics solver, embedded integration, and team coordination across mechanical / embedded / navigation tracks."
+        summary: "*Team lead, 2024.09 – 2025.06.* Rudder-wheel chassis + LiDAR-based autonomous navigation. Owned mechanical design, kinematics solver, embedded integration, and team coordination across mechanical / embedded / navigation tracks."
 
     Awards:
-      - title: HKSAR Government Talent Development Scholarship
-        authors: ["HKSAR Government"]
-        date: 2024-09
-        summary: "Scholarship recognising outstanding talent and development potential outside academic performance."
+      - title: RoboMaster 2024 RMUC International Region — **Champion**
+        awarder: DJI / RoboMaster
+        date: 2024-08
+        summary: "Top placement in the international region of RMUC, RoboMaster's flagship national championship."
 
-      - title: RoboMaster 2025 University League — Region Champion (RMUL)
-        authors: ["DJI / RoboMaster"]
+      - title: RoboMaster 2025 University League — **Region Champion** (RMUL)
+        awarder: DJI / RoboMaster
         date: 2025-04
 
       - title: RoboMaster 2025 National (RMUC) — Second Place
-        authors: ["DJI / RoboMaster"]
+        awarder: DJI / RoboMaster
         date: 2025-08
 
-      - title: RoboMaster 2024 RMUC International Region — Champion
-        authors: ["DJI / RoboMaster"]
-        date: 2024-08
+      - title: HKSAR Government **Talent Development Scholarship**
+        awarder: HKSAR Government Scholarship Fund
+        date: 2024-09
+        summary: "Awarded for outstanding talent and development potential in non-academic dimensions."
 
       - title: RoboMaster 2024 University League — Region Runner-up (RMUL)
-        authors: ["DJI / RoboMaster"]
+        awarder: DJI / RoboMaster
         date: 2024-04
 
     Skills:
-      - category: "Embodied AI / 3D perception"
-        items: "VLA models, diffusion policies; point-cloud semantic segmentation; multi-view RGBD pipelines (intrinsics/extrinsics calibration, time-sync, cross-view alignment)."
-      - category: "Mechanical design"
-        items: "SolidWorks (proficient); Rhino, Blender; 2+ years RoboMaster mechanical R&D with multiple open-sourced designs."
-      - category: "AI engineering"
-        items: "Claude Code, OpenCode, Codex; multi-agent orchestration; PyTorch (multi-GPU distributed training)."
-      - category: "Programming & tools"
-        items: "Python · C++ · LaTeX · Linux · Git · ROS"
+      - name: Embodied AI & 3D perception
+        keywords:
+          - VLA models
+          - diffusion policies
+          - point-cloud semantic segmentation
+          - multi-view RGBD pipelines
+          - sensor calibration & time-sync
+      - name: Mechanical design
+        keywords:
+          - SolidWorks (proficient)
+          - Rhino
+          - Blender
+          - 2+ years RoboMaster mechanical R&D
+          - multiple open-sourced designs
+      - name: AI engineering
+        keywords:
+          - Claude Code
+          - OpenCode
+          - multi-agent orchestration
+          - PyTorch
+          - multi-GPU distributed training
+      - name: Programming & tools
+        keywords:
+          - Python
+          - C++
+          - LaTeX
+          - Linux
+          - Git
+          - ROS
 
     Interests:
-      - LEGO Technic — gears, linkages, differentials
-      - Films — sci-fi & documentaries
-      - Travel
+      - name: LEGO Technic
+        keywords:
+          - gears
+          - linkages
+          - differentials
+      - name: Films
+        keywords:
+          - sci-fi
+          - documentaries
+      - name: Travel
+        keywords:
+          - new places
+          - new ways of life
