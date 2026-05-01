@@ -426,12 +426,7 @@ ninja.data = [{
           section: "News",},{id: "news-started-memory-augmented-vla-urp-project-designing-a-subtask-aware-framework-with-vae-based-compression-for-long-horizon-manipulation-targeting-icra-2027-启动记忆增强-vla-本科生研究计划-基于-vae-的子任务压缩框架-缓解长时序任务的上下文爆炸-计划投稿-icra-2027",
           title: '🚀 Started Memory-Augmented VLA (URP project) — designing a subtask-aware framework with VAE-based...',
           description: "",
-          section: "News",},{id: "projects-hkust-robomaster-enterprize",
-          title: 'HKUST RoboMaster ENTERPRIZE',
-          description: "Mechanical design lead for ENTERPRIZE — drone, sentry, infantry robots, and 2024 wallpaper collection.",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/1_robomaster/";
-            },},{id: "projects-magnetic-mechanism-磁力机构",
+          section: "News",},{id: "projects-magnetic-mechanism-磁力机构",
           title: 'Magnetic Mechanism / 磁力机构',
           description: "Mechanism-design course project — magnetic actuator design and prototype.",
           section: "Projects",handler: () => {
@@ -456,6 +451,36 @@ ninja.data = [{
           description: "Year-2 project — omnidirectional wheelchair platform with autonomous obstacle avoidance.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/6_wheelchair/";
+            },},{id: "projects-hkust-robomaster-enterprize-战队概览",
+          title: 'HKUST RoboMaster ENTERPRIZE / 战队概览',
+          description: "Mechanical Department Lead 2023–2025 · RMUC 2024 International Champion · 2025 University League Champion",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/rm_1_team/";
+            },},{id: "projects-wheel-leg-infantry-轮腿步兵",
+          title: 'Wheel-leg Infantry / 轮腿步兵',
+          description: "Custom serial-leg infantry — Best Knight Award (RMUC 2024).",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/rm_2_wheelleg/";
+            },},{id: "projects-sentry",
+          title: 'Sentry',
+          description: "Auto-targeting sentry robot — mechanical design.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/rm_3_sentry7/";
+            },},{id: "projects-dual-head-sentry-双头哨兵",
+          title: 'Dual-head Sentry / 双头哨兵',
+          description: "Twin-turret sentry variant — newest iteration.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/rm_4_dualsentry/";
+            },},{id: "projects-rudder-wheel-infantry-舵轮步兵",
+          title: 'Rudder-wheel Infantry / 舵轮步兵',
+          description: "Steering-wheel-driven infantry chassis.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/rm_5_rudder/";
+            },},{id: "projects-drone",
+          title: 'Drone',
+          description: "Quadcopter aerial unit for combat support.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/rm_6_drone/";
             },},{id: "teachings-data-science-fundamentals",
           title: 'Data Science Fundamentals',
           description: "This course covers the foundational aspects of data science, including data collection, cleaning, analysis, and visualization. Students will learn practical skills for working with real-world datasets.",
