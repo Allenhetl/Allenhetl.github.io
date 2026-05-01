@@ -5,7 +5,7 @@ description: '<span class="lang-en-only">Twin-turret sentry variant — newest i
 img: assets/img/projects/RoboMaster/双头哨兵.png
 importance: 4
 category: robomaster
-date: 2025
+timeframe: 2025
 ---
 
 <div class="lang-en-only" markdown="1">

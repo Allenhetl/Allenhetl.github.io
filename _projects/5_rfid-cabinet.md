@@ -5,7 +5,7 @@ description: '<span class="lang-en-only">WeShareTech internship — RFID-based s
 img: assets/img/projects/year-project/柜子展示图.jpg
 importance: 1
 category: year-project
-date: 2024.10 – 2025.01
+timeframe: 2024.10 – 2025.01
 ---
 
 <div class="lang-en-only" markdown="1">

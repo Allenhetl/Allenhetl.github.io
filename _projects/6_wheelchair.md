@@ -5,7 +5,7 @@ description: '<span class="lang-en-only">Team-led Year-2 project — rudder-whee
 img: assets/img/projects/year-project/轮椅展示图.jpg
 importance: 2
 category: year-project
-date: 2024.09 – 2025.06
+timeframe: 2024.09 – 2025.06
 ---
 
 <div class="lang-en-only" markdown="1">

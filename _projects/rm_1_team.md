@@ -5,7 +5,7 @@ description: '<span class="lang-en-only">Mechanical Department Lead — RMUC 202
 img: assets/img/projects/RoboMaster/合照.jpg
 importance: 1
 category: robomaster
-date: 2023.11 – 2025.08
+timeframe: 2023.11 – 2025.08
 ---
 
 <div class="lang-en-only" markdown="1">

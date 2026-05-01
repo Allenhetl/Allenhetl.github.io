@@ -5,7 +5,7 @@ description: '<span class="lang-en-only">Mechanism-design course project — mag
 img: assets/img/projects/课设/磁力机构展示图.png
 importance: 1
 category: coursework
-date: 2024
+timeframe: 2024
 ---
 
 <div class="lang-en-only" markdown="1">

@@ -5,7 +5,7 @@ description: '<span class="lang-en-only">Steering-wheel-driven infantry chassis.
 img: assets/img/projects/RoboMaster/舵轮步兵.JPG
 importance: 5
 category: robomaster
-date: 2024 – 2025
+timeframe: 2024 – 2025
 ---
 
 <div class="lang-en-only" markdown="1">

@@ -5,7 +5,7 @@ description: '<span class="lang-en-only">Auto-targeting sentry robot — mechani
 img: assets/img/projects/RoboMaster/7号哨兵.JPG
 importance: 3
 category: robomaster
-date: 2024
+timeframe: 2024
 ---
 
 <div class="lang-en-only" markdown="1">

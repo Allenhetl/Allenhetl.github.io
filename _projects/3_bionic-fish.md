@@ -5,7 +5,7 @@ description: '<span class="lang-en-only">Course project — biologically-inspire
 img: assets/img/projects/课设/仿生鱼海报.jpg
 importance: 2
 category: coursework
-date: 2024
+timeframe: 2024
 ---
 
 <div class="lang-en-only" markdown="1">

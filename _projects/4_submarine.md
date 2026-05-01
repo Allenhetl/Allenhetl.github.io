@@ -5,7 +5,7 @@ description: '<span class="lang-en-only">Full-stack — mechanical, embedded cas
 img: assets/img/projects/课设/潜水器海报.png
 importance: 3
 category: coursework
-date: 2025.08 – 2025.12
+timeframe: 2025.08 – 2025.12
 ---
 
 <div class="lang-en-only" markdown="1">
