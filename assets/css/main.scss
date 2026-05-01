@@ -243,11 +243,21 @@ html[data-theme="dark"] .hkust-inline-logo {
   margin-bottom: 1.25rem;
 }
 
-/* Card thumbnail — natural ratio (no forced crop, user crops images themselves). */
+/* Card thumbnail — uniform band (220px on desktop, 160px mobile) using object-fit:cover.
+   This is a soft visual crop only (display layer) — your source files are NOT touched and
+   you can re-crop in the source whenever you want. The previous "natural ratio" version
+   left big whitespace under shorter images when the card stretched to row height. */
 .projects .card img.card-img-top {
   width: 100%;
-  height: auto;
+  height: 220px;
+  object-fit: cover;
+  object-position: center 38%;
   display: block;
+}
+@media (max-width: 575px) {
+  .projects .card img.card-img-top {
+    height: 160px;
+  }
 }
 .projects .card figure {
   margin: 0;

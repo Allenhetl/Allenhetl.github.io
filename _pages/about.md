@@ -11,7 +11,7 @@ profile:
   image_circular: true
   more_info: >
     <p><strong>HE Tianlun (Allen)</strong></p>
-    <p><img src="/assets/img/hkust-logo.png?v=shield2" alt="HKUST" class="hkust-inline-logo"> <span class="lang-en-only">The Hong Kong University of Science and Technology</span><span class="lang-zh-only">香港科技大学</span></p>
+    <p><img src="/assets/img/hkust-shield.png" alt="HKUST" class="hkust-inline-logo"> <span class="lang-en-only">The Hong Kong University of Science and Technology</span><span class="lang-zh-only">香港科技大学</span></p>
     <p>📍 <span class="lang-en-only">Hong Kong, China</span><span class="lang-zh-only">中国 · 香港</span></p>
     <p>📧 <a href="mailto:theaj@connect.ust.hk">theaj@connect.ust.hk</a></p>
     <p>🐙 <a href="https://github.com/Allenhetl" target="_blank" rel="noopener">github.com/Allenhetl</a></p>
