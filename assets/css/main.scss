@@ -200,15 +200,22 @@ strong, b {
   .wallpaper-marquee img { height: 140px; }
 }
 
-/* HKUST inline logo (portrait shield, ~143×218) used in the homepage profile sidebar */
-.hkust-inline-logo {
-  height: 1.15em;
-  width: auto;
-  vertical-align: -0.25em;
+/* HKUST inline logo (portrait shield, 143×218 source) used in the homepage profile sidebar.
+   The override !important is REQUIRED because al-folio's _layout.scss sets
+   `.profile img { width: 100% }` which would otherwise stretch this small icon
+   to fill the sidebar column horizontally. Selector specificity .profile
+   img.hkust-inline-logo (0,2,1) beats .profile img (0,1,1), and !important is a
+   belt-and-suspenders to prevent any future override. */
+.profile img.hkust-inline-logo,
+img.hkust-inline-logo {
+  width: auto !important;
+  height: 22px !important;
+  max-width: none !important;
+  vertical-align: -6px;
   margin-right: 6px;
   display: inline-block;
 }
-html[data-theme="dark"] .hkust-inline-logo {
+html[data-theme="dark"] img.hkust-inline-logo {
   filter: brightness(1.05);
 }
 

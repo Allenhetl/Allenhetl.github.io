@@ -49,8 +49,8 @@ cv:
           - "**Awards while in role** — RMUC 2024 International Champion · RoboMaster 2025 University League Champion · RMUC 2025 National runner-up · RMUL 2024 regional runner-up."
 
       - company: WeShareTech Limited
-        position: Hardware Development Intern
-        location: China · Electronics / Communication / Hardware
+        position: Hardware Development Intern (Electronics / Hardware)
+        location: China
         start_date: 2024-10
         end_date: 2025-01
         summary: Laboratory chemical-reagent management — winter co-development project.
@@ -92,25 +92,25 @@ cv:
         summary: "*Team lead, 2024.09 – 2025.06.* Rudder-wheel chassis + LiDAR-based autonomous navigation. Owned mechanical design, kinematics solver, embedded integration, and team coordination across mechanical / embedded / navigation tracks."
 
     Awards:
-      - title: RoboMaster 2024 RMUC International Region — **Champion**
+      - title: "RoboMaster 2024 RMUC International Region — Champion 🥇"
         awarder: DJI / RoboMaster
         date: 2024-08
         summary: "Top placement in the international region of RMUC, RoboMaster's flagship national championship."
 
-      - title: RoboMaster 2025 University League — **Region Champion** (RMUL)
+      - title: "RoboMaster 2025 University League — Region Champion (RMUL) 🏆"
         awarder: DJI / RoboMaster
         date: 2025-04
 
-      - title: RoboMaster 2025 National (RMUC) — Second Place
+      - title: "RoboMaster 2025 National (RMUC) — Second Place"
         awarder: DJI / RoboMaster
         date: 2025-08
 
-      - title: HKSAR Government **Talent Development Scholarship**
+      - title: "HKSAR Government Talent Development Scholarship 🎓"
         awarder: HKSAR Government Scholarship Fund
         date: 2024-09
         summary: "Awarded for outstanding talent and development potential in non-academic dimensions."
 
-      - title: RoboMaster 2024 University League — Region Runner-up (RMUL)
+      - title: "RoboMaster 2024 University League — Region Runner-up (RMUL)"
         awarder: DJI / RoboMaster
         date: 2024-04
 

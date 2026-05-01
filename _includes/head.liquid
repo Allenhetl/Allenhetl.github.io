@@ -1,6 +1,26 @@
 <!-- Metadata, OpenGraph and Schema.org -->
 {% include metadata.liquid %}
 
+<!-- Set bilingual language class on <html> SYNCHRONOUSLY before body parses,
+     so EN/ZH content shows in the right language on first paint with no FOUC. -->
+<script>
+  (function () {
+    try {
+      var saved = localStorage.getItem('site-lang');
+      if (!saved) {
+        saved = (navigator.language || '').toLowerCase().indexOf('zh') === 0 ? 'zh' : 'en';
+      }
+      if (saved === 'zh') document.documentElement.classList.add('is-zh');
+    } catch (e) {}
+  })();
+</script>
+<style>
+  /* Apply lang visibility from <html> class (early) so first paint matches saved language */
+  .lang-zh-only { display: none; }
+  html.is-zh .lang-en-only { display: none; }
+  html.is-zh .lang-zh-only { display: inherit; }
+</style>
+
 <!-- Security: Content Security Policy -->
 <!-- Permissive CSP suitable for academic websites. Allows external images, videos, and common embed services. -->
 <!-- To customize for your needs, see: https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->

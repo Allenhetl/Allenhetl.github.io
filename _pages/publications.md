@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /publications/
-title: Publications 出版物
+title: '<span class="lang-en-only">Publications</span><span class="lang-zh-only">出版物</span>'
 description: Publications in reverse-chronological order.
 nav: true
 nav_order: 4

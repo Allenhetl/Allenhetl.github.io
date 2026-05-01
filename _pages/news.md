@@ -1,6 +1,6 @@
 ---
 layout: page
-title: News 新闻
+title: '<span class="lang-en-only">News</span><span class="lang-zh-only">新闻</span>'
 permalink: /news/
 nav: true
 nav_order: 2
