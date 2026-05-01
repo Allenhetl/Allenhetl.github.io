@@ -426,51 +426,36 @@ ninja.data = [{
           section: "News",},{id: "news-started-memory-augmented-vla-urp-project-designing-a-subtask-aware-framework-with-vae-based-compression-for-long-horizon-manipulation-targeting-icra-2027-启动记忆增强-vla-本科生研究计划-基于-vae-的子任务压缩框架-缓解长时序任务的上下文爆炸-计划投稿-icra-2027",
           title: '🚀 Started Memory-Augmented VLA (URP project) — designing a subtask-aware framework with VAE-based...',
           description: "",
-          section: "News",},{id: "projects-project-1",
-          title: 'project 1',
-          description: "with background image",
+          section: "News",},{id: "projects-hkust-robomaster-enterprize",
+          title: 'HKUST RoboMaster ENTERPRIZE',
+          description: "Mechanical design lead for ENTERPRIZE — drone, sentry, infantry robots, and 2024 wallpaper collection.",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/1_project/";
-            },},{id: "projects-project-2",
-          title: 'project 2',
-          description: "a project with a background image and giscus comments",
+              window.location.href = "/projects/1_robomaster/";
+            },},{id: "projects-magnetic-mechanism-磁力机构",
+          title: 'Magnetic Mechanism / 磁力机构',
+          description: "Mechanism-design course project — magnetic actuator design and prototype.",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/2_project/";
-            },},{id: "projects-project-3-with-very-long-name",
-          title: 'project 3 with very long name',
-          description: "a project that redirects to another website",
+              window.location.href = "/projects/2_magnetic/";
+            },},{id: "projects-bionic-fish-仿生鱼",
+          title: 'Bionic Fish / 仿生鱼',
+          description: "Course project — biologically-inspired underwater swimmer with poster-style overview and built prototype.",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/3_project/";
-            },},{id: "projects-project-4",
-          title: 'project 4',
-          description: "another without an image",
+              window.location.href = "/projects/3_bionic-fish/";
+            },},{id: "projects-6-dof-underwater-robot-潜水器",
+          title: '6-DOF Underwater Robot / 潜水器',
+          description: "Class project — 6-DOF underwater navigation robot with cascade PID control and YOLO-based vision.",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/4_project/";
-            },},{id: "projects-project-5",
-          title: 'project 5',
-          description: "a project with a background image",
+              window.location.href = "/projects/4_submarine/";
+            },},{id: "projects-rfid-smart-cabinet-智能-rfid-试剂柜",
+          title: 'RFID Smart Cabinet / 智能 RFID 试剂柜',
+          description: "Industrial co-development project — RFID-based smart reagent cabinet with custom hardware.",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/5_project/";
-            },},{id: "projects-project-6",
-          title: 'project 6',
-          description: "a project with no image",
+              window.location.href = "/projects/5_rfid-cabinet/";
+            },},{id: "projects-omnidirectional-autonomous-wheelchair-全向自主轮椅",
+          title: 'Omnidirectional Autonomous Wheelchair / 全向自主轮椅',
+          description: "Year-2 project — omnidirectional wheelchair platform with autonomous obstacle avoidance.",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/6_project/";
-            },},{id: "projects-project-7",
-          title: 'project 7',
-          description: "with background image",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/7_project/";
-            },},{id: "projects-project-8",
-          title: 'project 8',
-          description: "an other project with a background image and giscus comments",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/8_project/";
-            },},{id: "projects-project-9",
-          title: 'project 9',
-          description: "another project with an image 🎉",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/9_project/";
+              window.location.href = "/projects/6_wheelchair/";
             },},{id: "teachings-data-science-fundamentals",
           title: 'Data Science Fundamentals',
           description: "This course covers the foundational aspects of data science, including data collection, cleaning, analysis, and visualization. Students will learn practical skills for working with real-world datasets.",
