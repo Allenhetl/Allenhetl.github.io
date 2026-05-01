@@ -173,7 +173,12 @@ strong, b {
   display: flex;
   gap: 1rem;
   width: max-content;
-  animation: wallpaper-scroll 60s linear infinite;
+  will-change: transform;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .wallpaper-marquee__track {
+    animation: wallpaper-scroll 60s linear infinite;
+  }
 }
 .wallpaper-marquee:hover .wallpaper-marquee__track {
   animation-play-state: paused;
@@ -197,10 +202,10 @@ strong, b {
 
 /* HKUST inline logo used in the homepage profile sidebar */
 .hkust-inline-logo {
-  height: 16px;
+  height: 1em;
   width: auto;
-  vertical-align: -2px;
-  margin-right: 4px;
+  vertical-align: -0.18em;
+  margin-right: 5px;
   display: inline-block;
 }
 html[data-theme="dark"] .hkust-inline-logo {
@@ -209,25 +214,24 @@ html[data-theme="dark"] .hkust-inline-logo {
 
 /* ========== /projects/ index polish ========== */
 
-/* Bolder category headers — were too pale before. */
+/* Bolder category headers — accent bar carries the colour, no underline. */
 .projects h2.category {
-  font-size: 1.6rem;
-  font-weight: 700;
+  font-size: 1.4rem;
+  font-weight: 600;
   margin-top: 2.25rem;
   margin-bottom: 1rem;
-  padding-bottom: 0.35rem;
-  border-bottom: 2px solid var(--global-theme-color);
+  padding-bottom: 0.25rem;
   color: var(--global-text-color);
   letter-spacing: -0.01em;
 }
 .projects h2.category::before {
   content: "";
   display: inline-block;
-  width: 6px;
-  height: 1.1em;
+  width: 4px;
+  height: 1em;
   background: var(--global-theme-color);
-  vertical-align: -0.18em;
-  margin-right: 0.6rem;
+  vertical-align: -0.12em;
+  margin-right: 0.55rem;
   border-radius: 2px;
 }
 .projects > a:first-of-type h2.category {
@@ -239,22 +243,21 @@ html[data-theme="dark"] .hkust-inline-logo {
   margin-bottom: 1.25rem;
 }
 
-/* Card thumbnail — uniform aspect-ratio crop, focus on subject */
-.projects .card .card-img,
-.projects .card-img-top,
-.projects .card .card-img-top,
-.projects .card picture img,
-.projects .card .row picture img {
+/* Card thumbnail — uniform aspect-ratio crop, focus on subject.
+   Scoped via class `.card-img-top` (set on thumbnails by _includes/projects.liquid).
+   In-page body figures use `.img-fluid` and are NOT affected. */
+.projects .card img.card-img-top {
   aspect-ratio: 4 / 3;
   width: 100%;
   height: auto;
   object-fit: cover;
-  object-position: center;
+  object-position: center 35%;
   background-color: #f5f5f5;
 }
-html[data-theme="dark"] .projects .card .card-img,
-html[data-theme="dark"] .projects .card-img-top,
-html[data-theme="dark"] .projects .card picture img {
+.projects .card figure {
+  margin: 0;
+}
+html[data-theme="dark"] .projects .card img.card-img-top {
   background-color: #2a2a2a;
 }
 

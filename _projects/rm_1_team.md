@@ -21,6 +21,6 @@ Head of Mechanical Department for **HKUST RoboMaster Team ENTERPRIZE** (Sep 2023
   <div class="wallpaper-marquee__track">
     {% assign wp = "壁纸大符,壁纸飞镖,壁纸工程,壁纸麦轮步兵,壁纸平衡步兵,壁纸双头哨兵,壁纸英雄" | split: "," %}
     {% for f in wp %}<img src="{{ '/assets/img/projects/RoboMaster/24壁纸/' | append: f | append: '.jpg' | relative_url }}" alt="{{ f }}" data-zoomable>{% endfor %}
-    {% for f in wp %}<img src="{{ '/assets/img/projects/RoboMaster/24壁纸/' | append: f | append: '.jpg' | relative_url }}" alt="{{ f }}" aria-hidden="true">{% endfor %}
+    {% for f in wp %}<img src="{{ '/assets/img/projects/RoboMaster/24壁纸/' | append: f | append: '.jpg' | relative_url }}" alt="{{ f }}" aria-hidden="true" data-zoomable>{% endfor %}
   </div>
 </div>
