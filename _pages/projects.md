@@ -35,7 +35,17 @@ horizontal: false
     </div>
   </div>
   {% else %}
-  <div class="row row-cols-1 row-cols-md-3">
+  {% assign card_count = sorted_projects | size %}
+  {% if card_count == 1 %}
+    {% assign row_classes = "row-cols-1 row-cols-md-1" %}
+  {% elsif card_count == 2 %}
+    {% assign row_classes = "row-cols-1 row-cols-md-2" %}
+  {% elsif card_count == 3 %}
+    {% assign row_classes = "row-cols-1 row-cols-md-3" %}
+  {% else %}
+    {% assign row_classes = "row-cols-1 row-cols-md-2 row-cols-lg-3" %}
+  {% endif %}
+  <div class="row {{ row_classes }} project-grid">
     {% for project in sorted_projects %}
       {% include projects.liquid %}
     {% endfor %}

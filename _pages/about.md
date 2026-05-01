@@ -11,10 +11,11 @@ profile:
   image_circular: true
   more_info: >
     <p><strong>HE Tianlun (Allen)</strong></p>
-    <p>🏫 <span class="lang-en-only">The Hong Kong University of Science and Technology</span><span class="lang-zh-only">香港科技大学</span></p>
+    <p><img src="/assets/img/hkust-logo.png" alt="HKUST" class="hkust-inline-logo"> <span class="lang-en-only">The Hong Kong University of Science and Technology</span><span class="lang-zh-only">香港科技大学</span></p>
     <p>📍 <span class="lang-en-only">Hong Kong, China</span><span class="lang-zh-only">中国 · 香港</span></p>
     <p>📧 <a href="mailto:theaj@connect.ust.hk">theaj@connect.ust.hk</a></p>
     <p>🐙 <a href="https://github.com/Allenhetl" target="_blank" rel="noopener">github.com/Allenhetl</a></p>
+    <p>💬 <span class="lang-en-only">WeChat</span><span class="lang-zh-only">微信</span>: 18216000982</p>
 
 selected_papers: false
 social: false
@@ -40,6 +41,8 @@ My research interests center on **Embodied AI** — particularly **vision-langua
 
 I'm actively looking for **research internships** and **PhD opportunities** in embodied AI and robot learning. If my experience interests you, I'd be happy to connect.
 
+Outside research, I enjoy **building LEGO sets**, **photography**, and **traveling** — places, optics, and well-engineered plastic bricks all scratch the same itch.
+
 </div>
 
 <div class="lang-zh-only" markdown="1">
@@ -51,5 +54,7 @@ I'm actively looking for **research internships** and **PhD opportunities** in e
 我的研究方向集中在**具身智能（Embodied AI）**，包括**视觉-语言-动作（VLA）模型、记忆增强策略、机器人操作的世界模型，以及 sim-to-real 强化学习**。目前在做 *Memory-Augmented VLA*，计划投稿 **ICRA 2027**。
 
 我正在寻找**研究实习**与**博士项目**机会。如果我的经历能引起你的兴趣，欢迎随时联系。
+
+工作之外，我喜欢**拼乐高**、**摄影**和**旅行**——风景、光线，还有工程精巧的塑料砖块，对我来说都是同一件事。
 
 </div>

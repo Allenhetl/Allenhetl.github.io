@@ -194,3 +194,97 @@ strong, b {
 @media (max-width: 575px) {
   .wallpaper-marquee img { height: 140px; }
 }
+
+/* HKUST inline logo used in the homepage profile sidebar */
+.hkust-inline-logo {
+  height: 16px;
+  width: auto;
+  vertical-align: -2px;
+  margin-right: 4px;
+  display: inline-block;
+}
+html[data-theme="dark"] .hkust-inline-logo {
+  filter: invert(0.9) brightness(1.05);
+}
+
+/* ========== /projects/ index polish ========== */
+
+/* Bolder category headers — were too pale before. */
+.projects h2.category {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-top: 2.25rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 2px solid var(--global-theme-color);
+  color: var(--global-text-color);
+  letter-spacing: -0.01em;
+}
+.projects h2.category::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 1.1em;
+  background: var(--global-theme-color);
+  vertical-align: -0.18em;
+  margin-right: 0.6rem;
+  border-radius: 2px;
+}
+.projects > a:first-of-type h2.category {
+  margin-top: 1rem;
+}
+
+/* Consistent gutter between project cards */
+.project-grid > [class*="col-"] {
+  margin-bottom: 1.25rem;
+}
+
+/* Card thumbnail — uniform aspect-ratio crop, focus on subject */
+.projects .card .card-img,
+.projects .card-img-top,
+.projects .card .card-img-top,
+.projects .card picture img,
+.projects .card .row picture img {
+  aspect-ratio: 4 / 3;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+  background-color: #f5f5f5;
+}
+html[data-theme="dark"] .projects .card .card-img,
+html[data-theme="dark"] .projects .card-img-top,
+html[data-theme="dark"] .projects .card picture img {
+  background-color: #2a2a2a;
+}
+
+/* Card body breathing room + subtle hover lift */
+.projects .card {
+  border: 1px solid var(--global-divider-color);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  height: 100%;
+}
+.projects .card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+.projects .card .card-body {
+  padding: 1rem 1.1rem 1.15rem;
+}
+.projects .card .card-title {
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  font-size: 1.05rem;
+  line-height: 1.35;
+}
+.projects .card .card-text {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--global-text-color-light);
+}
+
+/* Mobile — single column, slightly looser */
+@media (max-width: 575px) {
+  .projects h2.category { font-size: 1.35rem; }
+  .projects .card .card-title { font-size: 1rem; }
+}
