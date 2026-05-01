@@ -1,10 +1,11 @@
 ---
 layout: page
-title: Rudder-wheel Infantry / 舵轮步兵
-description: Steering-wheel-driven infantry chassis.
+title: '<span class="lang-en-only">Rudder-wheel Infantry</span><span class="lang-zh-only">舵轮步兵</span>'
+description: '<span class="lang-en-only">Steering-wheel-driven infantry chassis.</span><span class="lang-zh-only">舵轮驱动步兵底盘。</span>'
 img: assets/img/projects/RoboMaster/舵轮步兵.JPG
 importance: 5
 category: robomaster
+date: 2024 – 2025
 ---
 
 <div class="lang-en-only" markdown="1">

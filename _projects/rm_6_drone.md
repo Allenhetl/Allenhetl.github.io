@@ -1,10 +1,11 @@
 ---
 layout: page
-title: Drone #6 / 6 号无人机
-description: Quadcopter aerial unit for combat support.
+title: '<span class="lang-en-only">Drone #6</span><span class="lang-zh-only">6 号无人机</span>'
+description: '<span class="lang-en-only">Quadcopter aerial unit for combat support.</span><span class="lang-zh-only">作战支援四旋翼无人机。</span>'
 img: assets/img/projects/RoboMaster/6号无人机.JPG
 importance: 6
 category: robomaster
+date: 2024
 ---
 
 <div class="lang-en-only" markdown="1">

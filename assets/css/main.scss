@@ -200,16 +200,16 @@ strong, b {
   .wallpaper-marquee img { height: 140px; }
 }
 
-/* HKUST inline logo used in the homepage profile sidebar */
+/* HKUST inline logo (portrait shield, ~143×218) used in the homepage profile sidebar */
 .hkust-inline-logo {
-  height: 1em;
+  height: 1.15em;
   width: auto;
-  vertical-align: -0.18em;
-  margin-right: 5px;
+  vertical-align: -0.25em;
+  margin-right: 6px;
   display: inline-block;
 }
 html[data-theme="dark"] .hkust-inline-logo {
-  filter: invert(0.9) brightness(1.05);
+  filter: brightness(1.05);
 }
 
 /* ========== /projects/ index polish ========== */
@@ -243,22 +243,33 @@ html[data-theme="dark"] .hkust-inline-logo {
   margin-bottom: 1.25rem;
 }
 
-/* Card thumbnail — uniform aspect-ratio crop, focus on subject.
-   Scoped via class `.card-img-top` (set on thumbnails by _includes/projects.liquid).
-   In-page body figures use `.img-fluid` and are NOT affected. */
+/* Card thumbnail — natural ratio (no forced crop, user crops images themselves). */
 .projects .card img.card-img-top {
-  aspect-ratio: 4 / 3;
   width: 100%;
   height: auto;
-  object-fit: cover;
-  object-position: center 35%;
-  background-color: #f5f5f5;
+  display: block;
 }
 .projects .card figure {
   margin: 0;
 }
-html[data-theme="dark"] .projects .card img.card-img-top {
-  background-color: #2a2a2a;
+
+/* Project date / timeframe meta line under the description on each card */
+.projects .card .card-meta {
+  font-size: 0.78rem;
+  color: var(--global-text-color-light);
+  margin: 0 0 0.4rem 0;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+}
+
+/* Synchronize dark/light color flip across all text elements so different
+   font sizes / weights don't appear to "ripple" through the page on toggle. */
+html, body, p, h1, h2, h3, h4, h5, h6, a, span, li, strong, b, em,
+.card, .card-title, .card-text, .card-meta, .navbar, .post-title, .desc,
+.profile, .more-info, .category, blockquote, code, pre, table, th, td {
+  transition: color 0.18s ease,
+              background-color 0.18s ease,
+              border-color 0.18s ease;
 }
 
 /* Card body breathing room + subtle hover lift */

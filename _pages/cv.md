@@ -4,9 +4,9 @@ permalink: /cv/
 title: CV 简历
 nav: true
 nav_order: 5
-cv_pdf: /assets/pdf/example_pdf.pdf # you can also use external links here
-cv_format: rendercv # options: rendercv, jsonresume
-description: This is a description of the page. You can modify it in '_pages/cv.md'. You can also change or remove the top pdf download button.
+cv_pdf: # add /assets/pdf/cv-he-tianlun.pdf once you upload your CV PDF
+cv_format: rendercv
+description: HE Tianlun (Allen) — academic CV.
 toc:
   sidebar: left
 ---

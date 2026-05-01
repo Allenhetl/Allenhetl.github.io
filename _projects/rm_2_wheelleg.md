@@ -1,10 +1,11 @@
 ---
 layout: page
-title: Wheel-leg Infantry / 轮腿步兵
-description: Custom serial-leg infantry — Best Knight Award (RMUC 2024).
+title: '<span class="lang-en-only">Wheel-leg Infantry</span><span class="lang-zh-only">轮腿步兵</span>'
+description: '<span class="lang-en-only">Custom serial-leg infantry — Best Knight Award, RMUC 2024.</span><span class="lang-zh-only">自研串联腿步兵 — RMUC 2024 最佳骑士奖。</span>'
 img: assets/img/projects/RoboMaster/轮腿最佳骑士.jpg
 importance: 2
 category: robomaster
+date: 2024 – 2025
 ---
 
 <div class="lang-en-only" markdown="1">
