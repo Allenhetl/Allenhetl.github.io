@@ -1,16 +1,26 @@
 <!-- Metadata, OpenGraph and Schema.org -->
 {% include metadata.liquid %}
 
-<!-- Set bilingual language class on <html> SYNCHRONOUSLY before body parses,
-     so EN/ZH content shows in the right language on first paint with no FOUC. -->
+<!-- Synchronous pre-paint setup: set BOTH the bilingual language class AND the
+     dark/light data-theme on <html> BEFORE any CSS link or body parsing.
+     Without this, the page can paint once in the wrong state then "flash" to
+     the correct one on every navigation (white-flash in dark mode, EN-flash in ZH mode). -->
 <script>
   (function () {
     try {
-      var saved = localStorage.getItem('site-lang');
-      if (!saved) {
-        saved = (navigator.language || '').toLowerCase().indexOf('zh') === 0 ? 'zh' : 'en';
+      // Language
+      var lang = localStorage.getItem('site-lang');
+      if (!lang) {
+        lang = (navigator.language || '').toLowerCase().indexOf('zh') === 0 ? 'zh' : 'en';
       }
-      if (saved === 'zh') document.documentElement.classList.add('is-zh');
+      if (lang === 'zh') document.documentElement.classList.add('is-zh');
+
+      // Theme — match the same logic theme.js uses, but apply BEFORE main.css parses
+      var themeSetting = localStorage.getItem('theme') || 'system';
+      var dark = themeSetting === 'dark' ||
+                 (themeSetting === 'system' &&
+                  window.matchMedia('(prefers-color-scheme: dark)').matches);
+      document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
     } catch (e) {}
   })();
 </script>

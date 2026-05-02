@@ -20,6 +20,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+{% comment %}
+  Browser tab <title>. Page titles can contain bilingual spans like
+  '<span class="lang-en-only">CV</span><span class="lang-zh-only">简历</span>'.
+  Extract just the English span content for the tab so it doesn't read as
+  "CV简历" mashed together. Falls back to strip_html for plain titles.
+{% endcomment %}
+{% assign raw_title = page.title %}
+{% if raw_title contains 'lang-en-only' %}
+  {% assign tab_page_title = raw_title | split: 'lang-en-only">' | last | split: '</span>' | first %}
+{% else %}
+  {% assign tab_page_title = raw_title | strip_html %}
+{% endif %}
 <title>
   {% if site.title == 'blank' %}
     {% capture title %}{{ author_name }}{% endcapture %}
@@ -27,12 +39,12 @@
     {% capture title %}{{ site.title }}{% endcapture %}
   {% endif %}
   {% if page.url == '/blog/index.html' %}
-    {{ page.title }} | {{ title }}
+    {{ tab_page_title }} | {{ title }}
   {% elsif page.title != 'blank' and page.url != '/' %}
     {% if page.title == null or page.title == '' %}
       {{ page.date | date: '%Y' }} | {{ title }}
     {% else %}
-      {{ page.title }} | {{ title }}
+      {{ tab_page_title }} | {{ title }}
     {% endif %}
   {% else %}
     {{ title }}
