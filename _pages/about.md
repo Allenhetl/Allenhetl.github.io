@@ -1,6 +1,7 @@
 ---
 layout: about
-title: '<span class="lang-en-only">Homepage</span><span class="lang-zh-only">主页</span>'
+title: Homepage
+nav_html: '<span class="lang-en-only">Homepage</span><span class="lang-zh-only">主页</span>'
 permalink: /
 subtitle: Embodied AI · Robot Learning · Computer Vision
 nav: false

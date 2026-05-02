@@ -1,6 +1,7 @@
 ---
 layout: page
-title: '<span class="lang-en-only">Projects</span><span class="lang-zh-only">项目</span>'
+title: Projects
+nav_html: '<span class="lang-en-only">Projects</span><span class="lang-zh-only">项目</span>'
 permalink: /projects/
 description: Selected research and engineering projects.
 nav: true
