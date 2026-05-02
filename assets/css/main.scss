@@ -279,12 +279,23 @@ nav .navbar-nav .nav-item.active > .nav-link::after {
   color: var(--global-text-color);
   letter-spacing: -0.01em;
 }
-/* Tighten the gap between page H1 (Projects) and the first category — it was
-   stacking H1 margin + description + first category margin = too much air. */
-.post-header + .projects > a:first-of-type h2.category,
-.post-description + .projects > a:first-of-type h2.category,
+/* Tighten the gap between page H1 (Projects) and the first category.
+   Multiple stacked margins were contributing: post-description bottom margin,
+   article default padding, .projects top, and h2.category top.
+   Override them all when this is the projects page. */
+.projects .post-description,
+.post-description + article {
+  margin-bottom: 0.25rem;
+}
+.projects > a:first-child,
+.projects > a:first-of-type {
+  display: block;
+  margin-top: 0;
+}
+.projects > a:first-child h2.category,
 .projects > a:first-of-type h2.category {
-  margin-top: 0.5rem;
+  margin-top: 0 !important;
+  padding-top: 0;
 }
 .projects h2.category::before {
   content: "";
