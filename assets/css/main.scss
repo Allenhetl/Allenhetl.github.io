@@ -221,6 +221,30 @@ html[data-theme="dark"] img.hkust-inline-logo {
 
 /* ========== /projects/ index polish ========== */
 
+/* Active nav-link — clearer "you are here" indicator */
+nav .navbar-nav .nav-item.active > .nav-link {
+  position: relative;
+  color: var(--global-theme-color) !important;
+  font-weight: 700;
+}
+nav .navbar-nav .nav-item.active > .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0.6rem;
+  right: 0.6rem;
+  bottom: 0.1rem;
+  height: 2px;
+  background: var(--global-theme-color);
+  border-radius: 1px;
+}
+@media (max-width: 575px) {
+  nav .navbar-nav .nav-item.active > .nav-link::after { display: none; }
+  nav .navbar-nav .nav-item.active > .nav-link {
+    background: rgba(44, 82, 130, 0.08);
+    border-radius: 4px;
+  }
+}
+
 /* Bolder category headers — accent bar carries the colour, no underline. */
 .projects h2.category {
   font-size: 1.4rem;
