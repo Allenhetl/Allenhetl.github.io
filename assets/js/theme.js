@@ -1,15 +1,13 @@
 // Has to be in the head tag, otherwise a flicker effect will occur.
 
-// Toggle through light, dark, and system theme settings.
+// 2-state toggle: light <-> dark only (system option removed).
 let toggleThemeSetting = () => {
   let themeSetting = determineThemeSetting();
+  // Resolve "system" to the currently-computed concrete value first
   if (themeSetting == "system") {
-    setThemeSetting("light");
-  } else if (themeSetting == "light") {
-    setThemeSetting("dark");
-  } else {
-    setThemeSetting("system");
+    themeSetting = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
   }
+  setThemeSetting(themeSetting === "dark" ? "light" : "dark");
 };
 
 // Change the theme setting and apply the theme.

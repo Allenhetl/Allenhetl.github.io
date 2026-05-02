@@ -30,26 +30,8 @@
       document.documentElement.style.backgroundColor = dark ? '#1c1d1f' : '#ffffff';
     } catch (e) {}
   })();
-  // Replace the theme toggle button's click handler with a 2-state-only flip.
-  // (al-folio's toggleThemeSetting is `let`-scoped so we can't override it via
-  // window; instead we clone the button to drop existing listeners and bind our
-  // own.)
-  document.addEventListener('DOMContentLoaded', function () {
-    var btn = document.getElementById('light-toggle');
-    if (!btn) return;
-    var clone = btn.cloneNode(true);
-    btn.parentNode.replaceChild(clone, btn);
-    clone.addEventListener('click', function () {
-      var current = document.documentElement.getAttribute('data-theme');
-      var next = current === 'dark' ? 'light' : 'dark';
-      localStorage.setItem('theme', next);
-      document.documentElement.setAttribute('data-theme', next);
-      document.documentElement.style.backgroundColor = next === 'dark' ? '#1c1d1f' : '#ffffff';
-      // Re-run al-folio's helpers if available so highlight CSS / charts update
-      if (typeof setHighlight === 'function') { try { setHighlight(next); } catch(e){} }
-      if (typeof setSearchTheme === 'function') { try { setSearchTheme(next); } catch(e){} }
-    });
-  });
+  // 2-state toggle is enforced by patching theme.js itself (see assets/js/theme.js).
+  // No JS override needed here — just keep the early-paint logic above.
 </script>
 <style>
   /* Apply lang visibility from <html> class (early) so first paint matches saved language */
