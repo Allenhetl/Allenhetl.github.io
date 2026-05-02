@@ -3,35 +3,35 @@ const ninja = document.querySelector('ninja-keys');
 
 // add the home and posts menu items
 ninja.data = [{
-    id: "nav-span-class-lang-en-only-homepage-span-span-class-lang-zh-only-主页-span",
-    title: "<span class="lang-en-only">Homepage</span><span class="lang-zh-only">主页</span>",
+    id: "nav-homepage",
+    title: "Homepage",
     section: "Navigation",
     handler: () => {
       window.location.href = "/";
     },
-  },{id: "nav-lt-span-class-quot-lang-en-only-quot-gt-news-lt-span-gt-lt-span-class-quot-lang-zh-only-quot-gt-新闻-lt-span-gt",
-          title: "&lt;span class=&quot;lang-en-only&quot;&gt;News&lt;/span&gt;&lt;span class=&quot;lang-zh-only&quot;&gt;新闻&lt;/span&gt;",
+  },{id: "nav-news",
+          title: "News",
           description: "",
           section: "Navigation",
           handler: () => {
             window.location.href = "/news/";
           },
-        },{id: "nav-lt-span-class-quot-lang-en-only-quot-gt-projects-lt-span-gt-lt-span-class-quot-lang-zh-only-quot-gt-项目-lt-span-gt",
-          title: "&lt;span class=&quot;lang-en-only&quot;&gt;Projects&lt;/span&gt;&lt;span class=&quot;lang-zh-only&quot;&gt;项目&lt;/span&gt;",
+        },{id: "nav-projects",
+          title: "Projects",
           description: "Selected research and engineering projects.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/projects/";
           },
-        },{id: "nav-lt-span-class-quot-lang-en-only-quot-gt-publications-lt-span-gt-lt-span-class-quot-lang-zh-only-quot-gt-出版物-lt-span-gt",
-          title: "&lt;span class=&quot;lang-en-only&quot;&gt;Publications&lt;/span&gt;&lt;span class=&quot;lang-zh-only&quot;&gt;出版物&lt;/span&gt;",
+        },{id: "nav-publications",
+          title: "Publications",
           description: "Publications in reverse-chronological order.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/publications/";
           },
-        },{id: "nav-lt-span-class-quot-lang-en-only-quot-gt-cv-lt-span-gt-lt-span-class-quot-lang-zh-only-quot-gt-简历-lt-span-gt",
-          title: "&lt;span class=&quot;lang-en-only&quot;&gt;CV&lt;/span&gt;&lt;span class=&quot;lang-zh-only&quot;&gt;简历&lt;/span&gt;",
+        },{id: "nav-cv",
+          title: "CV",
           description: "HE Tianlun (Allen) — academic CV.",
           section: "Navigation",
           handler: () => {
