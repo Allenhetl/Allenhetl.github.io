@@ -221,6 +221,30 @@ html[data-theme="dark"] img.hkust-inline-logo {
 
 /* ========== /projects/ index polish ========== */
 
+/* Theme toggle — 2 states only (light / dark). Hide the system "half-sun" icon
+   in both color schemes; show sun in light, moon in dark. */
+#light-toggle-system { display: none !important; }
+:root #light-toggle-light { display: inline-block !important; }
+:root #light-toggle-dark { display: none !important; }
+html[data-theme="light"] #light-toggle-light { display: inline-block !important; }
+html[data-theme="light"] #light-toggle-dark { display: none !important; }
+html[data-theme="dark"] #light-toggle-light { display: none !important; }
+html[data-theme="dark"] #light-toggle-dark { display: inline-block !important; }
+
+/* Stable news date column — tabular numbers + system fallback so column width
+   doesn't shift after Inter finishes loading. The previous behaviour was the
+   date "appearing later" than the rest because the table re-laid out when
+   web fonts swapped in. */
+.news .table th[scope="row"],
+.news .table-responsive th {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+  white-space: nowrap;
+  min-width: 105px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Inter", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+}
+
 /* Active nav-link — clearer "you are here" indicator */
 nav .navbar-nav .nav-item.active > .nav-link {
   position: relative;
@@ -249,11 +273,18 @@ nav .navbar-nav .nav-item.active > .nav-link::after {
 .projects h2.category {
   font-size: 1.4rem;
   font-weight: 600;
-  margin-top: 2.25rem;
-  margin-bottom: 1rem;
+  margin-top: 1.6rem;
+  margin-bottom: 0.85rem;
   padding-bottom: 0.25rem;
   color: var(--global-text-color);
   letter-spacing: -0.01em;
+}
+/* Tighten the gap between page H1 (Projects) and the first category — it was
+   stacking H1 margin + description + first category margin = too much air. */
+.post-header + .projects > a:first-of-type h2.category,
+.post-description + .projects > a:first-of-type h2.category,
+.projects > a:first-of-type h2.category {
+  margin-top: 0.5rem;
 }
 .projects h2.category::before {
   content: "";
@@ -264,9 +295,6 @@ nav .navbar-nav .nav-item.active > .nav-link::after {
   vertical-align: -0.12em;
   margin-right: 0.55rem;
   border-radius: 2px;
-}
-.projects > a:first-of-type h2.category {
-  margin-top: 1rem;
 }
 
 /* Consistent gutter between project cards */

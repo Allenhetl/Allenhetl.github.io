@@ -15,11 +15,14 @@
       }
       if (lang === 'zh') document.documentElement.classList.add('is-zh');
 
-      // Theme — match the same logic theme.js uses, but apply BEFORE main.css parses
-      var themeSetting = localStorage.getItem('theme') || 'system';
-      var dark = themeSetting === 'dark' ||
-                 (themeSetting === 'system' &&
-                  window.matchMedia('(prefers-color-scheme: dark)').matches);
+      // Theme — 2 states only (light / dark). If user previously had 'system',
+      // resolve it once to a concrete value so the toggle just flips between two.
+      var themeSetting = localStorage.getItem('theme');
+      if (!themeSetting || themeSetting === 'system') {
+        themeSetting = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        localStorage.setItem('theme', themeSetting);
+      }
+      var dark = themeSetting === 'dark';
       document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
       // Set <html> background-color inline so the very first paint is the right
       // colour even before main.css finishes loading — kills the white flash on
@@ -27,6 +30,26 @@
       document.documentElement.style.backgroundColor = dark ? '#1c1d1f' : '#ffffff';
     } catch (e) {}
   })();
+  // Replace the theme toggle button's click handler with a 2-state-only flip.
+  // (al-folio's toggleThemeSetting is `let`-scoped so we can't override it via
+  // window; instead we clone the button to drop existing listeners and bind our
+  // own.)
+  document.addEventListener('DOMContentLoaded', function () {
+    var btn = document.getElementById('light-toggle');
+    if (!btn) return;
+    var clone = btn.cloneNode(true);
+    btn.parentNode.replaceChild(clone, btn);
+    clone.addEventListener('click', function () {
+      var current = document.documentElement.getAttribute('data-theme');
+      var next = current === 'dark' ? 'light' : 'dark';
+      localStorage.setItem('theme', next);
+      document.documentElement.setAttribute('data-theme', next);
+      document.documentElement.style.backgroundColor = next === 'dark' ? '#1c1d1f' : '#ffffff';
+      // Re-run al-folio's helpers if available so highlight CSS / charts update
+      if (typeof setHighlight === 'function') { try { setHighlight(next); } catch(e){} }
+      if (typeof setSearchTheme === 'function') { try { setSearchTheme(next); } catch(e){} }
+    });
+  });
 </script>
 <style>
   /* Apply lang visibility from <html> class (early) so first paint matches saved language */
