@@ -1,14 +1,10 @@
+# GitHub profiles whose stats/trophies are displayed on the /repositories/ page.
 github_users:
-  - torvalds
-  - alshedivat
+  - Allenhetl
 
 repo_description_lines_max: 2
 
+# Repositories featured on the /repositories/ page (format: owner/repo).
+# Add your own public repositories here, e.g.:
+#   - Allenhetl/your-repo-name
 github_repos:
-  - alshedivat/al-folio
-  - jekyll/jekyll
-  - twbs/bootstrap
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - mathjax/MathJax
-  - jpswalsh/academicons
