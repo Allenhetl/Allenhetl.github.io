@@ -42,7 +42,7 @@ My research interests center on **Embodied AI** — particularly **vision-langua
 
 I'm actively looking for **research internships** and **PhD opportunities** in embodied AI and robot learning. If my experience interests you, I'd be happy to connect.
 
-Outside research I build **LEGO Technic** sets, take photos, and travel when I can. The Technic kits — gears, linkages, differentials — are a habit kept from childhood and a quiet way to keep my mechanical-design intuition warm. The camera and the road are how I think when I'm not at a desk.
+Outside research, I build **LEGO Technic** sets, take photos, and travel when I can.
 
 </div>
 
@@ -56,6 +56,6 @@ Outside research I build **LEGO Technic** sets, take photos, and travel when I c
 
 我正在寻找**研究实习**与**博士项目**机会。如果我的经历能引起你的兴趣，欢迎随时联系。
 
-工作之余喜欢拼**乐高 Technic**、拍照和旅行。Technic 那些齿轮、连杆、差速结构的套装从小拼到现在，对我来说是机械设计直觉的日常练习；相机和路途，则是我换一种方式思考的工具。
+科研之余，我喜欢拼**乐高 Technic**、拍照和旅行。
 
 </div>

@@ -441,20 +441,63 @@ html[data-theme="dark"] .projects .card {
 }
 
 /* ---------- 10. News list ------------------------------------ */
-/* Stable date column — tabular figures + a system fallback so the
-   column width doesn't shift when the web font swaps in. */
+/* The date is a small uppercase letterspaced label in the accent
+   colour — editorial, not a rigid monospace column. Tabular figures
+   keep it aligned; hairline rules separate the entries. */
+.news .table {
+  width: 100%;
+}
 .news .table th[scope="row"],
-.news .table-responsive th {
-  font-family: var(--font-mono);
+.news .table td {
+  border-top: 0;
+  border-bottom: 1px solid var(--global-divider-color);
+}
+.news .table tr:last-child th[scope="row"],
+.news .table tr:last-child td {
+  border-bottom: 0;
+}
+.news .table th[scope="row"] {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
   font-variant-numeric: tabular-nums;
   font-feature-settings: "tnum" 1;
+  color: var(--global-theme-color);
   white-space: nowrap;
-  min-width: 105px;
-  font-size: 0.84rem;
-  color: var(--global-text-color-light);
+  vertical-align: top;
+  width: 124px;
+  min-width: 124px;
+  padding: 1.05rem 1rem 1.05rem 0;
 }
 .news .table td {
-  line-height: 1.6;
+  vertical-align: top;
+  padding: 1rem 0;
+  line-height: 1.62;
+  font-size: 0.95rem;
+  color: var(--global-text-color);
+}
+.news .table a.news-title {
+  font-weight: 600;
+}
+/* Quiet full-row hover. */
+.news .table tr {
+  transition: background-color 0.16s ease;
+}
+.news .table tbody tr:hover {
+  background-color: rgba(47, 75, 216, 0.035);
+}
+html[data-theme="dark"] .news .table tbody tr:hover {
+  background-color: rgba(141, 164, 255, 0.06);
+}
+@media (max-width: 575px) {
+  .news .table th[scope="row"] {
+    width: 96px;
+    min-width: 96px;
+    font-size: 0.68rem;
+    padding-right: 0.7rem;
+  }
 }
 
 /* ---------- 11. CV page -------------------------------------- */
