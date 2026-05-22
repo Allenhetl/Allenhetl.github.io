@@ -39,110 +39,162 @@
 @use "font-awesome/regular";
 
 /* ============================================================
-   Custom overrides — must come AFTER all @use rules
+   REFINED MINIMAL — custom design system
+   Light-first, one saturated accent, distinctive type, quiet
+   page-load motion. All overrides below are plain CSS and must
+   come AFTER every @use rule above.
    ============================================================ */
 
-/* 1) Replace the bright magenta accent with a calmer deep blue. */
+/* ---------- 1. Design tokens ---------------------------------- */
 :root {
-  --global-theme-color: #2c5282;
-  --global-hover-color: #1a365d;
-  --global-highlight-color: #2c5282;
+  --font-display:
+    "Bricolage Grotesque", "Hanken Grotesk", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-body:
+    "Hanken Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  --font-mono:
+    "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  /* Saturated, confident blue — replaces the timid corporate navy. */
+  --global-theme-color: #2f4bd8;
+  --global-hover-color: #1f37b0;
+  --global-highlight-color: #2f4bd8;
+
+  /* Warm paper background + near-black ink. */
+  --global-bg-color: #fdfcfa;
+  --global-text-color: #18191d;
+  --global-text-color-light: #5c5e68;
+  --global-divider-color: #e9e7e1;
+  --global-card-bg-color: #ffffff;
 }
 html[data-theme="dark"] {
-  --global-theme-color: #63b3ed;
-  --global-hover-color: #90cdf4;
-  --global-highlight-color: #90cdf4;
+  --global-theme-color: #8da4ff;
+  --global-hover-color: #aab8ff;
+  --global-highlight-color: #8da4ff;
 }
 
-/* 2) Switch the body/heading typeface to Inter (sans) and Lora (serif).
-   Code blocks use JetBrains Mono. */
+/* ---------- 2. Typography ------------------------------------- */
 body,
 p,
 li,
-.post-title,
 .post-description,
 .profile,
 .navbar {
-  font-family:
-    "Inter",
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    "PingFang SC",
-    "Hiragino Sans GB",
-    "Microsoft YaHei",
-    sans-serif;
+  font-family: var(--font-body);
 }
-h1, h2, h3, h4, h5, h6,
-.post-title h1,
-.profile .more-info p strong {
-  font-family:
-    "Inter",
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    "PingFang SC",
-    "Microsoft YaHei",
-    sans-serif;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-}
-code, pre, kbd, samp, .highlight {
-  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-}
-
-/* Slightly softer body color & line-height for readability */
 body {
   font-size: 1rem;
-  line-height: 1.7;
+  line-height: 1.72;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.018em;
+}
+code, pre, kbd, samp, .highlight {
+  font-family: var(--font-mono);
 }
 
-/* The big name on the homepage — elegant academic serif (Playfair Display).
-   To try a different look, change the family below to one of:
-     "Cormorant Garamond"  — refined classical serif
-     "EB Garamond"         — warm book-style serif
-     "DM Serif Display"    — modern high-contrast serif
-     "Manrope"             — clean modern sans (geometric)
-*/
-.post .post-title,
-.post .post-title h1,
-h1.post-title,
-h1.post-title span.font-weight-bold {
-  font-family:
-    "Playfair Display",
-    "Lora",
-    Georgia,
-    "Times New Roman",
-    "PingFang SC",
-    "Microsoft YaHei",
-    serif;
-  font-weight: 600;
-  letter-spacing: -0.005em;
-}
-.post .post-title span.font-weight-bold {
+/* Bold text stays ink-dark — never tinted, so it never looks like a link. */
+strong, b {
+  color: inherit;
   font-weight: 700;
 }
 
-/* Bold text — keep it dark, NOT theme color, so it doesn't look pink. */
-strong, b {
-  color: inherit;
+::selection {
+  background: rgba(47, 75, 216, 0.16);
+}
+html[data-theme="dark"] ::selection {
+  background: rgba(141, 164, 255, 0.26);
+}
+
+:focus-visible {
+  outline: 2px solid var(--global-theme-color);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/* ---------- 3. Background atmosphere -------------------------- */
+/* A single, whisper-faint accent glow anchored at the top of the
+   page — restraint is the point in a minimal system. */
+body {
+  background-color: var(--global-bg-color);
+  background-image: radial-gradient(
+    115% 52% at 50% 0%,
+    rgba(47, 75, 216, 0.05),
+    rgba(47, 75, 216, 0) 72%
+  );
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+html[data-theme="dark"] body {
+  background-image: radial-gradient(
+    115% 52% at 50% 0%,
+    rgba(141, 164, 255, 0.08),
+    rgba(141, 164, 255, 0) 72%
+  );
+}
+
+/* ---------- 4. Homepage hero --------------------------------- */
+/* Big, confident page title. The homepage name carries a weight
+   contrast: bold given-name span vs. light family name. */
+.post .post-title,
+.post .post-title h1,
+h1.post-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 5vw, 3.45rem);
+  font-weight: 300;
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+}
+.post .post-title span.font-weight-bold,
+h1.post-title span.font-weight-bold {
+  font-weight: 800;
+}
+
+/* Subtitle → refined uppercase "eyebrow". */
+.post-header .desc,
+p.desc {
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 0.145em;
+  font-size: 0.78rem;
   font-weight: 600;
+  color: var(--global-theme-color);
+  margin-top: 0.95rem;
+  margin-bottom: 0;
 }
 
-/* 3) Push the profile photo further to the LEFT on the homepage,
-   without breaking small-screen behaviour. */
-@media (min-width: 576px) {
-  .post .profile.float-left {
-    margin-left: -2.5rem;
-    margin-right: 1.5rem;
-    max-width: 32%;
-  }
-  .post .profile.float-left img {
-    max-width: 100%;
-  }
+/* Homepage section headers ("news") → quiet letterspaced labels
+   with a hairline rule. Targets only the article-level h2s, not
+   the content headings inside the bio. */
+.post > article > h2 {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--global-text-color-light);
+  margin-top: 2.7rem;
+  margin-bottom: 1.1rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--global-divider-color);
+}
+.post > article > h2 a {
+  color: inherit;
+  transition: color 0.18s ease;
+}
+.post > article > h2 a:hover {
+  color: var(--global-theme-color);
 }
 
-/* 4) Profile "more-info" lines — tighten and align nicely under the photo. */
+/* ---------- 5. Profile photo --------------------------------- */
 .profile .more-info {
   text-align: left;
   padding-left: 0;
@@ -160,14 +212,396 @@ strong, b {
   text-decoration: underline;
 }
 
-/* Auto-scrolling wallpaper gallery — used at the bottom of the RoboMaster project. */
+/* Push the photo further left on desktop, give it a soft lift. */
+@media (min-width: 576px) {
+  .post .profile.float-left {
+    margin-left: -2.5rem;
+    margin-right: 1.6rem;
+    max-width: 32%;
+  }
+  .post .profile.float-left img {
+    max-width: 100%;
+  }
+}
+.post .profile.float-left img {
+  box-shadow: 0 16px 38px -18px rgba(20, 22, 45, 0.5);
+  transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.post .profile.float-left img:hover {
+  transform: scale(1.02);
+}
+
+/* ---------- 6. Body links ------------------------------------ */
+.post article .clearfix a {
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1px;
+  transition: color 0.16s ease;
+}
+
+/* ---------- 7. Navbar ---------------------------------------- */
+#navbar.navbar {
+  background-color: rgba(253, 252, 250, 0.82);
+  -webkit-backdrop-filter: saturate(180%) blur(12px);
+  backdrop-filter: saturate(180%) blur(12px);
+  border-bottom: 1px solid var(--global-divider-color);
+}
+html[data-theme="dark"] #navbar.navbar {
+  background-color: rgba(28, 29, 31, 0.82);
+}
+.navbar-brand.title {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+.navbar .nav-link {
+  font-family: var(--font-body);
+  font-weight: 500;
+}
+
+/* Active nav-link — clear "you are here" indicator. */
+nav .navbar-nav .nav-item.active > .nav-link {
+  position: relative;
+  color: var(--global-theme-color) !important;
+  font-weight: 700;
+}
+nav .navbar-nav .nav-item.active > .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0.6rem;
+  right: 0.6rem;
+  bottom: 0.1rem;
+  height: 2px;
+  background: var(--global-theme-color);
+  border-radius: 1px;
+}
+@media (max-width: 575px) {
+  nav .navbar-nav .nav-item.active > .nav-link::after {
+    display: none;
+  }
+  nav .navbar-nav .nav-item.active > .nav-link {
+    background: rgba(47, 75, 216, 0.09);
+    border-radius: 4px;
+  }
+}
+
+/* ---------- 8. Page-load motion ------------------------------ */
+/* One orchestrated entrance: hero elements rise + fade in a
+   stagger. Guarded by prefers-reduced-motion — when motion is
+   reduced (or the rule is unsupported) content stays fully
+   visible because opacity:0 lives only inside the query. */
+@keyframes rm-rise {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .post-header .post-title,
+  .post-header .desc,
+  .post article > .profile,
+  .post article > .clearfix,
+  .post article > h2 {
+    opacity: 0;
+    animation: rm-rise 0.72s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+  .post-header .post-title {
+    animation-delay: 0.05s;
+  }
+  .post-header .desc {
+    animation-delay: 0.15s;
+  }
+  .post article > .profile {
+    animation-delay: 0.25s;
+  }
+  .post article > .clearfix {
+    animation-delay: 0.33s;
+  }
+  .post article > h2 {
+    animation-delay: 0.42s;
+  }
+}
+
+/* al-folio adds class="transition" to <html> for 750ms on a theme
+   toggle and applies `transition: all 750ms` to every element. With
+   mixed element sizes the eye reads it as a "ripple". Snap instead so
+   every colour flips on the same paint frame. */
+html.transition,
+html.transition *,
+html.transition *::before,
+html.transition *::after {
+  transition: none !important;
+}
+
+/* ---------- 9. Projects index -------------------------------- */
+.projects h2.category {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 700;
+  margin-top: 1.7rem;
+  margin-bottom: 0.9rem;
+  padding-bottom: 0.25rem;
+  color: var(--global-text-color);
+  letter-spacing: -0.02em;
+}
+.projects h2.category::before {
+  content: "";
+  display: inline-block;
+  width: 4px;
+  height: 0.92em;
+  background: var(--global-theme-color);
+  vertical-align: -0.1em;
+  margin-right: 0.6rem;
+  border-radius: 2px;
+}
+/* Tighten the gap between the page H1 and the first category. */
+.projects .post-description,
+.post-description + article {
+  margin-bottom: 0.25rem;
+}
+.projects > a:first-child,
+.projects > a:first-of-type {
+  display: block;
+  margin-top: 0;
+}
+.projects > a:first-child h2.category,
+.projects > a:first-of-type h2.category {
+  margin-top: 0 !important;
+  padding-top: 0;
+}
+
+.project-grid > [class*="col-"] {
+  margin-bottom: 1.5rem;
+}
+
+/* Refined cards — no hard border, soft resting shadow, larger
+   radius, a confident lift on hover. */
+.projects .card {
+  border: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--global-card-bg-color);
+  box-shadow:
+    0 1px 2px rgba(20, 22, 45, 0.06),
+    0 10px 24px -16px rgba(20, 22, 45, 0.3);
+  transition:
+    transform 0.22s cubic-bezier(0.2, 0.7, 0.2, 1),
+    box-shadow 0.22s ease;
+  height: 100%;
+}
+.projects .card:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 2px 4px rgba(20, 22, 45, 0.07),
+    0 22px 40px -20px rgba(20, 22, 45, 0.42);
+}
+html[data-theme="dark"] .projects .card {
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.5),
+    0 10px 24px -16px rgba(0, 0, 0, 0.7);
+}
+
+/* Card thumbnail — uniform band via object-fit:cover. This is a
+   display-layer crop only; source images are untouched. */
+.projects .card img.card-img-top {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  object-position: center 38%;
+  display: block;
+}
+.projects .card figure {
+  margin: 0;
+}
+.projects .card .card-body {
+  padding: 1.15rem 1.2rem 1.3rem;
+}
+.projects .card .card-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.08rem;
+  line-height: 1.32;
+  letter-spacing: -0.015em;
+  margin-bottom: 0.4rem;
+}
+.projects .card .card-text {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--global-text-color-light);
+}
+/* Project date / timeframe meta line. */
+.projects .card .card-meta {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--global-text-color-light);
+  margin: 0 0 0.45rem 0;
+  letter-spacing: 0.01em;
+}
+
+/* ---------- 10. News list ------------------------------------ */
+/* Stable date column — tabular figures + a system fallback so the
+   column width doesn't shift when the web font swaps in. */
+.news .table th[scope="row"],
+.news .table-responsive th {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+  white-space: nowrap;
+  min-width: 105px;
+  font-size: 0.84rem;
+  color: var(--global-text-color-light);
+}
+.news .table td {
+  line-height: 1.6;
+}
+
+/* ---------- 11. CV page -------------------------------------- */
+.cv-hero {
+  border-left: 4px solid var(--global-theme-color);
+}
+.cv-hero-photo img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-right: 1.5rem;
+  border: 3px solid var(--global-theme-color);
+}
+@media (max-width: 575px) {
+  .cv-hero-photo img {
+    width: 76px;
+    height: 76px;
+    margin-right: 1rem;
+  }
+}
+.cv-hero-name {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.7rem;
+  letter-spacing: -0.025em;
+  color: var(--global-text-color);
+}
+.cv-hero-label {
+  font-size: 1rem;
+  color: var(--global-theme-color);
+  font-weight: 600;
+  margin: 0;
+}
+.cv-hero-meta {
+  font-size: 0.9rem;
+  color: var(--global-text-color-light);
+}
+
+/* CV section card titles — accent bar, no heavy chrome. */
+.cv .card .card-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.22rem;
+  color: var(--global-text-color);
+  border-bottom: 1px solid var(--global-divider-color);
+  padding-bottom: 0.4rem;
+  margin-bottom: 0.75rem;
+  position: relative;
+  padding-left: 0.6rem;
+}
+.cv .card .card-title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.15em;
+  bottom: 0.45em;
+  width: 3px;
+  background: var(--global-theme-color);
+  border-radius: 2px;
+}
+.cv .badge.danger-color-dark {
+  background-color: var(--global-theme-color) !important;
+  color: #fff !important;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  padding: 0.4rem 0.55rem;
+  border-radius: 4px;
+  letter-spacing: 0.01em;
+}
+.cv h6.title.font-weight-bold {
+  font-family: var(--font-display);
+  font-size: 1.06rem;
+  font-weight: 700;
+  color: var(--global-text-color);
+  margin-bottom: 0.15rem;
+}
+.cv .table-cv td.font-weight-bold b {
+  color: var(--global-theme-color);
+}
+.cv ul.items {
+  padding-left: 1rem;
+  margin-bottom: 0;
+}
+.cv ul.items li {
+  margin-bottom: 0.35rem;
+}
+
+/* ---------- 12. HKUST inline logo ---------------------------- */
+/* The !important is REQUIRED: al-folio's _layout.scss sets
+   `.profile img { width: 100% }`, which would stretch this small
+   shield to fill the sidebar column. */
+.profile img.hkust-inline-logo,
+img.hkust-inline-logo {
+  width: auto !important;
+  height: 22px !important;
+  max-width: none !important;
+  vertical-align: -6px;
+  margin-right: 6px;
+  display: inline-block;
+}
+html[data-theme="dark"] img.hkust-inline-logo {
+  filter: brightness(1.05);
+}
+
+/* ---------- 13. Theme toggle (2-state: light / dark) --------- */
+#light-toggle-system {
+  display: none !important;
+}
+:root #light-toggle-light {
+  display: inline-block !important;
+}
+:root #light-toggle-dark {
+  display: none !important;
+}
+html[data-theme="light"] #light-toggle-light {
+  display: inline-block !important;
+}
+html[data-theme="light"] #light-toggle-dark {
+  display: none !important;
+}
+html[data-theme="dark"] #light-toggle-light {
+  display: none !important;
+}
+html[data-theme="dark"] #light-toggle-dark {
+  display: inline-block !important;
+}
+
+/* ---------- 14. Wallpaper marquee (RoboMaster project) ------- */
 .wallpaper-marquee {
   overflow: hidden;
   position: relative;
   padding: 0.5rem 0;
   margin-top: 1.5rem;
-  -webkit-mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent);
-  mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent);
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 5%,
+    #000 95%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 5%,
+    #000 95%,
+    transparent
+  );
 }
 .wallpaper-marquee__track {
   display: flex;
@@ -193,279 +627,31 @@ strong, b {
   flex: 0 0 auto;
 }
 @keyframes wallpaper-scroll {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 @media (max-width: 575px) {
-  .wallpaper-marquee img { height: 140px; }
-}
-
-/* HKUST inline logo (portrait shield, 143×218 source) used in the homepage profile sidebar.
-   The override !important is REQUIRED because al-folio's _layout.scss sets
-   `.profile img { width: 100% }` which would otherwise stretch this small icon
-   to fill the sidebar column horizontally. Selector specificity .profile
-   img.hkust-inline-logo (0,2,1) beats .profile img (0,1,1), and !important is a
-   belt-and-suspenders to prevent any future override. */
-.profile img.hkust-inline-logo,
-img.hkust-inline-logo {
-  width: auto !important;
-  height: 22px !important;
-  max-width: none !important;
-  vertical-align: -6px;
-  margin-right: 6px;
-  display: inline-block;
-}
-html[data-theme="dark"] img.hkust-inline-logo {
-  filter: brightness(1.05);
-}
-
-/* ========== /projects/ index polish ========== */
-
-/* Theme toggle — 2 states only (light / dark). Hide the system "half-sun" icon
-   in both color schemes; show sun in light, moon in dark. */
-#light-toggle-system { display: none !important; }
-:root #light-toggle-light { display: inline-block !important; }
-:root #light-toggle-dark { display: none !important; }
-html[data-theme="light"] #light-toggle-light { display: inline-block !important; }
-html[data-theme="light"] #light-toggle-dark { display: none !important; }
-html[data-theme="dark"] #light-toggle-light { display: none !important; }
-html[data-theme="dark"] #light-toggle-dark { display: inline-block !important; }
-
-/* Stable news date column — tabular numbers + system fallback so column width
-   doesn't shift after Inter finishes loading. The previous behaviour was the
-   date "appearing later" than the rest because the table re-laid out when
-   web fonts swapped in. */
-.news .table th[scope="row"],
-.news .table-responsive th {
-  font-variant-numeric: tabular-nums;
-  font-feature-settings: "tnum" 1;
-  white-space: nowrap;
-  min-width: 105px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-    "Inter", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-}
-
-/* Active nav-link — clearer "you are here" indicator */
-nav .navbar-nav .nav-item.active > .nav-link {
-  position: relative;
-  color: var(--global-theme-color) !important;
-  font-weight: 700;
-}
-nav .navbar-nav .nav-item.active > .nav-link::after {
-  content: "";
-  position: absolute;
-  left: 0.6rem;
-  right: 0.6rem;
-  bottom: 0.1rem;
-  height: 2px;
-  background: var(--global-theme-color);
-  border-radius: 1px;
-}
-@media (max-width: 575px) {
-  nav .navbar-nav .nav-item.active > .nav-link::after { display: none; }
-  nav .navbar-nav .nav-item.active > .nav-link {
-    background: rgba(44, 82, 130, 0.08);
-    border-radius: 4px;
+  .wallpaper-marquee img {
+    height: 140px;
   }
 }
 
-/* Bolder category headers — accent bar carries the colour, no underline. */
-.projects h2.category {
-  font-size: 1.4rem;
-  font-weight: 600;
-  margin-top: 1.6rem;
-  margin-bottom: 0.85rem;
-  padding-bottom: 0.25rem;
-  color: var(--global-text-color);
-  letter-spacing: -0.01em;
-}
-/* Tighten the gap between page H1 (Projects) and the first category.
-   Multiple stacked margins were contributing: post-description bottom margin,
-   article default padding, .projects top, and h2.category top.
-   Override them all when this is the projects page. */
-.projects .post-description,
-.post-description + article {
-  margin-bottom: 0.25rem;
-}
-.projects > a:first-child,
-.projects > a:first-of-type {
-  display: block;
-  margin-top: 0;
-}
-.projects > a:first-child h2.category,
-.projects > a:first-of-type h2.category {
-  margin-top: 0 !important;
-  padding-top: 0;
-}
-.projects h2.category::before {
-  content: "";
-  display: inline-block;
-  width: 4px;
-  height: 1em;
-  background: var(--global-theme-color);
-  vertical-align: -0.12em;
-  margin-right: 0.55rem;
-  border-radius: 2px;
-}
-
-/* Consistent gutter between project cards */
-.project-grid > [class*="col-"] {
-  margin-bottom: 1.25rem;
-}
-
-/* Card thumbnail — uniform band (220px on desktop, 160px mobile) using object-fit:cover.
-   This is a soft visual crop only (display layer) — your source files are NOT touched and
-   you can re-crop in the source whenever you want. The previous "natural ratio" version
-   left big whitespace under shorter images when the card stretched to row height. */
-.projects .card img.card-img-top {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  object-position: center 38%;
-  display: block;
-}
+/* ---------- 15. Mobile tweaks -------------------------------- */
 @media (max-width: 575px) {
+  .projects h2.category {
+    font-size: 1.32rem;
+  }
+  .projects .card .card-title {
+    font-size: 1.02rem;
+  }
   .projects .card img.card-img-top {
     height: 160px;
   }
-}
-.projects .card figure {
-  margin: 0;
-}
-
-/* Project date / timeframe meta line under the description on each card */
-.projects .card .card-meta {
-  font-size: 0.78rem;
-  color: var(--global-text-color-light);
-  margin: 0 0 0.4rem 0;
-  font-variant-numeric: tabular-nums;
-  letter-spacing: 0.02em;
-}
-
-/* Dark/light theme toggle — al-folio adds `class="transition"` to <html> for
-   750ms during a toggle and applies `transition: all 750ms` to every element.
-   With elements of different sizes/weights/colors, the eye perceives the long
-   animation as "ripple" — text appears to flip out of sync. Override with an
-   instant snap so all colors flip together at the same paint frame. */
-html.transition,
-html.transition *,
-html.transition *::before,
-html.transition *::after {
-  transition: none !important;
-}
-
-/* ========== /cv/ page polish ========== */
-.cv-hero {
-  border-left: 4px solid var(--global-theme-color);
-}
-.cv-hero-photo img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  margin-right: 1.5rem;
-  border: 3px solid var(--global-theme-color);
-}
-@media (max-width: 575px) {
-  .cv-hero-photo img { width: 76px; height: 76px; margin-right: 1rem; }
-}
-.cv-hero-name {
-  font-weight: 700;
-  font-size: 1.6rem;
-  letter-spacing: -0.01em;
-  color: var(--global-text-color);
-}
-.cv-hero-label {
-  font-size: 1rem;
-  color: var(--global-theme-color);
-  font-weight: 600;
-  margin: 0;
-}
-.cv-hero-meta {
-  font-size: 0.9rem;
-  color: var(--global-text-color-light);
-}
-
-/* CV section card titles — bolder, theme-color accent bar */
-.cv .card .card-title {
-  font-weight: 700;
-  font-size: 1.2rem;
-  color: var(--global-text-color);
-  border-bottom: 1px solid var(--global-divider-color);
-  padding-bottom: 0.4rem;
-  margin-bottom: 0.75rem;
-  position: relative;
-  padding-left: 0.6rem;
-}
-.cv .card .card-title::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.15em;
-  bottom: 0.45em;
-  width: 3px;
-  background: var(--global-theme-color);
-  border-radius: 2px;
-}
-
-/* Date badges — punchier */
-.cv .badge.danger-color-dark {
-  background-color: var(--global-theme-color) !important;
-  color: #fff !important;
-  font-size: 0.8rem;
-  padding: 0.4rem 0.55rem;
-  border-radius: 4px;
-  letter-spacing: 0.02em;
-}
-
-/* CV titles inside entries (position / award / project name) */
-.cv h6.title.font-weight-bold {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--global-text-color);
-  margin-bottom: 0.15rem;
-}
-
-/* Keep the first contact-info table compact */
-.cv .table-cv td.font-weight-bold b {
-  color: var(--global-theme-color);
-}
-
-/* Bullet items inside CV entries — slight indent + tighter spacing */
-.cv ul.items {
-  padding-left: 1rem;
-  margin-bottom: 0;
-}
-.cv ul.items li {
-  margin-bottom: 0.35rem;
-}
-
-/* Card body breathing room + subtle hover lift */
-.projects .card {
-  border: 1px solid var(--global-divider-color);
-  transition: transform 0.18s ease, box-shadow 0.18s ease;
-  height: 100%;
-}
-.projects .card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-}
-.projects .card .card-body {
-  padding: 1rem 1.1rem 1.15rem;
-}
-.projects .card .card-title {
-  font-weight: 600;
-  margin-bottom: 0.4rem;
-  font-size: 1.05rem;
-  line-height: 1.35;
-}
-.projects .card .card-text {
-  font-size: 0.9rem;
-  line-height: 1.5;
-  color: var(--global-text-color-light);
-}
-
-/* Mobile — single column, slightly looser */
-@media (max-width: 575px) {
-  .projects h2.category { font-size: 1.35rem; }
-  .projects .card .card-title { font-size: 1rem; }
+  .post .profile.float-left img {
+    box-shadow: 0 10px 24px -14px rgba(20, 22, 45, 0.45);
+  }
 }
