@@ -21,8 +21,5 @@ The team's aerial support unit — a **13 kg custom quadcopter** that rains fire
   <div class="col-sm mt-3 mt-md-0">
     {% include figure.liquid path="assets/img/projects/RoboMaster/6号无人机.JPG" class="img-fluid rounded z-depth-1" zoomable=true %}
   </div>
-  <div class="col-sm mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/projects/RoboMaster/无人机蓝图.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
-  </div>
 </div>
-<div class="caption"><span class="lang-en-only">Left: the built quadcopter. Right: blueprint-style render of the airframe.</span><span class="lang-zh-only">左：实机四旋翼；右：机架的蓝图风渲染。</span></div>
+<div class="caption"><span class="lang-en-only">The built quadcopter.</span><span class="lang-zh-only">实机四旋翼。</span></div>
