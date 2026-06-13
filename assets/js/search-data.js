@@ -30,6 +30,13 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/publications/";
           },
+        },{id: "nav-photography",
+          title: "Photography",
+          description: "A few frames I have taken — light, cities, and quiet moments away from the lab.一些我拍下的画面——光线、城市，和实验室之外的安静时刻。",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/photography/";
+          },
         },{id: "nav-cv",
           title: "CV",
           description: "HE Tianlun (Allen) — academic CV.",
@@ -86,6 +93,21 @@ ninja.data = [{
           description: "Team-led Year-2 project — rudder-wheel chassis with LiDAR-based autonomous navigation.Year 2 团队负责人项目 — 舵轮底盘 + 激光雷达自主导航。",
           section: "Projects",handler: () => {
               window.location.href = "/projects/6_wheelchair/";
+            },},{id: "projects-4d-world-model-mvista-4d-4d-世界模型-mvista-4d",
+          title: '4D World Model (MVISTA-4D)4D 世界模型 (MVISTA-4D)',
+          description: "View-consistent 4D world model for robotic manipulation — ICML 2026.面向机器人操作的视角一致 4D 世界模型 — ICML 2026。",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/research_1_worldmodel/";
+            },},{id: "projects-memory-augmented-vla记忆增强-vla",
+          title: 'Memory-Augmented VLA记忆增强 VLA',
+          description: "Memory-augmented vision-language-action policy for long-horizon manipulation — targeting ICRA 2027.面向长程操作的记忆增强视觉-语言-动作策略 — 计划投稿 ICRA 2027。",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/research_2_memoryvla/";
+            },},{id: "projects-indoor-semantic-segmentation室内结构语义分割",
+          title: 'Indoor Semantic Segmentation室内结构语义分割',
+          description: "Point-cloud structural segmentation with Sonata + PTV3, plus a Blender labelling plugin.基于 Sonata + PTV3 的点云结构分割，并自研 Blender 标注插件。",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/research_3_segmentation/";
             },},{id: "projects-hkust-robomaster-enterprizehkust-robomaster-enterprize-战队",
           title: 'HKUST RoboMaster ENTERPRIZEHKUST RoboMaster Enterprize 战队',
           description: "Mechanical Department Lead — RMUC 2024 International Champion · 2025 University League Champion机械部门负责人 — RMUC 2024 国际赛区冠军 · 2025 高校联盟赛冠军",
