@@ -18,7 +18,7 @@ A mechanism design course project exploring magnetic actuation. Designed and pro
 
 <div class="row">
     <div class="col-sm">
-        {% include figure.liquid loading="eager" path="assets/img/projects/课设/磁力机构展示图.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid path="assets/img/projects/课设/磁力机构展示图.png" class="img-fluid rounded z-depth-1" zoomable=true %}
         <div class="caption"><span class="lang-en-only">Magnetic mechanism prototype</span><span class="lang-zh-only">磁力机构样机</span></div>
     </div>
 </div>

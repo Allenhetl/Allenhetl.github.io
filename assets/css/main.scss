@@ -257,6 +257,24 @@ html[data-theme="dark"] #navbar.navbar {
   font-weight: 500;
 }
 
+/* Right-side controls on one baseline. On desktop the nav is a flex
+   row whose items default to `align-items: stretch`, so page tabs
+   (tall, padded links), the search button, the theme icon (a fixed
+   2rem box) and the EN/中 toggle all sat at different heights. Center
+   them on the cross-axis so every control shares one midline — this
+   replaces the old per-icon translateY nudge with a structural fix. */
+@media (min-width: 576px) {
+  #navbar .navbar-nav {
+    align-items: center;
+  }
+  /* Match the language toggle's optical size to the nav links. */
+  #navbar .navbar-nav .toggle-container .nav-link,
+  #navbar #lang-toggle {
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
 /* Active nav-link — clear "you are here" indicator. */
 nav .navbar-nav .nav-item.active > .nav-link {
   position: relative;

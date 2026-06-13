@@ -16,6 +16,13 @@
 
 {% capture author_name %}{{ site.first_name }}{% if site.middle_name %} {{ site.middle_name }}{% endif %} {{ site.last_name }}{% endcapture %}
 
+{% comment %}
+  Bilingual titles store BOTH languages inline as <span class="lang-en-only">..</span><span class="lang-zh-only">..</span>.
+  For machine-read metadata (title tag, OG, Twitter, JSON-LD) we want the English text only, not both
+  concatenated. Drop the entire lang-zh-only span (tag + content), then strip any remaining tags.
+{% endcomment %}
+{% assign page_title_clean = page.title | regex_replace: '<span class="lang-zh-only">.*?</span>', '' | strip_html | strip %}
+
 <!-- Standard metadata -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -27,15 +34,15 @@
     {% capture title %}{{ site.title }}{% endcapture %}
   {% endif %}
   {% if page.url == '/blog/index.html' %}
-    {{ page.title }} | {{ title }}
+    {{ page_title_clean }} | {{ title | strip_html }}
   {% elsif page.title != 'blank' and page.url != '/' %}
     {% if page.title == null or page.title == '' %}
-      {{ page.date | date: '%Y' }} | {{ title }}
+      {{ page.date | date: '%Y' }} | {{ title | strip_html }}
     {% else %}
-      {{ page.title }} | {{ title }}
+      {{ page_title_clean }} | {{ title | strip_html }}
     {% endif %}
   {% else %}
-    {{ title }}
+    {{ title | strip_html }}
   {% endif %}
 </title>
 <meta name="author" content="{{ author_name }}">
@@ -53,20 +60,29 @@
 
 {% if site.serve_og_meta %}
   <!-- OpenGraph -->
-  <meta property="og:site_name" content="{{ title }}">
+  <meta property="og:site_name" content="{{ title | strip_html }}">
   <meta property="og:type" content="{% if is_blog_post %}article{% else %}website{% endif %}">
-  <meta property="og:title" content="{% if page.title %}{{ title }} | {{ page.title }}{% else %}{{ title }}{% endif %}">
+  <meta
+    property="og:title"
+    content="{% if page.title and page.url != '/' %}{{ title | strip_html }} | {{ page_title_clean }}{% else %}{{ title | strip_html }}{% endif %}"
+  >
   <meta property="og:url" content="{{ page.url | prepend: site.baseurl | prepend: site.url | remove_first: 'index.html' }}">
-  <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  <meta property="og:description" content="{% if page.description %}{{ page.description | strip_html }}{% else %}{{ site.description }}{% endif %}">
   {% if page.og_image or site.og_image %}
     <meta property="og:image" content="{% if page.og_image %}{{ page.og_image }}{% else %}{{ site.og_image }}{% endif %}">
+    {% unless page.og_image %}
+      <meta property="og:image:width" content="1619">
+      <meta property="og:image:height" content="1080">
+      <meta property="og:image:alt" content="{{ site.description | strip_html | truncate: 200 }}">
+    {% endunless %}
   {% endif %}
   <meta property="og:locale" content="{{ site.lang }}">
+  <meta property="og:locale:alternate" content="zh_CN">
 
   <!-- Twitter card -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ title }}{% endif %}">
-  <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{% if page.title and page.url != '/' %}{{ page_title_clean }}{% else %}{{ title | strip_html }}{% endif %}">
+  <meta name="twitter:description" content="{% if page.description %}{{ page.description | strip_html }}{% else %}{{ site.description }}{% endif %}">
   {% if page.og_image or site.og_image %}
     <meta name="twitter:image" content="{% if page.og_image %}{{ page.og_image }}{% else %}{{ site.og_image }}{% endif %}">
   {% endif %}
@@ -235,8 +251,8 @@
         },
         "url": "{{ page.url | prepend: site.baseurl | prepend: site.url }}",
         "@type": "{% if is_blog_post %}BlogPosting{% else %}WebSite{% endif %}",
-        "description": "{% if page.description %}{{ page.description }}{% else if site.description %}{{ site.description }}{% endif %}",
-        "headline": "{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}",
+        "description": "{% if page.description %}{{ page.description | strip_html }}{% else if site.description %}{{ site.description | strip_html }}{% endif %}",
+        "headline": "{% if page.title %}{{ page_title_clean }}{% else %}{{ site.title | strip_html }}{% endif %}",
         {% if sameaslinks != blank %}
         "sameAs": {{ sameaslinks | jsonify }},
         {% endif %}

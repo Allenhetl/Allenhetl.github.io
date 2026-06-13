@@ -4,7 +4,9 @@
 # cv_pdf: /assets/pdf/cv.pdf      # uncomment after putting your CV PDF at assets/pdf/cv.pdf
 email: theaj@connect.ust.hk
 github_username: Allenhetl
-# scholar_userid:                 # your Google Scholar user ID (the part after `user=` in the URL)
-# linkedin_username:              # your LinkedIn vanity name
-# orcid_id:                       # your ORCID
+# --- Fill these in to feed schema.org sameAs + (when social: true) the profile icons. ---
+# Biggest credibility win for PhD/internship applications — register, then uncomment.
+# scholar_userid:                 # Google Scholar user ID (the part after `user=` in the URL)
+# orcid_id:                       # ORCID, e.g. 0000-0002-1825-0097
+# linkedin_username:              # LinkedIn vanity name (linkedin.com/in/<this>)
 rss_icon: false

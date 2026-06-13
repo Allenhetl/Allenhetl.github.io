@@ -18,10 +18,10 @@ Independently designed the team's **serial-leg infantry** — a wheel-leg hybrid
 
 <div class="row mt-3">
   <div class="col-sm mt-3 mt-md-0">
-    {% include figure.liquid loading="eager" path="assets/img/projects/RoboMaster/轮腿步兵.JPG" class="img-fluid rounded z-depth-1" zoomable=true %}
+    {% include figure.liquid path="assets/img/projects/RoboMaster/轮腿步兵.JPG" class="img-fluid rounded z-depth-1" zoomable=true %}
   </div>
   <div class="col-sm mt-3 mt-md-0">
-    {% include figure.liquid loading="eager" path="assets/img/projects/RoboMaster/轮腿最佳骑士.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+    {% include figure.liquid path="assets/img/projects/RoboMaster/轮腿最佳骑士.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
   </div>
 </div>
 <div class="caption"><span class="lang-en-only">Left: production unit. Right: Best Knight Award shot.</span><span class="lang-zh-only">左：量产机型；右：最佳骑士奖颁奖照。</span></div>

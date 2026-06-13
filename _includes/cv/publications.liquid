@@ -33,6 +33,10 @@
               <h6 class="title font-weight-bold ml-1 ml-md-4">{{ entry.title }}</h6>
             {% endif %}
 
+            {% if entry.authors %}
+              <p class="ml-1 ml-md-4" style="font-size: 0.9rem">{{ entry.authors | markdownify | remove: '<p>' | remove: '</p>' }}</p>
+            {% endif %}
+
             {% if entry.publisher %}
               <h6 class="ml-1 ml-md-4" style="font-size: 0.95rem">
                 <em>{{ entry.publisher }}</em>

@@ -11,7 +11,7 @@ cv:
     (Integrative Systems and Design, Minor in Robotics) — **top 10%** of cohort.
     Embodied-AI researcher focused on **vision-language-action (VLA) models**, **world models**
     for manipulation, and **sim-to-real reinforcement learning**.
-    First-author publication at **ICML 2026**. Two-year **Mechanical Lead**
+    Co-author of an **ICML 2026** publication. Two-year **Mechanical Lead**
     at HKUST RoboMaster ENTERPRIZE; **RMUC 2024 International Champion**.
 
   social_networks:
@@ -19,7 +19,6 @@ cv:
       username: Allenhetl
 
   sections:
-
     Education:
       - institution: The Hong Kong University of Science and Technology
         location: Hong Kong, China
@@ -60,11 +59,12 @@ cv:
           - "Built and validated the **prototype end-to-end**, from CAD to bench testing."
 
     Publications:
-      - title: Embodied 4D World Model for Robotic Manipulation
+      - title: "MVISTA-4D: View-Consistent 4D World Model with Test-Time Action Inference for Robotic Manipulation"
         publisher: ICML 2026
         date: 2026-04
+        authors: "Jiaxu Wang, Yicheng Jiang, **Tianlun He**, Jingkai Sun, Qiang Zhang, Junhao He, Jiahang Cao, Zesen Gan, Mingyuan Sun, Qiming Shao, Xiangyu Yue"
         url: https://arxiv.org/abs/2602.09878
-        summary: "First-author work. A 4D world model that takes single-view RGBD input and produces multi-view-consistent 3D/4D scene representations, enabling an *imagine-then-act* decision paradigm for manipulation. End-to-end loop from sensor capture, multi-view reconstruction, dataset construction, and model training, to real-robot validation."
+        summary: "A 4D world model that takes single-view RGBD input and produces multi-view-consistent 3D/4D scene representations, enabling an *imagine-then-act* decision paradigm for manipulation. End-to-end loop from sensor capture, multi-view reconstruction, dataset construction, and model training, to real-robot validation."
 
     Projects:
       - name: "Memory VLA — long-horizon manipulation"
@@ -75,7 +75,7 @@ cv:
           - "**Implementation** — full PyTorch training & inference pipeline; multi-GPU distributed training; sim-to-real validation on a real arm."
           - "**Evaluation** — RMBench / VLABench / LIBERO-Long against Mem-0, MEM, MemER, CronusVLA baselines."
 
-      - name: "Embodied 4D World Model for Robotic Manipulation (ICML 2026)"
+      - name: "MVISTA-4D — View-Consistent 4D World Model (ICML 2026)"
         url: https://arxiv.org/abs/2602.09878
         summary: "*Research assistant, 2025.12 – 2026.02.* Built the physical robot platform, multi-camera calibration / time-sync / cross-view alignment pipeline, and 4D manipulation dataset. Validated *imagine-then-act* on real hardware. Accepted to **ICML 2026**."
 

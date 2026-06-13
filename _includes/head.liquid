@@ -1,10 +1,17 @@
 <!-- Metadata, OpenGraph and Schema.org -->
 {% include metadata.liquid %}
 
-<!-- Synchronous pre-paint setup: set BOTH the bilingual language class AND the
-     dark/light data-theme on <html> BEFORE any CSS link or body parsing.
-     Without this, the page can paint once in the wrong state then "flash" to
-     the correct one on every navigation (white-flash in dark mode, EN-flash in ZH mode). -->
+<!-- Preconnect to font + CDN origins to remove DNS/TLS round-trips from the critical render path -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
+<!--
+  Synchronous pre-paint setup: set BOTH the bilingual language class AND the
+  dark/light data-theme on <html> BEFORE any CSS link or body parsing.
+  Without this, the page can paint once in the wrong state then "flash" to
+  the correct one on every navigation (white-flash in dark mode, EN-flash in ZH mode).
+-->
 <script>
   (function () {
     try {
@@ -35,9 +42,15 @@
 </script>
 <style>
   /* Apply lang visibility from <html> class (early) so first paint matches saved language */
-  .lang-zh-only { display: none; }
-  html.is-zh .lang-en-only { display: none; }
-  html.is-zh .lang-zh-only { display: inherit; }
+  .lang-zh-only {
+    display: none;
+  }
+  html.is-zh .lang-en-only {
+    display: none;
+  }
+  html.is-zh .lang-zh-only {
+    display: inherit;
+  }
 </style>
 
 <!-- Security: Content Security Policy -->

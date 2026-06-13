@@ -18,10 +18,10 @@ A course project that designed a fish-like underwater robot. The work covered bi
 
 <div class="row">
     <div class="col-sm">
-        {% include figure.liquid loading="eager" path="assets/img/projects/课设/仿生鱼海报.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid path="assets/img/projects/课设/仿生鱼海报.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
     <div class="col-sm">
-        {% include figure.liquid loading="eager" path="assets/img/projects/课设/仿生鱼实物.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid path="assets/img/projects/课设/仿生鱼实物.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
     </div>
 </div>
 <div class="caption"><span class="lang-en-only">Poster (left) and built prototype (right).</span><span class="lang-zh-only">左：项目海报；右：实物样机。</span></div>
