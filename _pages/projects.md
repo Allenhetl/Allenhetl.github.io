@@ -21,7 +21,7 @@ horizontal: false
     {% when "coursework" %}{% assign cat_label = '<span class="lang-en-only">Coursework</span><span class="lang-zh-only">课设</span>' %}
     {% when "year-project" %}{% assign cat_label = '<span class="lang-en-only">Year Project</span><span class="lang-zh-only">学年项目</span>' %}
   {% endcase %}
-  <a id="{{ category }}" href=".#{{ category }}">
+  <a id="{{ category }}" href=".#{{ category }}" data-reveal>
     <h2 class="category">{{ cat_label }}</h2>
   </a>
   {% assign categorized_projects = site.projects | where: "category", category %}
