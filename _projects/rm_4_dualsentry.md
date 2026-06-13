@@ -3,6 +3,7 @@ layout: page
 title: '<span class="lang-en-only">Dual-head Sentry</span><span class="lang-zh-only">双头哨兵</span>'
 description: '<span class="lang-en-only">Twin-turret sentry variant — newest iteration.</span><span class="lang-zh-only">双炮塔哨兵新一代 — 最新迭代。</span>'
 img: assets/img/projects/RoboMaster/双头哨兵.png
+card_pos: center 48%
 importance: 4
 category: robomaster
 timeframe: 2025

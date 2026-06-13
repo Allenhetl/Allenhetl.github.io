@@ -195,6 +195,13 @@ p.desc {
 }
 
 /* ---------- 5. Profile photo --------------------------------- */
+/* Breathing room between the hero (name + eyebrow subtitle) and the
+   bio/photo below it. The subtitle sits flush against the article by
+   default, which reads as cramped right under the name. */
+.post-header {
+  margin-bottom: 2.4rem;
+}
+
 .profile .more-info {
   text-align: left;
   padding-left: 0;
@@ -427,8 +434,15 @@ html[data-theme="dark"] .projects .card {
   width: 100%;
   height: 220px;
   object-fit: cover;
-  object-position: center 38%;
+  /* Per-card focal point via --card-pos (set on .card-img-wrap from
+     the project's `card_pos` front-matter); falls back to a sensible
+     default. One global crop can't frame subjects that sit at
+     different heights across photos. */
+  object-position: var(--card-pos, center 38%);
   display: block;
+}
+.projects .card .card-img-wrap {
+  display: contents;
 }
 .projects .card figure {
   margin: 0;

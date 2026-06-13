@@ -3,6 +3,7 @@ layout: page
 title: '<span class="lang-en-only">Sentry #7</span><span class="lang-zh-only">7 号哨兵</span>'
 description: '<span class="lang-en-only">Auto-targeting sentry robot — mechanical design.</span><span class="lang-zh-only">自动瞄准哨兵机器人 — 机械设计。</span>'
 img: assets/img/projects/RoboMaster/7号哨兵.JPG
+card_pos: center 60%
 importance: 3
 category: robomaster
 timeframe: 2024

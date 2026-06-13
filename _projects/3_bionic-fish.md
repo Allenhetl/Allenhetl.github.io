@@ -3,6 +3,7 @@ layout: page
 title: '<span class="lang-en-only">Bionic Fish</span><span class="lang-zh-only">仿生鱼</span>'
 description: '<span class="lang-en-only">Course project — biologically-inspired underwater swimmer with built prototype.</span><span class="lang-zh-only">课程项目 — 仿生水下游动机器人，含完整实物样机。</span>'
 img: assets/img/projects/课设/仿生鱼海报.jpg
+card_pos: center 30%
 importance: 2
 category: coursework
 timeframe: 2024

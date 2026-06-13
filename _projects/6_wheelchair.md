@@ -3,6 +3,7 @@ layout: page
 title: '<span class="lang-en-only">Omnidirectional Autonomous Wheelchair</span><span class="lang-zh-only">全向自主移动轮椅</span>'
 description: '<span class="lang-en-only">Team-led Year-2 project — rudder-wheel chassis with LiDAR-based autonomous navigation.</span><span class="lang-zh-only">Year 2 团队负责人项目 — 舵轮底盘 + 激光雷达自主导航。</span>'
 img: assets/img/projects/year-project/轮椅展示图.jpg
+card_pos: center 42%
 importance: 2
 category: year-project
 timeframe: 2024.09 – 2025.06

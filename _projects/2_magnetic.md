@@ -3,6 +3,7 @@ layout: page
 title: '<span class="lang-en-only">Magnetic Mechanism</span><span class="lang-zh-only">磁力机构</span>'
 description: '<span class="lang-en-only">Mechanism-design course project — magnetic actuator design and prototype.</span><span class="lang-zh-only">机械设计课程项目 — 磁力执行机构方案与样机。</span>'
 img: assets/img/projects/课设/磁力机构展示图.png
+card_pos: center 42%
 importance: 1
 category: coursework
 timeframe: 2024

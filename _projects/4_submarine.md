@@ -3,6 +3,7 @@ layout: page
 title: '<span class="lang-en-only">6-DOF Underwater Autonomous Robot</span><span class="lang-zh-only">6 自由度水下自主导航机器人</span>'
 description: '<span class="lang-en-only">Full-stack — mechanical, embedded cascade PID, and YOLO-based underwater perception.</span><span class="lang-zh-only">全栈开发 — 机械结构、嵌入式级联 PID 控制、基于 YOLO 的水下感知。</span>'
 img: assets/img/projects/课设/潜水器海报.png
+card_pos: center 50%
 importance: 3
 category: coursework
 timeframe: 2025.08 – 2025.12

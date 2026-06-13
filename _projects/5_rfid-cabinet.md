@@ -3,6 +3,7 @@ layout: page
 title: '<span class="lang-en-only">RFID Smart Reagent Cabinet</span><span class="lang-zh-only">智能 RFID 试剂柜</span>'
 description: '<span class="lang-en-only">WeShareTech internship — RFID-based smart-weighing system for laboratory reagent management.</span><span class="lang-zh-only">WeShareTech 实习 — 基于 RFID 的实验室药剂智能称重管理系统。</span>'
 img: assets/img/projects/year-project/柜子展示图.jpg
+card_pos: center 42%
 importance: 1
 category: year-project
 timeframe: 2024.10 – 2025.01
