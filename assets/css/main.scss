@@ -1044,3 +1044,107 @@ html[data-theme="dark"] .photo-gallery .photo-item:hover {
     transition: none;
   }
 }
+
+/* ---------- BP8. Cross-document page transitions ------------- */
+/* Opt the whole site into the View Transitions API so navigating
+   between pages cross-fades + lifts instead of hard-cutting. Native
+   in modern browsers; older ones simply navigate normally (no JS,
+   no polyfill). Honors reduced-motion by collapsing to a plain fade. */
+@view-transition {
+  navigation: auto;
+}
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes vt-fade-rise {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+  }
+  @keyframes vt-fade-out {
+    to {
+      opacity: 0;
+    }
+  }
+  ::view-transition-old(root) {
+    animation: vt-fade-out 0.18s ease both;
+  }
+  ::view-transition-new(root) {
+    animation: vt-fade-rise 0.34s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+}
+
+/* ---------- BP9. Scroll-driven section reveals (CSS-only) ---- */
+/* Progressive enhancement: where the browser supports scroll-driven
+   animations, project cards / news rows / photos animate in tied to
+   their own scroll position — fully off the main thread, smoother
+   than the JS IntersectionObserver path. @supports gates it; the JS
+   reveal (data-reveal) remains the fallback. Because the JS adds
+   .is-revealed once visible, we only need this to handle the entrance
+   curve more fluidly where supported, so we drive opacity+translate
+   on the same targets via a view() timeline. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    /* Hand these elements to the scroll-driven timeline and disable the
+       JS-reveal initial hide so the two systems never fight over
+       opacity. (data-reveal sets opacity:0 until .is-revealed; here we
+       override it and let view() drive the entrance instead.) */
+    .projects .col[data-reveal],
+    .photo-gallery[data-reveal] {
+      opacity: 1;
+      transform: none;
+    }
+    .projects .col,
+    .photo-gallery .photo-item {
+      animation: bp-view-rise linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 40%;
+    }
+    @keyframes bp-view-rise {
+      from {
+        opacity: 0;
+        transform: translateY(26px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+}
+
+/* ---------- BP10. Animated link underline -------------------- */
+/* Body links: an underline that wipes in from the left on hover
+   instead of the flat default — a small, tasteful microinteraction.
+   Uses a background-size transition so it works on multi-line links. */
+/* Target inline prose links — paragraphs and list items inside the
+   article, plus the page subtitle. Excludes card links, headings,
+   and figures (which have their own treatments). */
+.post article p a,
+.post article li a,
+.post-description a {
+  text-decoration: none;
+  background-image: linear-gradient(
+    var(--global-theme-color),
+    var(--global-theme-color)
+  );
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1.5px;
+  transition: background-size 0.32s cubic-bezier(0.2, 0.7, 0.2, 1);
+  padding-bottom: 0.04em;
+}
+.post article p a:hover,
+.post article p a:focus-visible,
+.post article li a:hover,
+.post article li a:focus-visible,
+.post-description a:hover,
+.post-description a:focus-visible {
+  background-size: 100% 1.5px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .post article p a,
+  .post article li a,
+  .post-description a {
+    transition: none;
+  }
+}
