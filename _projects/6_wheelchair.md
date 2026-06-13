@@ -32,3 +32,13 @@ Year 2 项目（ISDN2002，2024.09 – 2025.08）：**全向自主移动轮椅**
   </div>
 </div>
 <div class="caption"><span class="lang-en-only">Left: full platform. Right: wheel module exploded view.</span><span class="lang-zh-only">左：轮椅整机；右：轮组爆炸图。</span></div>
+
+<div class="row mt-3">
+  <div class="col-sm mt-3 mt-md-0">
+    {% include figure.liquid path="assets/img/projects/year-project/轮椅底盘.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+  </div>
+  <div class="col-sm mt-3 mt-md-0">
+    {% include figure.liquid path="assets/img/projects/year-project/轮椅舵轮模块.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+  </div>
+</div>
+<div class="caption"><span class="lang-en-only">Left: the second-generation drive base — four steering-wheel modules, battery, and control board. Right: CAD of a single steering-wheel module.</span><span class="lang-zh-only">左：第二代驱动底盘——四个舵轮模块、电池与控制板；右：单个舵轮模块的 CAD。</span></div>
