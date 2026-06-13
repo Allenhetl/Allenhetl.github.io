@@ -115,7 +115,7 @@ ninja.data = [{
               window.location.href = "/projects/rm_1_team/";
             },},{id: "projects-wheel-leg-infantry轮腿步兵",
           title: 'Wheel-leg Infantry轮腿步兵',
-          description: "Custom serial-leg infantry — Best Knight Award, RMUC 2024.自研串联腿步兵 — RMUC 2024 最佳骑士奖。",
+          description: "Wheel-leg infantry I led as mechanical designer — Best Knight, RM2025.我主导机械设计的串联腿步兵 — RM2025 最佳骑士奖。",
           section: "Projects",handler: () => {
               window.location.href = "/projects/rm_2_wheelleg/";
             },},{id: "projects-sentry-77-号哨兵",
