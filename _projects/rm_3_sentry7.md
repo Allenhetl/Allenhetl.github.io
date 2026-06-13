@@ -10,11 +10,11 @@ timeframe: 2024
 ---
 
 <div class="lang-en-only" markdown="1">
-Sentry robot for autonomous defense of the team's home base. Contributed mechanical design for the gimbal, turret, and chassis interface — built for high-rate dual-axis tracking with low-latency feedback to the perception stack.
+An earlier single-turret sentry that defends the team's home base on its own. I designed the gimbal, turret, and the gimbal–chassis interface, with the priority on **fast, steady dual-axis tracking**: a stiff, low-inertia turret the perception stack can drive with minimal latency, so the auto-aim stays locked on a moving target. It set the mechanical groundwork that the later dual-head sentry built on.
 </div>
 
 <div class="lang-zh-only" markdown="1">
-负责战队基地自动防御的哨兵机器人。负责云台、炮塔与底盘接口的机械设计——支持高速双轴跟踪并保证与感知模块的低延迟数据回路。
+一台早期的单炮塔哨兵，能自主守卫战队基地。我负责云台、炮塔以及云台–底盘接口的机械设计，重点放在 **快速而稳定的双轴跟踪**：把云台做得刚性高、惯量低，让感知模块能以极低延迟驱动它，使自瞄能持续锁定移动目标。它为后来的双头哨兵打下了机械基础。
 </div>
 
 <div class="row mt-3">

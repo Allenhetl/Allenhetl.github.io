@@ -10,16 +10,16 @@ timeframe: 2024.09 – 2025.06
 ---
 
 <div class="lang-en-only" markdown="1">
-Year-2 design project (Sep 2024 – Aug 2025) on an **omnidirectional autonomous wheelchair**.
+Year-2 design project (ISDN2002, Sep 2024 – Aug 2025): an **omnidirectional autonomous wheelchair**.
 
-I owned the **mechanical system** and **kinematics solver** for the omnidirectional drive (custom wheel modules + chassis), and collaborated with the navigation team to integrate **autonomous obstacle avoidance and path planning**.
+I designed the **self-developed steering-wheel modules** and the **per-wheel kinematics solver**. The solver resolves each wheel's motion vector from the chair's target velocity while minimizing steering deviation and tire wear. The wheelset went through two generations — a first-gen rocker suspension that was weak under load, replaced by a **straight-tiller** second generation with higher load capacity — using optical-gate feedback, a topology-optimized structure, and LiDAR-based obstacle avoidance in collaboration with the navigation team.
 
 </div>
 
 <div class="lang-zh-only" markdown="1">
-Year 2 项目（2024.09 – 2025.08）：**全向自主移动轮椅**。
+Year 2 项目（ISDN2002，2024.09 – 2025.08）：**全向自主移动轮椅**。
 
-我负责**机械系统**与**运动学解算**设计（自研轮组与底盘），并与导航团队合作实现**自主避障与路径规划**。
+我负责**自研舵轮模块**与**逐轮运动学解算**设计。解算器根据轮椅目标速度求解每个轮的运动矢量，同时最小化转向偏差与轮胎磨损。轮组历经两代——第一代摇臂悬挂承载不足，第二代改为**直立舵柄**结构以提升承载与输出——采用光电门反馈、拓扑优化结构，并与导航组合作实现激光雷达自主避障。
 
 </div>
 
