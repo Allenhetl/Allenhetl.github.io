@@ -62,7 +62,7 @@ ninja.data = [{
           section: "News",},{id: "news-joined-the-undergraduate-research-program-on-hydraulic-soft-robotic-arms-under-the-supervision-of-prof-rob-加入-rob-教授指导的本科生研究计划-参与液压软体机械臂课题",
           title: '🤖 Joined the Undergraduate Research Program on hydraulic soft robotic arms under the...',
           description: "",
-          section: "News",},{id: "news-started-memory-augmented-vla-urp-project-designing-a-subtask-aware-framework-with-vae-based-compression-for-long-horizon-manipulation-targeting-icra-2027-启动记忆增强-vla-本科生研究计划-基于-vae-的子任务压缩框架-缓解长时序任务的上下文爆炸-计划投稿-icra-2027",
+          section: "News",},{id: "news-started-memory-augmented-vla-urp-project-designing-a-subtask-aware-framework-with-vae-based-compression-for-long-horizon-manipulation-启动记忆增强-vla-本科生研究计划-基于-vae-的子任务压缩框架-缓解长时序任务的上下文爆炸",
           title: '🚀 Started Memory-Augmented VLA (URP project) — designing a subtask-aware framework with VAE-based...',
           description: "",
           section: "News",},{id: "news-our-paper-mvista-4d-view-consistent-4d-world-model-with-test-time-action-inference-for-robotic-manipulation-has-been-accepted-to-icml-2026-arxiv-论文-mvista-4d-view-consistent-4d-world-model-with-test-time-action-inference-for-robotic-manipulation-被-icml-2026-接收-arxiv",
@@ -103,7 +103,7 @@ ninja.data = [{
               window.location.href = "/projects/research_1_worldmodel/";
             },},{id: "projects-memory-augmented-vla记忆增强-vla",
           title: 'Memory-Augmented VLA记忆增强 VLA',
-          description: "Memory-augmented vision-language-action policy for long-horizon manipulation — targeting ICRA 2027.面向长程操作的记忆增强视觉-语言-动作策略 — 计划投稿 ICRA 2027。",
+          description: "Memory-augmented vision-language-action policy for long-horizon manipulation.面向长程操作的记忆增强视觉-语言-动作策略。",
           section: "Projects",handler: () => {
               window.location.href = "/projects/research_2_memoryvla/";
             },},{id: "projects-indoor-semantic-segmentation室内结构语义分割",
