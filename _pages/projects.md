@@ -6,7 +6,7 @@ permalink: /projects/
 description: Selected research and engineering projects.
 nav: true
 nav_order: 3
-display_categories: [robomaster, coursework, year-project]
+display_categories: [research, robomaster, year-project, coursework]
 horizontal: false
 ---
 
@@ -17,6 +17,7 @@ horizontal: false
   {% for category in page.display_categories %}
   {% assign cat_label = category %}
   {% case category %}
+    {% when "research" %}{% assign cat_label = '<span class="lang-en-only">Research</span><span class="lang-zh-only">研究</span>' %}
     {% when "robomaster" %}{% assign cat_label = '<span class="lang-en-only">RoboMaster</span><span class="lang-zh-only">RoboMaster</span>' %}
     {% when "coursework" %}{% assign cat_label = '<span class="lang-en-only">Coursework</span><span class="lang-zh-only">课设</span>' %}
     {% when "year-project" %}{% assign cat_label = '<span class="lang-en-only">Year Project</span><span class="lang-zh-only">学年项目</span>' %}

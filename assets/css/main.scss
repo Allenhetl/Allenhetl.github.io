@@ -991,3 +991,56 @@ footer.sticky-bottom .container {
   font-size: 0.78rem;
   letter-spacing: 0.01em;
 }
+
+/* ---------- BP7. Photography gallery ------------------------- */
+/* A CSS multi-column masonry: photos of mixed orientation flow into
+   tidy columns without cropping. Each frame lifts slightly and gains
+   an accent hairline on hover, matching the project-card language. */
+.photo-gallery {
+  column-count: 3;
+  column-gap: 14px;
+  margin-top: 1.6rem;
+}
+.photo-gallery .photo-item {
+  break-inside: avoid;
+  margin: 0 0 14px;
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(20, 22, 45, 0.06);
+  transition:
+    transform 0.32s cubic-bezier(0.2, 0.7, 0.2, 1),
+    box-shadow 0.32s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.photo-gallery .photo-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+.photo-gallery .photo-item:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 2px 4px rgba(20, 22, 45, 0.06),
+    0 18px 34px -20px rgba(47, 75, 216, 0.4);
+}
+html[data-theme="dark"] .photo-gallery .photo-item:hover {
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.5),
+    0 18px 34px -20px rgba(141, 164, 255, 0.45);
+}
+@media (max-width: 991px) {
+  .photo-gallery {
+    column-count: 2;
+  }
+}
+@media (max-width: 575px) {
+  .photo-gallery {
+    column-count: 1;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .photo-gallery .photo-item {
+    transition: none;
+  }
+}
