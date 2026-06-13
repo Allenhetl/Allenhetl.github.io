@@ -69,7 +69,7 @@ cv:
     Projects:
       - name: "Memory VLA — long-horizon manipulation"
         url: ""
-        summary: "Hierarchical task decomposition + fixed-capacity Implicit Memory Bank with cross-attention modulation. Targeting **ICRA 2027**. *Research lead, 2026.02 – ongoing.*"
+        summary: "Hierarchical task decomposition + fixed-capacity Implicit Memory Bank with cross-attention modulation. *Research lead, 2026.02 – ongoing.*"
         highlights:
           - "**Architecture** — hierarchical task decomposition, sub-task boundary detector, fixed-capacity Implicit Memory Bank, memory-action cross-attention interface."
           - "**Implementation** — full PyTorch training & inference pipeline; multi-GPU distributed training; sim-to-real validation on a real arm."

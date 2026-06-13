@@ -1,7 +1,7 @@
 ---
 layout: page
 title: '<span class="lang-en-only">Memory-Augmented VLA</span><span class="lang-zh-only">记忆增强 VLA</span>'
-description: '<span class="lang-en-only">Memory-augmented vision-language-action policy for long-horizon manipulation — targeting ICRA 2027.</span><span class="lang-zh-only">面向长程操作的记忆增强视觉-语言-动作策略 — 计划投稿 ICRA 2027。</span>'
+description: '<span class="lang-en-only">Memory-augmented vision-language-action policy for long-horizon manipulation.</span><span class="lang-zh-only">面向长程操作的记忆增强视觉-语言-动作策略。</span>'
 img: assets/img/projects/research/memoryvla.svg
 importance: 2
 category: research
@@ -10,7 +10,7 @@ github:
 ---
 
 <div class="lang-en-only" markdown="1">
-*Research lead, 2026.02 – ongoing. Targeting **ICRA 2027**.*
+*Research lead, 2026.02 – ongoing.*
 
 A vision-language-action (VLA) policy that stays coherent over **long-horizon** manipulation by carrying an explicit, bounded memory.
 
@@ -20,7 +20,7 @@ A vision-language-action (VLA) policy that stays coherent over **long-horizon** 
 </div>
 
 <div class="lang-zh-only" markdown="1">
-*研究负责人，2026.02 – 进行中。计划投稿 **ICRA 2027**。*
+*研究负责人，2026.02 – 进行中。*
 
 一个视觉-语言-动作（VLA）策略，通过显式、有界的记忆，在**长程**操作任务中保持连贯。
 
