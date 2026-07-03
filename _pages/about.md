@@ -20,6 +20,17 @@ profile:
     <p>🐙 <a href="https://github.com/Allenhetl" target="_blank" rel="noopener">github.com/Allenhetl</a></p>
     <p>💬 <span class="lang-en-only">WeChat</span><span class="lang-zh-only">微信</span>: 18216000982</p>
 
+# --- Interactive 3D hero model (opt-in) --------------------------------------
+# Drop a .glb/.gltf into assets/models/ and set robot_model to its path to show
+# an interactive orbit-able model between the name and the bio. Comment out
+# robot_model (or delete it) to hide the viewer entirely. A poster image avoids
+# a blank frame while the model streams in.
+# robot_model: assets/models/robot.glb
+# robot_poster: assets/img/models/robot-poster.webp
+robot_alt: Interactive 3D model of a robot arm
+robot_caption_en: "Drag to orbit · scroll locked · click-free"
+robot_caption_zh: "拖动可旋转查看"
+
 selected_papers: true
 social: false
 

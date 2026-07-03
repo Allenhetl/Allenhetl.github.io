@@ -838,27 +838,53 @@ html[data-theme="dark"] #light-toggle-dark {
   }
 }
 
-/* Hero name: a more pronounced entrance than the base rm-rise —
-   a subtle clip-reveal so the name "draws in". */
+/* Hero name: a "curtain-up" reveal. Instead of a soft blur (which can
+   read as low-res on some displays), the name is clipped from the
+   baseline and lifts into view — crisper and more deliberate. Paired
+   with a faint ink-drop on the bold initials and a signature hairline
+   that wipes in beneath the whole hero. */
 @media (prefers-reduced-motion: no-preference) {
-  @keyframes bp-name-in {
+  /* The name rises out from behind its own baseline. clip-path keeps
+     the type razor-sharp throughout (no blur), and the slight upward
+     travel + settle reads as a confident entrance. */
+  @keyframes bp-name-curtain {
     from {
       opacity: 0;
-      transform: translateY(20px);
-      letter-spacing: 0.04em;
-      filter: blur(4px);
+      transform: translateY(0.5em);
+      clip-path: inset(0 0 100% 0);
+    }
+    60% {
+      opacity: 1;
     }
     to {
       opacity: 1;
       transform: translateY(0);
-      letter-spacing: -0.035em;
-      filter: blur(0);
+      clip-path: inset(-0.15em 0 -0.15em 0);
     }
   }
   .post-header .post-title {
-    animation: bp-name-in 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
-    animation-delay: 0.05s;
+    animation: bp-name-curtain 0.85s cubic-bezier(0.2, 0.75, 0.15, 1) both;
+    animation-delay: 0.08s;
+    will-change: transform, clip-path;
   }
+
+  /* Ink-drop on the bold given-name initials: they land in the brand
+     blue, then settle to ink — a one-shot accent that draws the eye to
+     the "HE" the moment the name arrives. */
+  @keyframes bp-initials-ink {
+    0%,
+    30% {
+      color: var(--global-theme-color);
+    }
+    to {
+      color: var(--global-text-color);
+    }
+  }
+  /* Tokens adapt per theme, so one keyframe works in light and dark. */
+  .post-header .post-title span.font-weight-bold {
+    animation: bp-initials-ink 1.1s ease 0.5s both;
+  }
+
   /* The eyebrow tick grows in after the name lands. */
   @keyframes bp-tick-grow {
     from {
@@ -871,7 +897,46 @@ html[data-theme="dark"] #light-toggle-dark {
     }
   }
   .post-header .desc::before {
-    animation: bp-tick-grow 0.6s ease 0.5s both;
+    animation: bp-tick-grow 0.6s ease 0.6s both;
+  }
+
+  /* Signature hairline: a short brand-blue rule wipes in from the left
+     beneath the hero, echoing the blueprint tick language and giving
+     the whole header a "signed off" feel as the entrance completes. */
+  .home-header {
+    position: relative;
+  }
+  .home-header::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1.1rem;
+    height: 2px;
+    width: 3.4rem;
+    background: linear-gradient(
+      90deg,
+      var(--global-theme-color),
+      rgba(47, 75, 216, 0)
+    );
+    transform: scaleX(0);
+    transform-origin: left;
+    border-radius: 1px;
+    animation: bp-signature-wipe 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) 0.7s both;
+  }
+  html[data-theme="dark"] .home-header::before {
+    background: linear-gradient(
+      90deg,
+      var(--global-theme-color),
+      rgba(141, 164, 255, 0)
+    );
+  }
+  @keyframes bp-signature-wipe {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
   }
 }
 
@@ -928,6 +993,61 @@ html[data-theme="dark"] .projects a:hover .card {
   .projects .card::before {
     transition: none;
   }
+}
+
+/* ---------- BP12. Footer removed — reclaim its reserved space - */
+/* The fixed footer bar was removed (empty footer_contents renders no
+   <footer>). The theme reserves 70px of body padding for it; drop that
+   so there's no dead band at the bottom of every page. */
+body {
+  padding-bottom: 0;
+}
+
+/* ---------- BP13. Custom cursor (restrained) ----------------- */
+/* A small accent dot trails the pointer with a touch of easing; over
+   interactive targets it softens into a hollow ring. Pure decoration:
+   pointer-events:none, injected + driven by JS only on devices with a
+   real (fine, hover-capable) pointer, and never under reduced-motion.
+   The native cursor stays visible, so nothing breaks if JS is off. */
+.rm-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--global-theme-color);
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate3d(-50%, -50%, 0);
+  /* Position is set per-frame by JS; only the "grow into a ring" part
+     is a CSS transition so it stays buttery. */
+  transition:
+    width 0.22s cubic-bezier(0.2, 0.7, 0.2, 1),
+    height 0.22s cubic-bezier(0.2, 0.7, 0.2, 1),
+    background-color 0.22s ease,
+    border-color 0.22s ease,
+    opacity 0.25s ease;
+  border: 1.5px solid transparent;
+  opacity: 0;
+  will-change: transform;
+}
+.rm-cursor.is-active {
+  opacity: 1;
+}
+/* Over links/buttons/cards: expand to a hollow accent ring. */
+.rm-cursor.is-hovering {
+  width: 34px;
+  height: 34px;
+  background: transparent;
+  border-color: var(--global-theme-color);
+}
+/* While pressing: a small confirm squeeze. */
+.rm-cursor.is-down {
+  width: 20px;
+  height: 20px;
+  background: var(--global-theme-color);
+  border-color: transparent;
 }
 
 /* ---------- BP5. News as a blueprint timeline ---------------- */
@@ -1146,5 +1266,112 @@ html[data-theme="dark"] .photo-gallery .photo-item:hover {
   .post article li a,
   .post-description a {
     transition: none;
+  }
+}
+
+/* ---------- BP11. Homepage 3D robot viewer ------------------- */
+/* An interactive <model-viewer> framed as a blueprint "viewport":
+   corner ticks, a mono hint label, and a soft accent glow. Sits
+   between the hero and the article. Opt-in via `robot_model:` front
+   matter, so pages without a model render nothing. */
+.robot-viewer {
+  margin: 0 0 3.2rem;
+}
+.robot-viewer__stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 14px;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      120% 90% at 50% 0%,
+      rgba(47, 75, 216, 0.06),
+      rgba(47, 75, 216, 0) 70%
+    ),
+    var(--global-card-bg-color);
+  box-shadow:
+    0 1px 2px rgba(20, 22, 45, 0.06),
+    0 18px 40px -24px rgba(20, 22, 45, 0.35);
+}
+html[data-theme="dark"] .robot-viewer__stage {
+  background:
+    radial-gradient(
+      120% 90% at 50% 0%,
+      rgba(141, 164, 255, 0.09),
+      rgba(141, 164, 255, 0) 70%
+    ),
+    var(--global-card-bg-color);
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.5),
+    0 18px 40px -24px rgba(0, 0, 0, 0.7);
+}
+.robot-viewer__mv {
+  width: 100%;
+  height: 100%;
+  display: block;
+  --poster-color: transparent;
+  background-color: transparent;
+}
+/* Blueprint corner ticks on the viewport frame. */
+.robot-viewer__stage::before,
+.robot-viewer__stage::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--global-theme-color);
+  opacity: 0.55;
+  pointer-events: none;
+  z-index: 2;
+}
+.robot-viewer__stage::before {
+  top: 10px;
+  left: 10px;
+  border-right: 0;
+  border-bottom: 0;
+}
+.robot-viewer__stage::after {
+  bottom: 10px;
+  right: 10px;
+  border-left: 0;
+  border-top: 0;
+}
+/* Mono "drag to orbit" hint, bottom-left. Fades out once the user
+   starts interacting (model-viewer sets [data-js-focus-visible] etc.,
+   but we keep it simple: fade on hover of the stage). */
+.robot-viewer__hint {
+  position: absolute;
+  bottom: 12px;
+  left: 14px;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  color: var(--global-text-color-light);
+  opacity: 0.7;
+  pointer-events: none;
+  z-index: 3;
+  transition: opacity 0.3s ease;
+}
+.robot-viewer__stage:hover .robot-viewer__hint {
+  opacity: 0;
+}
+.robot-viewer__progress {
+  height: 2px;
+  background: var(--global-theme-color);
+}
+.robot-viewer__caption {
+  margin: 0.7rem 0 0;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+  color: var(--global-text-color-light);
+  text-align: center;
+}
+@media (max-width: 575px) {
+  .robot-viewer__stage {
+    aspect-ratio: 4 / 3;
+    border-radius: 12px;
   }
 }

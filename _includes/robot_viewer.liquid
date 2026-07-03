@@ -1,0 +1,71 @@
+{%- comment -%}
+  Interactive 3D model viewer for the homepage hero.
+
+  Renders a Google <model-viewer> web component (zero build step) inside a
+  framed panel that matches the Refined Minimal / Technical Blueprint system.
+  Opt-in: only rendered when the page declares `robot_model:` in front matter.
+
+  Front-matter knobs (all optional except robot_model):
+    robot_model        path to the .glb/.gltf, relative to site root
+                       e.g. assets/models/robot.glb
+    robot_poster       image shown while the model loads (recommended — avoids
+                       a blank box on slow connections)
+    robot_alt          accessible description of the model
+    robot_caption_en / robot_caption_zh   small caption under the frame
+
+  The model-viewer script is loaded lazily (module, defer) only on pages that
+  use this include, so other pages pay nothing.
+{%- endcomment -%}
+
+{%- assign model_src = page.robot_model | relative_url -%}
+{%- assign model_poster = page.robot_poster | relative_url -%}
+{%- assign model_alt = page.robot_alt | default: 'Interactive 3D robot model' -%}
+
+<div class="robot-viewer" data-reveal>
+  <div class="robot-viewer__stage">
+    <model-viewer
+      src="{{ model_src }}"
+      {% if model_poster %}
+        poster="{{ model_poster }}"
+      {% endif %}
+      alt="{{ model_alt }}"
+      camera-controls
+      touch-action="pan-y"
+      disable-zoom
+      auto-rotate
+      auto-rotate-delay="600"
+      rotation-per-second="18deg"
+      interaction-prompt="none"
+      shadow-intensity="0.9"
+      shadow-softness="1"
+      exposure="1.05"
+      environment-image="neutral"
+      loading="lazy"
+      reveal="auto"
+      class="robot-viewer__mv"
+    >
+      <div class="robot-viewer__progress" slot="progress-bar"></div>
+    </model-viewer>
+    <span class="robot-viewer__hint" aria-hidden="true">
+      <span class="lang-en-only">DRAG TO ORBIT</span><span class="lang-zh-only">拖动旋转</span>
+    </span>
+  </div>
+  {%- if page.robot_caption_en or page.robot_caption_zh -%}
+    <p class="robot-viewer__caption">
+      <span class="lang-en-only">{{ page.robot_caption_en }}</span><span class="lang-zh-only">{{ page.robot_caption_zh }}</span>
+    </p>
+  {%- endif -%}
+</div>
+
+<script type="module" src="https://unpkg.com/@google/model-viewer@4.0.0/dist/model-viewer.min.js"></script>
+<script>
+  // Honor reduced-motion: strip auto-rotate so the model sits still for users
+  // who asked for less motion. model-viewer has no CSS hook for this.
+  (function () {
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.querySelectorAll('model-viewer[auto-rotate]').forEach(function (mv) {
+        mv.removeAttribute('auto-rotate');
+      });
+    }
+  })();
+</script>
