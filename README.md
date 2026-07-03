@@ -1,9 +1,9 @@
 # HE Tianlun (Allen) — Personal Academic Website
 
-[![Website](https://img.shields.io/badge/website-allenhetl.github.io-blue)](https://allenhetl.github.io)
+[![Website](https://img.shields.io/badge/website-allenhtl.com-blue)](https://allenhtl.com)
 [![deploy](https://github.com/Allenhetl/Allenhetl.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/Allenhetl/Allenhetl.github.io/actions/workflows/deploy.yml)
 
-The source code for my personal academic website, live at **[allenhetl.github.io](https://allenhetl.github.io)**.
+The source code for my personal academic website, live at **[allenhtl.com](https://allenhtl.com)**.
 
 ## About Me
 
@@ -13,7 +13,7 @@ Minor in Robotics.
 
 My research interests center on **Embodied AI** — vision-language-action (VLA) models,
 memory-augmented policies, world models for robotic manipulation, and sim-to-real
-reinforcement learning. I'm currently working on *Memory-Augmented VLA*, targeting
+reinforcement learning. I'm currently working on _Memory-Augmented VLA_, targeting
 ICRA 2027.
 
 I'm actively looking for **research internships** and **PhD opportunities** in
@@ -23,7 +23,7 @@ embodied AI and robot learning.
 
 - 📧 Email: [theaj@connect.ust.hk](mailto:theaj@connect.ust.hk)
 - 🐙 GitHub: [github.com/Allenhetl](https://github.com/Allenhetl)
-- 🌐 Website: [allenhetl.github.io](https://allenhetl.github.io)
+- 🌐 Website: [allenhtl.com](https://allenhtl.com)
 
 ## About This Repository
 

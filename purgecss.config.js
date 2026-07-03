@@ -3,4 +3,13 @@ module.exports = {
   css: ["_site/assets/css/*.css"],
   output: "_site/assets/css/",
   skippedContentGlobs: ["_site/assets/**/*.html"],
+  // Keep styles that only appear when a feature is switched on, so
+  // PurgeCSS doesn't drop them while the feature is dormant:
+  //  - robot-viewer: the opt-in 3D hero (off until a .glb is added).
+  //  - rm-cursor: the custom cursor element is injected by JS at runtime.
+  //  - model-viewer: the web component's own shadow-DOM class hooks.
+  safelist: {
+    standard: [/^robot-viewer/, /^rm-cursor/],
+    greedy: [/model-viewer/],
+  },
 };

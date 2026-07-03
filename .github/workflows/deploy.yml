@@ -103,6 +103,10 @@ jobs:
           npm install -g purgecss
           purgecss -c purgecss.config.js
       - name: Deploy 🚀
+        # Publishes the fully built _site to the `gh-pages` branch.
+        # Cloudflare Pages watches that branch (with an empty build
+        # command) and serves it at allenhtl.com — no Cloudflare-side
+        # build, no API tokens. GitHub Pages can also still serve it.
         if: github.event_name != 'pull_request'
         uses: JamesIves/github-pages-deploy-action@v4
         with:
