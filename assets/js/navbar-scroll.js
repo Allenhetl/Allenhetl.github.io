@@ -1,0 +1,1 @@
+!function(){function n(){function n(){var n=(window.scrollY||window.pageYOffset)>o;t.classList.toggle("is-scrolled",n),d=!1}function e(){d||(window.requestAnimationFrame(n),d=!0)}var t=document.getElementById("navbar");if(t){var o=8,d=!1;window.addEventListener("scroll",e,{passive:!0}),n()}}"loading"===document.readyState?document.addEventListener("DOMContentLoaded",n):n()}();
