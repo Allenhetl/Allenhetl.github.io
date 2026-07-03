@@ -1496,3 +1496,115 @@ html[data-theme="dark"] .photo-gallery .photo-item {
     }
   }
 }
+
+/* ---------- CR5. Navbar scroll landing + hairline progress --- */
+/* At the very top of the page the navbar is clean — its divider and
+   shadow are removed so the header blends into the hero. Once the
+   reader scrolls (JS adds .is-scrolled), it "lands": the divider and a
+   faint shadow fade in. Mirrors the header craft on Linear/Vercel.
+   Base rule keeps the border for the no-JS case (see section 7); here
+   we override the resting state to borderless and restore on scroll. */
+#navbar.navbar {
+  border-bottom-color: transparent;
+  box-shadow: 0 0 0 0 rgba(20, 22, 45, 0);
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    background-color 0.3s ease;
+}
+#navbar.navbar.is-scrolled {
+  border-bottom-color: var(--global-divider-color);
+  box-shadow: 0 6px 20px -14px rgba(20, 22, 45, 0.4);
+}
+html[data-theme="dark"] #navbar.navbar.is-scrolled {
+  box-shadow: 0 6px 20px -12px rgba(0, 0, 0, 0.7);
+}
+
+/* Refine the built-in reading-progress bar into a 2px hairline sitting
+   flush under the navbar, with a soft leading glow. (Theme ships a 5px
+   bar at top:56px; slim it and align it to the header's bottom edge.) */
+.progress-container {
+  height: 2px;
+  top: 56px;
+}
+.progress-bar {
+  box-shadow: 0 0 6px rgba(47, 75, 216, 0.6);
+}
+html[data-theme="dark"] .progress-bar {
+  box-shadow: 0 0 6px rgba(141, 164, 255, 0.6);
+}
+progress#progress {
+  height: 2px;
+}
+
+/* ---------- CR6. Skip link + focus refinement --------------- */
+/* Keyboard users get a "Skip to content" link that's off-screen until
+   focused, then slides into the top-left. Mirrors the accessibility
+   craft on high-end product sites. */
+.skip-to-content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  transform: translateY(-120%);
+  margin: 0.6rem;
+  padding: 0.55rem 0.9rem;
+  background: var(--global-theme-color);
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 6px;
+  text-decoration: none;
+  box-shadow: 0 8px 24px -10px rgba(20, 22, 45, 0.6);
+  transition: transform 0.22s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.skip-to-content:focus,
+.skip-to-content:focus-visible {
+  transform: translateY(0);
+  outline: 2px solid #fff;
+  outline-offset: -4px;
+  color: #fff;
+}
+/* The main-content target shouldn't show a focus ring when jumped to. */
+#main-content:focus,
+#main-content:focus-visible {
+  outline: none;
+}
+
+/* ---------- CR7. Heading anchor links ----------------------- */
+/* Article headings reveal a quiet "#" link on hover — click to copy a
+   deep link to that section. Useful on long CV / project pages. The
+   anchor is added by JS (heading-anchors.js) which also assigns ids. */
+.post article > h2,
+.post article > h3,
+.post article > h4 {
+  position: relative;
+}
+.heading-anchor {
+  position: absolute;
+  left: -1.1em;
+  top: 0;
+  width: 1em;
+  text-align: center;
+  color: var(--global-theme-color);
+  text-decoration: none;
+  opacity: 0;
+  transition: opacity 0.18s ease;
+  font-weight: 400;
+}
+.post article > h2:hover .heading-anchor,
+.post article > h3:hover .heading-anchor,
+.post article > h4:hover .heading-anchor,
+.heading-anchor:focus-visible {
+  opacity: 0.7;
+}
+.heading-anchor:hover {
+  opacity: 1 !important;
+}
+@media (max-width: 767px) {
+  /* No hover on touch; keep the gutter clean. */
+  .heading-anchor {
+    display: none;
+  }
+}
