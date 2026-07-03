@@ -1,0 +1,45 @@
+---
+# ============================================================
+#  项目模板 / Project template
+#  用法：复制这个文件，按现有命名规则重命名（去掉 .example）：
+#    - 研究类:   research_N_slug.md   （N 是排序号）
+#    - RoboMaster: rm_N_slug.md
+#    - 其他课设/项目: N_slug.md
+#  ⚠️ title / description / 正文都要 EN + ZH 双语。
+# ============================================================
+layout: page
+title: '<span class="lang-en-only">Project Title (EN)</span><span class="lang-zh-only">项目标题（中文）</span>'
+description: '<span class="lang-en-only">One-line summary in English.</span><span class="lang-zh-only">一句话中文简介。</span>'
+img: assets/img/projects/research/PLACEHOLDER.svg # 换成真实图片路径
+importance: 4 # 数字越小越靠前（同 category 内排序）
+category: research # research | robomaster | 其他你已有的分类
+timeframe: 2026– # 时间段，显示在卡片上
+github: # 有开源链接就填，没有留空
+---
+
+<div class="lang-en-only" markdown="1">
+_Your role, 2026.XX – ongoing._
+
+One-paragraph description of what this project is.
+
+- **Bold label** — a concrete detail (architecture / method / result).
+- **Bold label** — another concrete detail.
+- **Bold label** — evaluation, numbers, or a demo link.
+</div>
+
+<div class="lang-zh-only" markdown="1">
+_你的角色，2026.XX – 进行中。_
+
+一段话描述这个项目是什么。
+
+- **加粗标签** —— 一个具体细节（架构 / 方法 / 结果）。
+- **加粗标签** —— 另一个具体细节。
+- **加粗标签** —— 评测、数字，或 demo 链接。
+</div>
+
+<!--
+  想让研究页更有说服力，正文里可以插入：
+  - 图片：  ![说明](/assets/img/projects/xxx.jpg)
+  - 真机 demo GIF（招生官最爱看，胜过一切文字）
+  改完本地预览：docker compose up  →  http://localhost:8080
+-->

@@ -1,0 +1,22 @@
+---
+# ============================================================
+#  新闻模板 / News template
+#  用法：复制这个文件，重命名为  YYYY-MM-slug.md （例如 2026-08-award.md），
+#  删掉文件名里的下划线，填好下面的内容。文件名不带 .example。
+#  ⚠️ 双语必须都写：EN 和 ZH 各一段，缺一个那条新闻会空白。
+# ============================================================
+layout: post
+date: 2026-08-01 10:00:00 # 改成实际日期时间
+inline: true # 短新闻用 true（显示在首页 news 列表里）
+related_posts: false
+---
+
+<span class="lang-en-only">🎉 English version of the news goes here. Keep it to one or two sentences.</span><span class="lang-zh-only">🎉 这里写中文版本的新闻，一到两句话即可。</span>
+
+<!--
+  提示：
+  - 开头 emoji 可选（🎉 🏆 📄 💼 🚀 ...），和你已有新闻风格一致。
+  - **加粗** 用来强调机构名 / 奖项名 / 职位。
+  - EN 段和 ZH 段必须成对出现，内容对应翻译。
+  - 改完本地预览：docker compose up  →  http://localhost:8080
+-->
