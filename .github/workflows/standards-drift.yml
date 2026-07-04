@@ -8,4 +8,4 @@ on:
     branches: [main, master]
 jobs:
   drift:
-    uses: Allenhetl/web-standards/.github/workflows/standards-drift.yml@v1
+    uses: Allenhetl/web-standards/.github/workflows/standards-drift.yml@v2
