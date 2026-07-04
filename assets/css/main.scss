@@ -1743,3 +1743,79 @@ html[data-theme="dark"] .post > article > h2 {
     transparent
   );
 }
+
+/* ============================================================
+   CR10. Mobile optimization pass
+   Addresses real issues found auditing every breakpoint: iOS
+   scroll jank from a fixed background, tap-highlight flash, over-
+   large hero type on small phones, and horizontal-overflow guards.
+   Desktop-only flourishes (coordinate readout, pointer spotlight,
+   custom cursor, heading anchors) are already gated ≥768px / fine-
+   pointer, so they don't run here.
+   ============================================================ */
+
+/* Prevent any accidental horizontal scroll on narrow screens. */
+html,
+body {
+  overflow-x: hidden;
+}
+
+/* Kill the grey tap-flash on iOS/Android; we provide our own
+   :active / hover feedback. Keep text selectable. */
+a,
+button,
+.btn,
+.card,
+.nav-link {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (max-width: 767px) {
+  /* `background-attachment: fixed` triggers repaint jank (and grid
+     mis-scaling) on iOS Safari. Pin the atmosphere to normal scroll on
+     touch/mobile — the grid + glow still show, just without the jank. */
+  body {
+    background-attachment: scroll;
+  }
+}
+
+@media (max-width: 575px) {
+  /* Hero title: on small phones the clamp sits at its 2.4rem floor,
+     which is a touch large against the tight line-height and can wrap
+     awkwardly. Ease it down and give the wrapped lines room. */
+  .post .post-title,
+  .post .post-title h1,
+  h1.post-title {
+    font-size: clamp(2rem, 8.5vw, 2.6rem);
+    line-height: 1.08;
+  }
+
+  /* Comfortable reading: a hair more line-height and slightly smaller
+     body copy so long paragraphs don't feel dense on a phone. */
+  .post article p,
+  .post article li {
+    font-size: 0.97rem;
+  }
+
+  /* Give primary tap targets a comfortable minimum height (WCAG ~44px)
+     without disturbing desktop density. */
+  .navbar .nav-link,
+  .post article p a,
+  .news .table a.news-title {
+    padding-top: 0.15rem;
+    padding-bottom: 0.15rem;
+  }
+
+  /* The profile photo is centered and sized for a phone (theme floats
+     it left ≥576px). Cap its width so it never dominates the fold. */
+  .post .profile {
+    max-width: 62%;
+    margin: 0 auto 1.4rem;
+  }
+
+  /* Signature hairline under the hero: pull it in a touch so it doesn't
+     sit against the screen edge. */
+  .home-header::before {
+    bottom: -0.8rem;
+  }
+}
