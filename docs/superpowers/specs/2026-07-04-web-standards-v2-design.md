@@ -39,15 +39,34 @@ the future (more site types will come).
    ships _reference requirements_ and CI asserts the generated output
    _satisfies_ them — it does not overwrite the generated files or demand
    byte-equality.
-5. **Document the flow** so future-Allen (or an agent) can pick a profile and
+5. **A cross-profile baseline for build / CSP / robots — NOT a free-for-all.**
+   build, CSP, and robots differ per site type, but they are **not** left
+   entirely to each profile's discretion. The standard defines a **minimum
+   requirement floor** every profile must satisfy, enforced by assertion:
+   - **CSP floor** (all profiles): `object-src 'none'`, `base-uri` restricted
+     (`'self'`/`'none'`), `frame-ancestors` restricted, no `unsafe-eval`,
+     `default-src` declared. A profile may be stricter (node-private goes to
+     `default-src 'none'`), never looser.
+   - **robots floor** (all profiles): must declare a deliberate, coherent
+     policy — either public-with-sitemap **or** noindex+`Disallow: /` — never
+     absent, contradictory, or accidentally indexable-when-private.
+   - **build floor** (all profiles): the build must pass the standard's
+     build+validate gate (build succeeds, `site-dir` output is produced,
+     required security headers are present in the output).
+     The floor is a shared baseline; the profile is where a site goes beyond it.
+6. **Document the flow** so future-Allen (or an agent) can pick a profile and
    stand up a new site without re-deriving any of this.
 
 ## Non-goals
 
 - Not unifying layout or content across sites (correctly site-specific).
 - Not unifying build tools (Jekyll vs Node is fine and expected).
-- Not the visual **design system** (shared brand tokens) — that is a
-  separate, later project. v2 is about standards/CI/security, not styling.
+- Not the visual **design system** (shared brand tokens) — Allen wants this
+  ("统一风格") and it IS planned, but as a **separate follow-up project after
+  v2** (call it the "brand-system" project). v2 is about standards/CI/security
+  only. The brand system will likely become another shared layer the profiles
+  reference; the layered v2 architecture is deliberately built so it can slot
+  in later without rework.
 - Not migrating the private site's build to static `_headers` (that would
   downgrade it).
 
@@ -58,7 +77,9 @@ web-standards/  (v2; published as tag @v2. @v1 stays alive untouched so the
                  personal site is unaffected until it deliberately migrates.)
 │
 ├── core/                       # universal — every site, every profile
-│   └── (reusable workflows live in .github/workflows/, see note)
+│   ├── (reusable workflows live in .github/workflows/, see note)
+│   ├── baseline-requirements.yml  # the CSP/robots/build FLOOR every profile
+│   │                              # must meet (Goal 5); profiles tighten it
 │   └── formatting/
 │       ├── .editorconfig
 │       ├── .prettierrc
@@ -156,6 +177,26 @@ This gives the same guarantee as jekyll-public's byte-drift check
 ("security config can't silently degrade") but by **assertion**, respecting
 that the file is generated. This assertion mechanism is a general v2
 capability, usable by any future profile with generated configs.
+
+### The cross-profile baseline floor (Goal 5)
+
+Two layers of check, so build/CSP/robots are governed even though they
+differ per profile:
+
+1. **`core/baseline-requirements.yml`** — the floor EVERY profile must meet
+   (CSP: `object-src 'none'`, restricted `base-uri` + `frame-ancestors`, no
+   `unsafe-eval`, `default-src` present; robots: a coherent public-or-noindex
+   policy declared; build: gate passes and produces `site-dir`).
+2. **`profiles/<name>/headers-requirements.yml`** — the profile's own,
+   _stricter-or-equal_ requirements (node-private adds `default-src 'none'`,
+   `connect-src 'none'`, `X-Robots-Tag: noindex`).
+
+`headers-assert.yml` checks the effective headers against **baseline ∪
+profile** requirements. jekyll-public's static `_headers` is checked against
+the baseline too (not just byte-drift) so even the public site can't drop
+below the floor. A profile can only _tighten_ the baseline, never loosen it —
+the assertion enforces this because it's the union, and the plan includes a
+test that a profile requirement contradicting the baseline is rejected.
 
 ## Versioning & migration safety
 
