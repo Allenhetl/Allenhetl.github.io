@@ -389,5 +389,11 @@
 <!-- Heading anchor links (copy deep link to a section) -->
 <script defer src="{{ '/assets/js/heading-anchors.js' | relative_url | bust_file_cache }}"></script>
 
-<!-- Living blueprint: pointer spotlight + coordinate readout (home) -->
-<script defer src="{{ '/assets/js/hero-blueprint.js' | relative_url | bust_file_cache }}"></script>
+<!--
+  Living blueprint: pointer spotlight + coordinate readout. Homepage
+  only (the .home-header hero lives on the about layout), so other
+  pages don't download a script that would immediately no-op.
+-->
+{% if layout.name == 'about' or page.layout == 'about' %}
+  <script defer src="{{ '/assets/js/hero-blueprint.js' | relative_url | bust_file_cache }}"></script>
+{% endif %}
