@@ -67,11 +67,67 @@
   --global-text-color-light: #5c5e68;
   --global-divider-color: #e9e7e1;
   --global-card-bg-color: #ffffff;
+
+  /* ---- Motion, shape & elevation tokens --------------------------
+     A small, disciplined set so the whole site shares one rhythm
+     instead of drifting into dozens of one-off values. Every
+     transition/animation, radius and shadow below is built from these.
+     Two easings (a standard glide + a gentle spring), four durations,
+     three radii, three elevation shadows (light + dark variants). */
+  --ease-standard: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  --dur-fast: 0.18s; /* micro state flips (0.16–0.18 cluster) */
+  --dur-quick: 0.22s; /* hovers / lifts (0.22–0.25 cluster) */
+  --dur-base: 0.3s; /* default UI transitions (0.3–0.34) */
+  --dur-med: 0.4s; /* medium moves */
+  --dur-slow: 0.55s; /* image zooms, larger moves (0.55–0.6) */
+  --dur-slower: 0.7s; /* wipes (0.7–0.72) */
+  --dur-slowest: 0.85s; /* orchestrated hero entrances */
+
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 14px;
+
+  /* Accent (brand-blue) alpha steps — used for tints, glows, focus. */
+  --accent-wash: rgba(47, 75, 216, 0.05);
+  --accent-tint: rgba(47, 75, 216, 0.09);
+  --accent-glow: rgba(47, 75, 216, 0.4);
+
+  /* Layered elevation. Ambient + contact + lift, with a hairline
+     top highlight so surfaces read as lit objects. */
+  --shadow-1:
+    0 1px 2px rgba(20, 22, 45, 0.06),
+    0 10px 24px -16px rgba(20, 22, 45, 0.3);
+  --shadow-2:
+    0 2px 4px rgba(20, 22, 45, 0.07),
+    0 22px 40px -20px rgba(20, 22, 45, 0.42);
+  --shadow-3:
+    0 1px 1px rgba(20, 22, 45, 0.05),
+    0 2px 4px rgba(20, 22, 45, 0.05),
+    0 8px 16px -10px rgba(20, 22, 45, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
 }
 html[data-theme="dark"] {
   --global-theme-color: #8da4ff;
   --global-hover-color: #aab8ff;
   --global-highlight-color: #8da4ff;
+
+  --accent-wash: rgba(141, 164, 255, 0.06);
+  --accent-tint: rgba(141, 164, 255, 0.1);
+  --accent-glow: rgba(141, 164, 255, 0.45);
+
+  --shadow-1:
+    0 1px 2px rgba(0, 0, 0, 0.5),
+    0 10px 24px -16px rgba(0, 0, 0, 0.7);
+  --shadow-2:
+    0 2px 4px rgba(0, 0, 0, 0.5),
+    0 22px 40px -20px rgba(0, 0, 0, 0.7);
+  --shadow-3:
+    0 1px 1px rgba(0, 0, 0, 0.4),
+    0 2px 4px rgba(0, 0, 0, 0.4),
+    0 8px 16px -10px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
 /* ---------- 2. Typography ------------------------------------- */
@@ -203,7 +259,7 @@ p.desc {
 }
 .post > article > h2 a {
   color: inherit;
-  transition: color 0.18s ease;
+  transition: color var(--dur-fast) ease;
 }
 .post > article > h2 a:hover {
   color: var(--global-theme-color);
@@ -247,7 +303,7 @@ p.desc {
 }
 .post .profile.float-left img {
   box-shadow: 0 16px 38px -18px rgba(20, 22, 45, 0.5);
-  transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition: transform var(--dur-med) var(--ease-standard);
 }
 .post .profile.float-left img:hover {
   transform: scale(1.02);
@@ -257,7 +313,7 @@ p.desc {
 .post article .clearfix a {
   text-underline-offset: 0.18em;
   text-decoration-thickness: 1px;
-  transition: color 0.16s ease;
+  transition: color var(--dur-fast) ease;
 }
 
 /* ---------- 7. Navbar ---------------------------------------- */
@@ -318,8 +374,8 @@ nav .navbar-nav .nav-item.active > .nav-link::after {
     display: none;
   }
   nav .navbar-nav .nav-item.active > .nav-link {
-    background: rgba(47, 75, 216, 0.09);
-    border-radius: 4px;
+    background: var(--accent-tint);
+    border-radius: var(--radius-sm);
   }
 }
 
@@ -345,7 +401,7 @@ nav .navbar-nav .nav-item.active > .nav-link::after {
   .post article > .clearfix,
   .post article > h2 {
     opacity: 0;
-    animation: rm-rise 0.72s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+    animation: rm-rise var(--dur-slower) var(--ease-standard) both;
   }
   .post-header .post-title {
     animation-delay: 0.05s;
@@ -420,27 +476,18 @@ html.transition *::after {
    radius, a confident lift on hover. */
 .projects .card {
   border: 0;
-  border-radius: 14px;
+  border-radius: var(--radius-lg);
   overflow: hidden;
   background: var(--global-card-bg-color);
-  box-shadow:
-    0 1px 2px rgba(20, 22, 45, 0.06),
-    0 10px 24px -16px rgba(20, 22, 45, 0.3);
+  box-shadow: var(--shadow-1);
   transition:
-    transform 0.22s cubic-bezier(0.2, 0.7, 0.2, 1),
-    box-shadow 0.22s ease;
+    transform var(--dur-base) var(--ease-standard),
+    box-shadow var(--dur-base) ease;
   height: 100%;
 }
 .projects .card:hover {
   transform: translateY(-5px);
-  box-shadow:
-    0 2px 4px rgba(20, 22, 45, 0.07),
-    0 22px 40px -20px rgba(20, 22, 45, 0.42);
-}
-html[data-theme="dark"] .projects .card {
-  box-shadow:
-    0 1px 2px rgba(0, 0, 0, 0.5),
-    0 10px 24px -16px rgba(0, 0, 0, 0.7);
+  box-shadow: var(--shadow-2);
 }
 
 /* Card thumbnail — uniform band via object-fit:cover. This is a
@@ -530,7 +577,7 @@ html[data-theme="dark"] .projects .card {
 }
 /* Quiet full-row hover. */
 .news .table tr {
-  transition: background-color 0.16s ease;
+  transition: background-color var(--dur-fast) ease;
 }
 .news .table tbody tr:hover {
   background-color: rgba(47, 75, 216, 0.035);
@@ -611,7 +658,7 @@ html[data-theme="dark"] .news .table tbody tr:hover {
   font-family: var(--font-mono);
   font-size: 0.76rem;
   padding: 0.4rem 0.55rem;
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
   letter-spacing: 0.01em;
 }
 .cv h6.title.font-weight-bold {
@@ -711,7 +758,7 @@ html[data-theme="dark"] #light-toggle-dark {
   height: 220px;
   width: auto;
   object-fit: cover;
-  border-radius: 6px;
+  border-radius: var(--radius-md);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   cursor: zoom-in;
   flex: 0 0 auto;
@@ -828,8 +875,8 @@ html[data-theme="dark"] #light-toggle-dark {
     opacity: 0;
     transform: translateY(22px);
     transition:
-      opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1),
-      transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+      opacity var(--dur-slower) var(--ease-standard),
+      transform var(--dur-slower) var(--ease-standard);
     will-change: opacity, transform;
   }
   [data-reveal].is-revealed {
@@ -863,7 +910,7 @@ html[data-theme="dark"] #light-toggle-dark {
     }
   }
   .post-header .post-title {
-    animation: bp-name-curtain 0.85s cubic-bezier(0.2, 0.75, 0.15, 1) both;
+    animation: bp-name-curtain var(--dur-slower) var(--ease-standard) both;
     animation-delay: 0.08s;
     will-change: transform, clip-path;
   }
@@ -897,7 +944,7 @@ html[data-theme="dark"] #light-toggle-dark {
     }
   }
   .post-header .desc::before {
-    animation: bp-tick-grow 0.6s ease 0.6s both;
+    animation: bp-tick-grow var(--dur-slow) ease 0.6s both;
   }
 
   /* Signature hairline: a short brand-blue rule wipes in from the left
@@ -921,7 +968,7 @@ html[data-theme="dark"] #light-toggle-dark {
     transform: scaleX(0);
     transform-origin: left;
     border-radius: 1px;
-    animation: bp-signature-wipe 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) 0.7s both;
+    animation: bp-signature-wipe var(--dur-slower) var(--ease-standard) 0.7s both;
   }
   html[data-theme="dark"] .home-header::before {
     background: linear-gradient(
@@ -946,26 +993,26 @@ html[data-theme="dark"] #light-toggle-dark {
 .projects .card {
   position: relative;
   transition:
-    transform 0.32s cubic-bezier(0.2, 0.7, 0.2, 1),
-    box-shadow 0.32s cubic-bezier(0.2, 0.7, 0.2, 1);
+    transform var(--dur-base) var(--ease-standard),
+    box-shadow var(--dur-base) var(--ease-standard);
 }
 .projects .card .card-img-wrap,
 .projects .card figure {
   overflow: hidden;
 }
 .projects .card img.card-img-top {
-  transition: transform 0.55s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition: transform var(--dur-slow) var(--ease-standard);
 }
 .projects a:hover .card {
   transform: translateY(-4px);
   box-shadow:
     0 2px 4px rgba(20, 22, 45, 0.06),
-    0 22px 40px -22px rgba(47, 75, 216, 0.4);
+    0 22px 40px -22px var(--accent-glow);
 }
 html[data-theme="dark"] .projects a:hover .card {
   box-shadow:
     0 2px 4px rgba(0, 0, 0, 0.5),
-    0 22px 40px -22px rgba(141, 164, 255, 0.45);
+    0 22px 40px -22px var(--accent-glow);
 }
 .projects a:hover .card img.card-img-top {
   transform: scale(1.045);
@@ -981,7 +1028,7 @@ html[data-theme="dark"] .projects a:hover .card {
   background: var(--global-theme-color);
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition: transform var(--dur-med) var(--ease-standard);
   z-index: 2;
 }
 .projects a:hover .card::before {
@@ -1023,11 +1070,11 @@ body {
   /* Position is set per-frame by JS; only the "grow into a ring" part
      is a CSS transition so it stays buttery. */
   transition:
-    width 0.22s cubic-bezier(0.2, 0.7, 0.2, 1),
-    height 0.22s cubic-bezier(0.2, 0.7, 0.2, 1),
-    background-color 0.22s ease,
-    border-color 0.22s ease,
-    opacity 0.25s ease;
+    width var(--dur-quick) var(--ease-standard),
+    height var(--dur-quick) var(--ease-standard),
+    background-color var(--dur-quick) ease,
+    border-color var(--dur-quick) ease,
+    opacity var(--dur-quick) ease;
   border: 1.5px solid transparent;
   opacity: 0;
   will-change: transform;
@@ -1083,7 +1130,7 @@ body {
   border-radius: 50%;
   background: var(--global-bg-color);
   border: 2px solid var(--global-theme-color);
-  transition: transform 0.18s ease, background-color 0.18s ease;
+  transition: transform var(--dur-fast) ease, background-color var(--dur-fast) ease;
 }
 .news .table tbody tr:hover th[scope="row"]::after {
   background: var(--global-theme-color);
@@ -1125,29 +1172,29 @@ footer.sticky-bottom .container {
   break-inside: avoid;
   margin: 0 0 14px;
   position: relative;
-  border-radius: 6px;
+  border-radius: var(--radius-md);
   overflow: hidden;
   box-shadow: 0 1px 2px rgba(20, 22, 45, 0.06);
   transition:
-    transform 0.32s cubic-bezier(0.2, 0.7, 0.2, 1),
-    box-shadow 0.32s cubic-bezier(0.2, 0.7, 0.2, 1);
+    transform var(--dur-base) var(--ease-standard),
+    box-shadow var(--dur-base) var(--ease-standard);
 }
 .photo-gallery .photo-item img {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 6px;
+  border-radius: var(--radius-md);
 }
 .photo-gallery .photo-item:hover {
   transform: translateY(-3px);
   box-shadow:
     0 2px 4px rgba(20, 22, 45, 0.06),
-    0 18px 34px -20px rgba(47, 75, 216, 0.4);
+    0 18px 34px -20px var(--accent-glow);
 }
 html[data-theme="dark"] .photo-gallery .photo-item:hover {
   box-shadow:
     0 2px 4px rgba(0, 0, 0, 0.5),
-    0 18px 34px -20px rgba(141, 164, 255, 0.45);
+    0 18px 34px -20px var(--accent-glow);
 }
 @media (max-width: 991px) {
   .photo-gallery {
@@ -1186,10 +1233,10 @@ html[data-theme="dark"] .photo-gallery .photo-item:hover {
     }
   }
   ::view-transition-old(root) {
-    animation: vt-fade-out 0.18s ease both;
+    animation: vt-fade-out var(--dur-fast) ease both;
   }
   ::view-transition-new(root) {
-    animation: vt-fade-rise 0.34s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+    animation: vt-fade-rise var(--dur-base) var(--ease-standard) both;
   }
 }
 
@@ -1250,7 +1297,7 @@ html[data-theme="dark"] .photo-gallery .photo-item:hover {
   background-position: 0 100%;
   background-repeat: no-repeat;
   background-size: 0% 1.5px;
-  transition: background-size 0.32s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition: background-size var(--dur-base) var(--ease-standard);
   padding-bottom: 0.04em;
 }
 .post article p a:hover,
@@ -1282,7 +1329,7 @@ html[data-theme="dark"] .photo-gallery .photo-item:hover {
   width: 100%;
   aspect-ratio: 16 / 9;
   border: 1px solid var(--global-divider-color);
-  border-radius: 14px;
+  border-radius: var(--radius-lg);
   overflow: hidden;
   background:
     radial-gradient(
@@ -1352,7 +1399,7 @@ html[data-theme="dark"] .robot-viewer__stage {
   opacity: 0.7;
   pointer-events: none;
   z-index: 3;
-  transition: opacity 0.3s ease;
+  transition: opacity var(--dur-base) ease;
 }
 .robot-viewer__stage:hover .robot-viewer__hint {
   opacity: 0;
@@ -1434,12 +1481,12 @@ li,
   .projects .card,
   .photo-gallery .photo-item,
   .post .profile.float-left img {
-    transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
-    transition-duration: 0.34s;
+    transition-timing-function: var(--ease-spring);
+    transition-duration: var(--dur-base);
   }
   /* The project-card top accent rule keeps its own smooth wipe. */
   .projects .card::before {
-    transition-timing-function: cubic-bezier(0.34, 1.4, 0.64, 1);
+    transition-timing-function: var(--ease-spring);
   }
 }
 
@@ -1449,19 +1496,7 @@ li,
    rather than flat rectangles with a drop shadow. */
 .projects .card,
 .photo-gallery .photo-item {
-  box-shadow:
-    0 1px 1px rgba(20, 22, 45, 0.05),
-    0 2px 4px rgba(20, 22, 45, 0.05),
-    0 8px 16px -10px rgba(20, 22, 45, 0.22),
-    inset 0 1px 0 rgba(255, 255, 255, 0.6);
-}
-html[data-theme="dark"] .projects .card,
-html[data-theme="dark"] .photo-gallery .photo-item {
-  box-shadow:
-    0 1px 1px rgba(0, 0, 0, 0.4),
-    0 2px 4px rgba(0, 0, 0, 0.4),
-    0 8px 16px -10px rgba(0, 0, 0, 0.6),
-    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  box-shadow: var(--shadow-3);
 }
 
 /* ---------- CR4. Signature detail: the hero coordinate ------ */
@@ -1472,8 +1507,8 @@ html[data-theme="dark"] .photo-gallery .photo-item {
 @media (min-width: 768px) and (prefers-reduced-motion: no-preference) {
   .home-header::after {
     transition:
-      color 0.3s ease,
-      opacity 0.3s ease;
+      color var(--dur-base) ease,
+      opacity var(--dur-base) ease;
     cursor: default;
   }
   .home-header:hover::after {
@@ -1508,9 +1543,9 @@ html[data-theme="dark"] .photo-gallery .photo-item {
   border-bottom-color: transparent;
   box-shadow: 0 0 0 0 rgba(20, 22, 45, 0);
   transition:
-    border-color 0.3s ease,
-    box-shadow 0.3s ease,
-    background-color 0.3s ease;
+    border-color var(--dur-base) ease,
+    box-shadow var(--dur-base) ease,
+    background-color var(--dur-base) ease;
 }
 #navbar.navbar.is-scrolled {
   border-bottom-color: var(--global-divider-color);
@@ -1554,10 +1589,10 @@ progress#progress {
   font-family: var(--font-body);
   font-size: 0.85rem;
   font-weight: 600;
-  border-radius: 6px;
+  border-radius: var(--radius-md);
   text-decoration: none;
   box-shadow: 0 8px 24px -10px rgba(20, 22, 45, 0.6);
-  transition: transform 0.22s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition: transform var(--dur-quick) var(--ease-standard);
 }
 .skip-to-content:focus,
 .skip-to-content:focus-visible {
@@ -1590,7 +1625,7 @@ progress#progress {
   color: var(--global-theme-color);
   text-decoration: none;
   opacity: 0;
-  transition: opacity 0.18s ease;
+  transition: opacity var(--dur-fast) ease;
   font-weight: 400;
 }
 .post article > h2:hover .heading-anchor,
