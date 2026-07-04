@@ -21,6 +21,9 @@ standards/**
 # reports it unformatted (a CI-only Unicode/locale divergence we could not
 # reproduce). It's vendor documentation, not authored content — ignore it.
 CUSTOMIZE.md
+# Generated design-token partial synced from standards/design-tokens; the
+# generator is its source of truth (see bin note), not prettier.
+_sass/_tokens.scss
 assets/css/main.scss
 assets/js/distillpub/template.v2.js
 assets/js/search/*.js
