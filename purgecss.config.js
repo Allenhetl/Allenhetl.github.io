@@ -11,7 +11,19 @@ module.exports = {
   //  - is-scrolled / heading-anchor / is-copied: toggled or injected by
   //    JS at runtime, so they never appear in the static HTML.
   safelist: {
-    standard: [/^robot-viewer/, /^rm-cursor/, "is-scrolled", "heading-anchor", "is-copied", "bp-live", "hero-spotlight", "is-reticle"],
+    standard: [
+      /^robot-viewer/,
+      /^companion/,
+      /^rm-cursor/,
+      "companion",
+      "is-dragging",
+      "is-scrolled",
+      "heading-anchor",
+      "is-copied",
+      "bp-live",
+      "hero-spotlight",
+      "is-reticle",
+    ],
     greedy: [/model-viewer/],
   },
 };

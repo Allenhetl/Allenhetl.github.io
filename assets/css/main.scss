@@ -1818,3 +1818,129 @@ button,
     bottom: -0.8rem;
   }
 }
+
+/* ---------- CR11. Corner desk-pet companion ------------------ */
+/* A sprite-based pet (companion.js creates #companion) that follows the
+   cursor within range, jumps on click, sits/sleeps when idle, and plays
+   micro-animations. Swap the sprite sheet to change the character.
+   Desktop-only + reduced-motion gating live in the script. */
+#companion {
+  position: fixed;
+  z-index: 2147483000;
+  pointer-events: auto;
+  cursor: grab;
+  image-rendering: pixelated;
+  background-repeat: no-repeat;
+  /* The script owns `transform` (it folds the base scale into the jump
+     squash-stretch each frame), so the entrance fades via opacity only
+     to avoid clobbering that. */
+  transform-origin: center bottom;
+  filter: drop-shadow(0 4px 6px rgba(20, 22, 45, 0.28));
+  animation: companion-in var(--dur-slower) var(--ease-standard) both;
+}
+#companion.is-dragging {
+  cursor: grabbing;
+}
+html[data-theme="dark"] #companion {
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.55));
+}
+@keyframes companion-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* Dropped treat the pet runs to and eats. */
+.companion-treat {
+  position: fixed;
+  z-index: 2147482999;
+  font-size: 20px;
+  line-height: 1;
+  pointer-events: none;
+  animation: companion-treat-in var(--dur-base) var(--ease-spring) both;
+}
+@keyframes companion-treat-in {
+  from {
+    transform: translateY(-8px) scale(0.4);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+/* Floating hearts when the pet is happy (pet-hover / after eating). */
+.companion-heart {
+  position: fixed;
+  z-index: 2147483001;
+  font-size: 13px;
+  line-height: 1;
+  color: #ff5a7a;
+  pointer-events: none;
+  animation: companion-heart-float 1.3s ease-out both;
+}
+@keyframes companion-heart-float {
+  0% {
+    transform: translateY(0) scale(0.6);
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-34px) scale(1);
+    opacity: 0;
+  }
+}
+/* First-hover hint bubble for the keyboard easter eggs (shows once). */
+.companion-hint {
+  position: fixed;
+  z-index: 2147483002;
+  padding: 0.32rem 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  color: var(--global-text-color);
+  background: var(--global-card-bg-color);
+  border: 1px solid var(--global-theme-color);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-1);
+  pointer-events: none;
+  animation: companion-hint-in var(--dur-base) var(--ease-spring) both;
+}
+.companion-hint b {
+  color: var(--global-theme-color);
+  font-family: var(--font-body);
+  font-weight: 700;
+}
+.companion-hint.is-leaving {
+  animation: companion-hint-out var(--dur-base) ease forwards;
+}
+@keyframes companion-hint-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes companion-hint-out {
+  to {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+/* Never show on small screens even if the script somehow runs. */
+@media (max-width: 1023px) {
+  #companion,
+  .companion-treat,
+  .companion-heart,
+  .companion-hint {
+    display: none !important;
+  }
+}
