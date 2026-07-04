@@ -37,12 +37,12 @@ Sites consume it through **four mechanisms**, each solving a distinct drift
 problem. This is the most engineered, lowest-drift form that still works on
 static sites and on a Windows dev machine.
 
-| Layer | Mechanism | Covers | Drift protection |
-| ----- | --------- | ------ | ---------------- |
-| 1. CI | Reusable workflows (`workflow_call`) | axe, broken-links, Lighthouse, prettier, CodeQL | Fully automatic — change once, every site picks it up next run |
-| 2. Shared read-only assets | Git submodule `standards/` | engineering baseline, `bin/` scripts, templates, CSP notes | Submodule pointer; `git submodule update --remote` pulls latest |
-| 3. Root-required files | Authoritative copies in submodule + auto-sync + CI check | `_headers`, `robots.txt`, `.editorconfig`, `.prettierrc`, `.prettierignore`, pre-commit config | pre-commit regenerates from source; CI fails on mismatch |
-| 4. Onboarding | `bin/onboard.sh` | wires all of the above into a site in one run | "Onboarded" == "conformant" |
+| Layer                      | Mechanism                                                | Covers                                                                                         | Drift protection                                                |
+| -------------------------- | -------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | --------------------------------------------------------------- |
+| 1. CI                      | Reusable workflows (`workflow_call`)                     | axe, broken-links, Lighthouse, prettier, CodeQL                                                | Fully automatic — change once, every site picks it up next run  |
+| 2. Shared read-only assets | Git submodule `standards/`                               | engineering baseline, `bin/` scripts, templates, CSP notes                                     | Submodule pointer; `git submodule update --remote` pulls latest |
+| 3. Root-required files     | Authoritative copies in submodule + auto-sync + CI check | `_headers`, `robots.txt`, `.editorconfig`, `.prettierrc`, `.prettierignore`, pre-commit config | pre-commit regenerates from source; CI fails on mismatch        |
+| 4. Onboarding              | `bin/onboard.sh`                                         | wires all of the above into a site in one run                                                  | "Onboarded" == "conformant"                                     |
 
 ### Why not the simpler options
 
