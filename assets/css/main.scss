@@ -167,10 +167,23 @@ html[data-theme="dark"] ::selection {
   background: rgba(141, 164, 255, 0.26);
 }
 
+/* Two-layer focus ring (Geist-style): a gap in the page colour, then a
+   brand-blue ring. Reads crisply on any background and never crowds the
+   element. Uses box-shadow so it hugs the element's own border-radius. */
 :focus-visible {
-  outline: 2px solid var(--global-theme-color);
-  outline-offset: 2px;
-  border-radius: 2px;
+  outline: none;
+  border-radius: 3px;
+  box-shadow:
+    0 0 0 2px var(--global-bg-color),
+    0 0 0 4px var(--global-theme-color);
+}
+/* Keep a real outline as a fallback for elements where box-shadow is
+   clipped (e.g. overflow:hidden ancestors). */
+@supports not (selector(:focus-visible)) {
+  :focus {
+    outline: 2px solid var(--global-theme-color);
+    outline-offset: 2px;
+  }
 }
 html {
   scroll-behavior: smooth;
@@ -830,6 +843,7 @@ html[data-theme="dark"] #light-toggle-dark {
 }
 @media (min-width: 768px) {
   .home-header::after {
+    /* Fixed campus coordinate by default. */
     content: "N22.34° · E114.26°";
     position: absolute;
     top: 0.5rem;
@@ -839,6 +853,18 @@ html[data-theme="dark"] #light-toggle-dark {
     letter-spacing: 0.12em;
     color: var(--global-text-color-light);
     opacity: 0.5;
+    transition:
+      color var(--dur-base) ease,
+      opacity var(--dur-base) ease;
+  }
+  /* When the pointer is over the hero, hero-blueprint.js sets a live
+     reading in data-coord; show it and light it up. */
+  .home-header[data-coord]::after {
+    content: attr(data-coord);
+  }
+  .home-header.bp-live::after {
+    color: var(--global-theme-color);
+    opacity: 0.85;
   }
 }
 
@@ -1642,4 +1668,76 @@ progress#progress {
   .heading-anchor {
     display: none;
   }
+}
+
+/* ============================================================
+   CR8. Living blueprint + interaction polish
+   Round of upgrades drawn from Cursor (hero as living surface),
+   Vercel/Geist (button state progression, alpha borders). Built on
+   the token system; additive and reduced-motion safe.
+   ============================================================ */
+
+/* ---------- CR8a. Pointer spotlight on the hero -------------- */
+/* A faint accent glow tracks the pointer across the hero, making the
+   blueprint grid feel like a live sensor canvas. The position comes
+   from --bp-mx/--bp-my (set per-frame by hero-blueprint.js); with no
+   JS the layer is simply invisible (opacity 0). Desktop only. */
+@media (min-width: 768px) and (prefers-reduced-motion: no-preference) {
+  .home-header::before {
+    content: "";
+    position: absolute;
+    inset: -2rem -1rem;
+    z-index: -1;
+    pointer-events: none;
+    background: radial-gradient(
+      18rem 18rem at var(--bp-mx, 50%) var(--bp-my, 0%),
+      var(--accent-tint),
+      transparent 70%
+    );
+    opacity: 0;
+    transition: opacity var(--dur-base) ease;
+  }
+  .home-header.bp-live::before {
+    opacity: 1;
+  }
+}
+
+/* ---------- CR8b. Button state progression ------------------- */
+/* Give real buttons and .btn a tactile three-step feel: rest → hover
+   (subtle lift + darken) → active (settle). Scoped so it doesn't fight
+   the navbar toggler or icon-only controls. */
+.btn,
+button.btn,
+a.btn {
+  transition:
+    transform var(--dur-fast) var(--ease-standard),
+    box-shadow var(--dur-fast) var(--ease-standard),
+    background-color var(--dur-fast) ease,
+    border-color var(--dur-fast) ease;
+}
+.btn:hover {
+  transform: translateY(-1px);
+}
+.btn:active {
+  transform: translateY(0);
+  transition-duration: 0.06s;
+}
+
+/* ---------- CR8c. Alpha dividers ----------------------------- */
+/* Where a hairline sits on a surface, prefer a translucent ink border
+   over a solid grey so it reads correctly in both themes. Applied to
+   the section-header rule under the hero and card inner borders. */
+.post > article > h2 {
+  border-bottom-color: color-mix(
+    in srgb,
+    var(--global-text-color) 12%,
+    transparent
+  );
+}
+html[data-theme="dark"] .post > article > h2 {
+  border-bottom-color: color-mix(
+    in srgb,
+    var(--global-text-color) 18%,
+    transparent
+  );
 }
