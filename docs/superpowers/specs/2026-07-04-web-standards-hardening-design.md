@@ -66,15 +66,15 @@ Actions security hardening guide, OpenSSF).
 Third-party actions to pin (GitHub-owned `actions/*` and
 `github/codeql-action` may stay at `@vN`):
 
-| Action | Was | Pin to |
-| ------ | --- | ------ |
-| `browser-actions/setup-chrome` | `@v1` | `@<sha>  # v1.x` |
-| `fjogeleit/yaml-update-action` | `@main` ⚠️ | `@<sha>  # vX` |
-| `lycheeverse/lychee-action` | `@v2.0.2` | `@<sha>  # v2.0.2` |
-| `ruby/setup-ruby` | `@v1` | `@<sha>  # v1.x` |
-| `thollander/actions-comment-pull-request` | `@v2` | `@<sha>  # v2.x` |
-| `treosh/lighthouse-ci-action` | `@v12` | `@<sha>  # v12.x` |
-| `step-security/harden-runner` (new) | — | `@<sha>  # v2.x` |
+| Action                                    | Was        | Pin to             |
+| ----------------------------------------- | ---------- | ------------------ |
+| `browser-actions/setup-chrome`            | `@v1`      | `@<sha>  # v1.x`   |
+| `fjogeleit/yaml-update-action`            | `@main` ⚠️ | `@<sha>  # vX`     |
+| `lycheeverse/lychee-action`               | `@v2.0.2`  | `@<sha>  # v2.0.2` |
+| `ruby/setup-ruby`                         | `@v1`      | `@<sha>  # v1.x`   |
+| `thollander/actions-comment-pull-request` | `@v2`      | `@<sha>  # v2.x`   |
+| `treosh/lighthouse-ci-action`             | `@v12`     | `@<sha>  # v12.x`  |
+| `step-security/harden-runner` (new)       | —          | `@<sha>  # v2.x`   |
 
 `fjogeleit/yaml-update-action@main` is the worst offender (floating ref to a
 third party) and must be pinned.
