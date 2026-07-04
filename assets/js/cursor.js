@@ -82,24 +82,34 @@
     // Grow into a ring over anything clickable. Uses event delegation +
     // closest() so it also works for links/buttons added later.
     var interactiveSel = 'a, button, .card, input, textarea, select, summary, [role="button"], .clickable, label[for]';
+    // Large visual targets (project/photo cards) get the "lock-on
+    // reticle" treatment: the ring squares off with corner brackets,
+    // reading as a machine-vision autofocus / detection box — on-brand
+    // for an embodied-AI researcher. Small controls keep the plain ring.
+    var reticleSel = ".card, .photo-item, figure.card-img-wrap";
+
+    function evalTarget(node) {
+      if (!node || !node.closest) {
+        dot.classList.remove("is-hovering", "is-reticle");
+        return;
+      }
+      var interactive = node.closest(interactiveSel);
+      dot.classList.toggle("is-hovering", !!interactive);
+      dot.classList.toggle("is-reticle", !!node.closest(reticleSel));
+    }
+
     document.addEventListener(
       "mouseover",
       function (e) {
-        if (e.target.closest && e.target.closest(interactiveSel)) {
-          dot.classList.add("is-hovering");
-        }
+        evalTarget(e.target);
       },
       { passive: true }
     );
     document.addEventListener(
       "mouseout",
       function (e) {
-        // Only drop the ring when leaving an interactive element for a
-        // non-interactive one (relatedTarget is where the pointer went).
-        var to = e.relatedTarget;
-        if (!to || !(to.closest && to.closest(interactiveSel))) {
-          dot.classList.remove("is-hovering");
-        }
+        // Re-evaluate against where the pointer went (relatedTarget).
+        evalTarget(e.relatedTarget);
       },
       { passive: true }
     );

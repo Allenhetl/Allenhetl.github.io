@@ -1078,6 +1078,50 @@ body {
   border-color: transparent;
 }
 
+/* Lock-on reticle: over large targets (project/photo cards) the ring
+   squares into a rounded rectangle with four L-shaped corner brackets —
+   a machine-vision autofocus / object-detection box. Stays pinned to
+   the real pointer (JS never lerps it to the target); only the shape
+   morphs. Brackets are drawn with a conic-gradient border image kept
+   faint so it reads as an instrument, not sci-fi HUD cosplay. */
+.rm-cursor.is-reticle {
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  border-color: color-mix(in srgb, var(--global-theme-color) 55%, transparent);
+}
+.rm-cursor::before,
+.rm-cursor::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border: 1.5px solid var(--global-theme-color);
+  opacity: 0;
+  transition: opacity var(--dur-quick) ease;
+  pointer-events: none;
+}
+/* Top-left + bottom-right bracket pair (each an L via two borders). */
+.rm-cursor::before {
+  top: -1.5px;
+  left: -1.5px;
+  border-right: 0;
+  border-bottom: 0;
+  border-top-left-radius: var(--radius-sm);
+}
+.rm-cursor::after {
+  bottom: -1.5px;
+  right: -1.5px;
+  border-left: 0;
+  border-top: 0;
+  border-bottom-right-radius: var(--radius-sm);
+}
+.rm-cursor.is-reticle::before,
+.rm-cursor.is-reticle::after {
+  opacity: 0.85;
+}
+
 /* ---------- BP5. News as a blueprint timeline ---------------- */
 /* Turn the news table into a spec-sheet timeline: mono dates, and a
    node marker sitting on a faint vertical rail that runs down the
