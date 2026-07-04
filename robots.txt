@@ -1,3 +1,10 @@
+# GENERATED FROM standards/root-files/robots.txt — DO NOT EDIT.
+# Run standards/bin/sync-standards.sh (the pre-commit hook does it for you).
+#
+# NOTE: the Sitemap line below uses Liquid and requires jekyll-sitemap.
+# A non-Jekyll site should list robots.txt in .standards-allow and ship a
+# static equivalent, or drop the front-matter + Liquid line.
+
 # Search engines: full access (helps people find this site).
 User-agent: *
 Disallow:

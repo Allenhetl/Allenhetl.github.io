@@ -1,3 +1,7 @@
+# GENERATED FROM standards/root-files/_headers — DO NOT EDIT.
+# Run standards/bin/sync-standards.sh (or just commit; the pre-commit hook
+# runs it for you). Edit the authoritative copy in the web-standards repo.
+#
 # Cloudflare Pages security & caching headers.
 # Docs: https://developers.cloudflare.com/pages/configuration/headers/
 # This file is copied verbatim into the site root at deploy time.
