@@ -22,11 +22,12 @@
       }
       if (lang === 'zh') document.documentElement.classList.add('is-zh');
 
-      // Theme — 2 states only (light / dark). If user previously had 'system',
-      // resolve it once to a concrete value so the toggle just flips between two.
+      // Theme — 2 states only (light / dark). Dark is the site default:
+      // when the visitor has never chosen (or carried a legacy 'system'
+      // value), start in dark. An explicit 'light' choice is still kept.
       var themeSetting = localStorage.getItem('theme');
       if (!themeSetting || themeSetting === 'system') {
-        themeSetting = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        themeSetting = 'dark';
         localStorage.setItem('theme', themeSetting);
       }
       var dark = themeSetting === 'dark';
