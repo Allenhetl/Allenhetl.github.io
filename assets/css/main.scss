@@ -1680,24 +1680,26 @@ progress#progress {
 /* ---------- CR8a. Pointer spotlight on the hero -------------- */
 /* A faint accent glow tracks the pointer across the hero, making the
    blueprint grid feel like a live sensor canvas. The position comes
-   from --bp-mx/--bp-my (set per-frame by hero-blueprint.js); with no
-   JS the layer is simply invisible (opacity 0). Desktop only. */
+   from --bp-mx/--bp-my (set per-frame by hero-blueprint.js) on a
+   dedicated element it injects (.hero-spotlight) — NOT a pseudo-element,
+   so it never collides with the signature hairline on ::before. With no
+   JS the element is absent. Desktop only. */
+.hero-spotlight {
+  position: absolute;
+  inset: -2rem -1rem;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: inherit;
+  background: radial-gradient(
+    18rem 18rem at var(--bp-mx, 50%) var(--bp-my, 0%),
+    var(--accent-tint),
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity var(--dur-base) ease;
+}
 @media (min-width: 768px) and (prefers-reduced-motion: no-preference) {
-  .home-header::before {
-    content: "";
-    position: absolute;
-    inset: -2rem -1rem;
-    z-index: -1;
-    pointer-events: none;
-    background: radial-gradient(
-      18rem 18rem at var(--bp-mx, 50%) var(--bp-my, 0%),
-      var(--accent-tint),
-      transparent 70%
-    );
-    opacity: 0;
-    transition: opacity var(--dur-base) ease;
-  }
-  .home-header.bp-live::before {
+  .home-header.bp-live .hero-spotlight {
     opacity: 1;
   }
 }

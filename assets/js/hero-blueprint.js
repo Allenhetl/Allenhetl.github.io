@@ -17,6 +17,15 @@
     var hero = document.querySelector(".home-header");
     if (!hero) return;
 
+    // Dedicated spotlight layer (kept off the ::before/::after pseudo-
+    // elements, which the signature hairline and coordinate readout own).
+    if (!hero.querySelector(".hero-spotlight")) {
+      var spot = document.createElement("div");
+      spot.className = "hero-spotlight";
+      spot.setAttribute("aria-hidden", "true");
+      hero.appendChild(spot);
+    }
+
     // Base coordinate (matches the CSS default so there's no jump).
     var BASE_LAT = 22.34;
     var BASE_LON = 114.26;
