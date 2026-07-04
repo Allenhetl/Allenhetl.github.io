@@ -1,11 +1,25 @@
+# GENERATED (base) FROM standards/root-files/.prettierignore.
+# This is the GENERIC baseline shared by every site. Site-specific ignores
+# go BELOW the "# --- site-specific ---" marker, which sync-standards.sh
+# preserves. Do not edit the section above the marker by hand.
+
+# Minified & source-map artifacts.
 **/*.map
 **/*.min.css
 **/*.min.js
+
+# Vendored / generated output.
+node_modules/**
+lighthouse_results/**
+
+# The web-standards submodule is vendored content — never lint it here.
+standards/**
+
+# --- site-specific --- (edit freely below this line; kept across syncs)
 assets/css/main.scss
 assets/js/distillpub/template.v2.js
 assets/js/search/*.js
 assets/plotly/demo.html
-lighthouse_results/**
 _posts/2015-10-20-math.md
 _sass/font-awesome/*.scss
 _scripts/*

@@ -4,6 +4,15 @@ The conventions this site is built and maintained by. Read this before
 making non-trivial changes. It complements [AGENTS.md](AGENTS.md) (build
 commands) and the per-filetype guides in `.github/instructions/`.
 
+> **Shared baseline.** The language-neutral parts of these standards
+> (security headers, robots, CI, formatting, motion/a11y rules) come from
+> the [`web-standards`](https://github.com/Allenhetl/web-standards) repo,
+> mounted here as the `standards/` submodule. Do **not** hand-edit the
+> managed root files (`_headers`, `robots.txt`, `.editorconfig`,
+> `.prettierrc`, `.prettierignore`, `.pre-commit-config.yaml`) — edit the
+> standard and re-sync. See `standards/ENGINEERING.baseline.md`. The
+> sections below record only what is specific to this site.
+
 ---
 
 ## 1. Architecture at a glance

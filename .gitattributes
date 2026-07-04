@@ -1,2 +1,12 @@
 # Force LF line endings, needed for Docker to work on Windows
 *.sh text eol=lf
+
+# web-standards managed root files: pin LF so the drift check (which
+# compares bytes against the standards submodule) never false-fires on a
+# Windows checkout that would otherwise introduce CRLF.
+_headers text eol=lf
+robots.txt text eol=lf
+.editorconfig text eol=lf
+.prettierrc text eol=lf
+.prettierignore text eol=lf
+.pre-commit-config.yaml text eol=lf
