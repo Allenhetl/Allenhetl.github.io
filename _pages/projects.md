@@ -13,18 +13,39 @@ horizontal: false
 <!-- pages/projects.md -->
 <div class="projects">
 {% if site.enable_project_categories and page.display_categories %}
+  <nav class="project-category-nav" aria-labelledby="project-category-nav-label" data-reveal>
+    <span id="project-category-nav-label" class="sr-only">
+      <span class="lang-en-only">Project categories</span><span class="lang-zh-only">项目分类</span>
+    </span>
+    <ul class="project-category-nav__list">
+      {% for category in page.display_categories %}
+        {% assign cat_label = category %}
+        {% case category %}
+          {% when "research" %}{% assign cat_label = '<span class="lang-en-only">Research</span><span class="lang-zh-only">研究</span>' %}
+          {% when "robomaster" %}{% assign cat_label = '<span class="lang-en-only">RoboMaster</span><span class="lang-zh-only">RoboMaster</span>' %}
+          {% when "coursework" %}{% assign cat_label = '<span class="lang-en-only">Coursework</span><span class="lang-zh-only">课设</span>' %}
+          {% when "year-project" %}{% assign cat_label = '<span class="lang-en-only">Year Project</span><span class="lang-zh-only">学年项目</span>' %}
+        {% endcase %}
+        <li class="project-category-nav__item">
+          <a class="project-category-nav__link" href="#{{ category }}">{{ cat_label }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+
   <!-- Display categorized projects -->
-  {% for category in page.display_categories %}
-  {% assign cat_label = category %}
-  {% case category %}
-    {% when "research" %}{% assign cat_label = '<span class="lang-en-only">Research</span><span class="lang-zh-only">研究</span>' %}
-    {% when "robomaster" %}{% assign cat_label = '<span class="lang-en-only">RoboMaster</span><span class="lang-zh-only">RoboMaster</span>' %}
-    {% when "coursework" %}{% assign cat_label = '<span class="lang-en-only">Coursework</span><span class="lang-zh-only">课设</span>' %}
-    {% when "year-project" %}{% assign cat_label = '<span class="lang-en-only">Year Project</span><span class="lang-zh-only">学年项目</span>' %}
-  {% endcase %}
-  <a id="{{ category }}" href=".#{{ category }}" data-reveal>
-    <h2 class="category">{{ cat_label }}</h2>
-  </a>
+
+{% for category in page.display_categories %}
+{% assign cat_label = category %}
+{% case category %}
+{% when "research" %}{% assign cat_label = '<span class="lang-en-only">Research</span><span class="lang-zh-only">研究</span>' %}
+{% when "robomaster" %}{% assign cat_label = '<span class="lang-en-only">RoboMaster</span><span class="lang-zh-only">RoboMaster</span>' %}
+{% when "coursework" %}{% assign cat_label = '<span class="lang-en-only">Coursework</span><span class="lang-zh-only">课设</span>' %}
+{% when "year-project" %}{% assign cat_label = '<span class="lang-en-only">Year Project</span><span class="lang-zh-only">学年项目</span>' %}
+{% endcase %}
+
+  <section class="project-section" aria-labelledby="{{ category }}">
+  <h2 id="{{ category }}" class="category" data-reveal>{{ cat_label }}</h2>
   {% assign categorized_projects = site.projects | where: "category", category %}
   {% assign sorted_projects = categorized_projects | sort: "importance" %}
   <!-- Generate cards for each project -->
@@ -53,6 +74,7 @@ horizontal: false
     {% endfor %}
   </div>
   {% endif %}
+  </section>
   {% endfor %}
 
 {% else %}

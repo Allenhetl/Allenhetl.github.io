@@ -12,8 +12,8 @@ description: '<span class="lang-en-only">A few frames I have taken — light, ci
   {% assign photos = "photo-01,photo-02,photo-03,photo-04,photo-05,photo-06,photo-07,photo-08,photo-09,photo-10,photo-11,photo-12,photo-13,photo-14,photo-15" | split: "," %}
   {% for photo in photos %}
     {% capture photo_path %}assets/img/photography/{{ photo }}.jpg{% endcapture %}
-    <figure class="photo-item">
-      {% include figure.liquid loading="lazy" path=photo_path class="img-fluid" zoomable=true alt="Photograph by HE Tianlun" %}
-    </figure>
+    <div class="photo-item">
+      {% include figure.liquid loading="lazy" path=photo_path sizes="(max-width: 575px) 95vw, (max-width: 991px) 46vw, 30vw" class="img-fluid" zoomable=true alt="Photograph by HE Tianlun" %}
+    </div>
   {% endfor %}
 </div>

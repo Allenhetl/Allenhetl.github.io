@@ -1,9 +1,11 @@
 {% assign card_layout = project.card_layout | default: 'standard' | slugify %}
 {% assign card_fit = project.card_fit | default: 'cover' | slugify %}
 {% assign card_loading = 'lazy' %}
+{% assign card_fetchpriority = '' %}
 {% assign card_sizes = '(min-width: 992px) 30vw, (min-width: 576px) 50vw, 95vw' %}
 {% if card_layout == 'featured' %}
   {% assign card_loading = 'eager' %}
+  {% assign card_fetchpriority = 'high' %}
   {% assign card_sizes = '(min-width: 1200px) 540px, (min-width: 992px) 52vw, (min-width: 768px) 690px, calc(100vw - 30px)' %}
 {% elsif category == 'research' or category == 'year-project' %}
   {% assign card_sizes = '(min-width: 1200px) 440px, (min-width: 768px) 46vw, calc(100vw - 30px)' %}
@@ -30,6 +32,7 @@
             sizes=card_sizes
             alt=card_alt
             class="card-img-top"
+            fetchpriority=card_fetchpriority
           %}
         </div>
       {% endif %}
