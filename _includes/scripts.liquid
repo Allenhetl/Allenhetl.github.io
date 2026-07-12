@@ -13,7 +13,7 @@
   crossorigin="anonymous"
 ></script>
 
-{% if site.enable_masonry %}
+{% if site.enable_masonry or page.masonry %}
   <!-- Masonry & imagesLoaded -->
   <script
     defer
@@ -195,7 +195,7 @@
   <script async src="https://badge.dimensions.ai/badge.js"></script>
 {% endif %}
 
-{% if site.enable_math %}
+{% if site.enable_math or page.math %}
   <!-- MathJax -->
   <script
     defer
@@ -380,8 +380,10 @@
 <!-- Scroll-reveal (Technical Blueprint motion layer) -->
 <script defer src="{{ '/assets/js/reveal.js' | relative_url | bust_file_cache }}"></script>
 
-<!-- Restrained custom cursor (fine-pointer devices only) -->
-<script defer src="{{ '/assets/js/cursor.js' | relative_url | bust_file_cache }}"></script>
+{% if layout.name == 'about' or page.layout == 'about' %}
+  <!-- Restrained custom cursor (fine-pointer devices only) -->
+  <script defer src="{{ '/assets/js/cursor.js' | relative_url | bust_file_cache }}"></script>
+{% endif %}
 
 <!-- Navbar scroll state (clean at top, lands on scroll) -->
 <script defer src="{{ '/assets/js/navbar-scroll.js' | relative_url | bust_file_cache }}"></script>
@@ -389,8 +391,10 @@
 <!-- Heading anchor links (copy deep link to a section) -->
 <script defer src="{{ '/assets/js/heading-anchors.js' | relative_url | bust_file_cache }}"></script>
 
-<!-- Corner 3D robot companion (lazy-loads model-viewer; desktop only) -->
-<script defer src="{{ '/assets/js/companion.js' | relative_url | bust_file_cache }}"></script>
+{% if layout.name == 'about' or page.layout == 'about' %}
+  <!-- Corner 3D robot companion (lazy-loads model-viewer; desktop only) -->
+  <script defer src="{{ '/assets/js/companion.js' | relative_url | bust_file_cache }}"></script>
+{% endif %}
 
 <!--
   Living blueprint: pointer spotlight + coordinate readout. Homepage
