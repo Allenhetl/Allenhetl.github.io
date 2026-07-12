@@ -2,7 +2,11 @@
 layout: page
 title: '<span class="lang-en-only">4D World Model (MVISTA-4D)</span><span class="lang-zh-only">4D 世界模型 (MVISTA-4D)</span>'
 description: '<span class="lang-en-only">View-consistent 4D world model for robotic manipulation — ICML 2026.</span><span class="lang-zh-only">面向机器人操作的视角一致 4D 世界模型 — ICML 2026。</span>'
-img: assets/img/projects/research/worldmodel.svg
+img: assets/img/projects/research/mvista4d-multiview.png
+card_layout: featured
+card_fit: cover
+card_pos: center 50%
+card_alt: Multi-view RGB, depth, point-cloud, simulation, and real-robot frames from MVISTA-4D
 importance: 1
 category: research
 timeframe: 2025–2026

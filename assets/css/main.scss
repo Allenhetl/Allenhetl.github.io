@@ -1944,3 +1944,707 @@ html[data-theme="dark"] #companion {
     display: none !important;
   }
 }
+
+/* ============================================================
+   NON-HOME EDITORIAL REFINEMENT
+   Quiet hierarchy for index and detail pages. The homepage keeps
+   its existing hero and section treatment through .home-header.
+   ============================================================ */
+
+.post-header:not(.home-header) {
+  margin-bottom: 2rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--global-divider-color);
+}
+
+.post-header:not(.home-header) .post-title {
+  margin-bottom: 0.35rem;
+  font-size: 2.25rem;
+  font-weight: 750;
+  line-height: 1.15;
+  letter-spacing: 0;
+}
+
+.post-header:not(.home-header) .post-description {
+  max-width: 46rem;
+  margin: 0.55rem 0 0;
+  color: var(--global-text-color-light);
+  font-size: 0.96rem;
+  line-height: 1.6;
+}
+
+.post-header:not(.home-header) .cv-download {
+  display: inline-flex;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-top: -0.15rem;
+  align-items: center;
+  justify-content: center;
+  color: var(--global-text-color-light);
+  border: 1px solid var(--global-divider-color);
+  border-radius: 6px;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+.post-header:not(.home-header) .cv-download:hover {
+  color: var(--global-theme-color);
+  border-color: var(--global-theme-color);
+  background: var(--accent-wash);
+}
+
+/* Restore document-style headings on detail pages. The numbered,
+   uppercase treatment remains exclusive to the homepage sections. */
+.post-header:not(.home-header) + article {
+  counter-reset: none;
+}
+
+.post-header:not(.home-header) + article > h2 {
+  display: block;
+  margin: 2.5rem 0 1rem;
+  padding: 0 0 0.55rem;
+  color: var(--global-text-color);
+  border-bottom: 1px solid var(--global-divider-color);
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.post-header:not(.home-header) + article > h2::before {
+  display: none;
+}
+
+.post-header:not(.home-header) + article > h3,
+.post-header:not(.home-header) + article > h4 {
+  margin-top: 2rem;
+  letter-spacing: 0;
+}
+
+.post-header:not(.home-header) + article > .lang-en-only,
+.post-header:not(.home-header) + article > .lang-zh-only {
+  max-width: 48rem;
+  line-height: 1.75;
+}
+
+/* Project index */
+.post-header:not(.home-header) + article .projects h2.category {
+  display: flex;
+  margin: 2.25rem 0 1rem;
+  padding: 0 0 0.65rem;
+  align-items: center;
+  gap: 0.65rem;
+  color: var(--global-text-color);
+  border-bottom: 1px solid var(--global-divider-color);
+  font-size: 1.22rem;
+  line-height: 1.35;
+  letter-spacing: 0;
+  text-align: left;
+}
+
+.post-header:not(.home-header) + article .projects h2.category::before {
+  width: 3px;
+  height: 1rem;
+  margin: 0;
+  border-radius: 1px;
+}
+
+.post-header:not(.home-header) + article .project-grid {
+  margin-right: -0.5rem;
+  margin-left: -0.5rem;
+}
+
+.post-header:not(.home-header) + article .project-grid > .col {
+  margin-bottom: 1rem;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+/* Research projects use an editorial hierarchy: the accepted paper is
+   featured, while ongoing work remains easy to compare below it. */
+.post-header:not(.home-header) + article .project-grid--research > .project-card-col {
+  width: 50%;
+  max-width: 50%;
+  flex: 0 0 50%;
+}
+
+.post-header:not(.home-header) + article .project-grid--research > .project-card-col--featured {
+  width: 100%;
+  max-width: 100%;
+  flex-basis: 100%;
+}
+
+.post-header:not(.home-header) + article .project-card-link {
+  display: block;
+  height: 100%;
+  color: inherit;
+}
+
+.post-header:not(.home-header) + article .projects .card {
+  border: 1px solid var(--global-divider-color);
+  border-radius: 8px;
+  background: var(--global-card-bg-color);
+  box-shadow: 0 1px 2px rgba(20, 22, 45, 0.05);
+}
+
+html[data-theme="dark"] .post-header:not(.home-header) + article .projects .card {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+}
+
+.post-header:not(.home-header) + article .projects .card::before {
+  display: none;
+}
+
+.post-header:not(.home-header) + article .projects .card-img-wrap {
+  display: block;
+  overflow: hidden;
+  border-bottom: 1px solid var(--global-divider-color);
+  background: var(--accent-wash);
+}
+
+.post-header:not(.home-header) + article .projects .card-img-wrap figure,
+.post-header:not(.home-header) + article .projects .card-img-wrap picture {
+  display: block;
+  margin: 0;
+}
+
+.post-header:not(.home-header) + article .project-grid--research .card-img-wrap {
+  aspect-ratio: 16 / 9;
+}
+
+.post-header:not(.home-header) + article .project-grid--coursework .card-img-wrap {
+  aspect-ratio: 16 / 9;
+}
+
+.post-header:not(.home-header) + article .project-grid--robomaster .card-img-wrap {
+  aspect-ratio: 3 / 2;
+}
+
+.post-header:not(.home-header) + article .project-grid--year-project .card-img-wrap {
+  aspect-ratio: 4 / 3;
+}
+
+.post-header:not(.home-header) + article .project-grid--research .card-img-wrap figure,
+.post-header:not(.home-header) + article .project-grid--research .card-img-wrap picture,
+.post-header:not(.home-header) + article .project-grid--coursework .card-img-wrap figure,
+.post-header:not(.home-header) + article .project-grid--coursework .card-img-wrap picture,
+.post-header:not(.home-header) + article .project-grid--robomaster .card-img-wrap figure,
+.post-header:not(.home-header) + article .project-grid--robomaster .card-img-wrap picture,
+.post-header:not(.home-header) + article .project-grid--year-project .card-img-wrap figure,
+.post-header:not(.home-header) + article .project-grid--year-project .card-img-wrap picture {
+  width: 100%;
+  height: 100%;
+}
+
+.post-header:not(.home-header) + article .projects .card img.card-img-top {
+  height: 12.5rem;
+  border-radius: 0;
+  transition: transform var(--dur-base) var(--ease-standard);
+}
+
+.post-header:not(.home-header) + article .project-grid--research .card img.card-img-top,
+.post-header:not(.home-header) + article .project-grid--coursework .card img.card-img-top,
+.post-header:not(.home-header) + article .project-grid--robomaster .card img.card-img-top,
+.post-header:not(.home-header) + article .project-grid--year-project .card img.card-img-top {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.post-header:not(.home-header) + article .projects .card-img-wrap--contain img.card-img-top {
+  padding: clamp(0.45rem, 1vw, 0.8rem);
+  object-fit: contain;
+  background: color-mix(in srgb, var(--global-card-bg-color) 88%, var(--global-bg-color));
+}
+
+.post-header:not(.home-header) + article .projects .card .card-body {
+  display: flex;
+  min-height: 10.5rem;
+  padding: 1rem 1.05rem 1.1rem;
+  flex-direction: column;
+}
+
+.post-header:not(.home-header) + article .projects .card .card-title {
+  margin-bottom: 0.45rem;
+  font-size: 1.05rem;
+  line-height: 1.38;
+  letter-spacing: 0;
+}
+
+.post-header:not(.home-header) + article .projects .card .card-text {
+  margin-bottom: 0;
+  color: var(--global-text-color-light);
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.post-header:not(.home-header) + article .projects .card .card-meta {
+  order: -1;
+  margin-bottom: 0.5rem;
+  color: var(--global-theme-color);
+  font-size: 0.7rem;
+}
+
+.post-header:not(.home-header) + article .project-card-link:hover .card,
+.post-header:not(.home-header) + article .project-card-link:focus-visible .card {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--global-theme-color) 45%, var(--global-divider-color));
+  box-shadow: 0 12px 28px -20px var(--accent-glow);
+}
+
+.post-header:not(.home-header) + article .project-card-link:hover .card img.card-img-top,
+.post-header:not(.home-header) + article .project-card-link:focus-visible .card img.card-img-top {
+  transform: scale(1.02);
+}
+
+.post-header:not(.home-header) + article .projects .project-card-link:hover .card-img-wrap--contain img.card-img-top,
+.post-header:not(.home-header) + article .projects .project-card-link:focus-visible .card-img-wrap--contain img.card-img-top {
+  transform: none;
+}
+
+@media (min-width: 992px) {
+  .post-header:not(.home-header) + article .project-grid--research .project-card-col--featured .card {
+    display: grid;
+    grid-template-columns: minmax(0, 1.45fr) minmax(19rem, 1fr);
+  }
+
+  .post-header:not(.home-header) + article .project-grid--research .project-card-col--featured .card-img-wrap {
+    min-height: 18rem;
+    border-right: 1px solid var(--global-divider-color);
+    border-bottom: 0;
+    aspect-ratio: auto;
+  }
+
+  .post-header:not(.home-header) + article .project-grid--research .project-card-col--featured .card-body {
+    min-height: 18rem;
+    padding: 1.35rem 1.5rem;
+    justify-content: center;
+  }
+
+  .post-header:not(.home-header) + article .project-grid--research .project-card-col--featured .card-title {
+    font-size: 1.28rem;
+  }
+
+  .post-header:not(.home-header) + article .project-grid--research .project-card-col--featured .card-text {
+    font-size: 0.94rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .post-header:not(.home-header) + article .project-grid--research > .project-card-col {
+    width: 100%;
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+
+  .post-header:not(.home-header) + article .project-grid--research .card img.card-img-top,
+  .post-header:not(.home-header) + article .project-grid--coursework .card img.card-img-top,
+  .post-header:not(.home-header) + article .project-grid--robomaster .card img.card-img-top,
+  .post-header:not(.home-header) + article .project-grid--year-project .card img.card-img-top {
+    height: 100%;
+  }
+}
+
+.post-header:not(.home-header) + article .project-card-link:focus-visible {
+  border-radius: 8px;
+}
+
+/* Publications */
+.post-header:not(.home-header) + article #bibsearch {
+  width: min(100%, 30rem);
+  min-height: 2.75rem;
+  padding: 0.6rem 0.8rem;
+  color: var(--global-text-color);
+  border: 1px solid var(--global-divider-color);
+  border-radius: 6px;
+  background: var(--global-card-bg-color);
+  box-shadow: none;
+}
+
+.post-header:not(.home-header) + article #bibsearch:focus {
+  border-color: var(--global-theme-color);
+}
+
+.post-header:not(.home-header) + article .publications {
+  margin-top: 1.75rem;
+}
+
+.post-header:not(.home-header) + article .publications h2.bibliography {
+  display: flex;
+  margin: 2.25rem 0 0.4rem;
+  padding: 0;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--global-text-color-light);
+  border: 0;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-align: left;
+}
+
+.post-header:not(.home-header) + article .publications h2.bibliography::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: var(--global-divider-color);
+}
+
+.post-header:not(.home-header) + article .publications h2.bibliography span {
+  font-size: inherit;
+}
+
+.post-header:not(.home-header) + article .publications ol.bibliography > li {
+  margin: 0;
+  padding: 1.35rem 0;
+  border-bottom: 1px solid var(--global-divider-color);
+}
+
+.post-header:not(.home-header) + article .publications ol.bibliography > li:last-child {
+  border-bottom: 0;
+}
+
+.post-header:not(.home-header) + article .publications .abbr figure {
+  margin: 0;
+}
+
+.post-header:not(.home-header) + article .publications .preview {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 6px !important;
+  box-shadow: none;
+}
+
+.post-header:not(.home-header) + article .publications .title {
+  margin-bottom: 0.35rem;
+  font-family: var(--font-display);
+  font-size: 1.08rem;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0;
+}
+
+.post-header:not(.home-header) + article .publications .author,
+.post-header:not(.home-header) + article .publications .periodical {
+  color: var(--global-text-color-light);
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.post-header:not(.home-header) + article .publications .links {
+  display: flex;
+  margin-top: 0.65rem;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.post-header:not(.home-header) + article .publications .links a.btn {
+  display: inline-flex;
+  min-height: 2rem;
+  margin: 0;
+  padding: 0.3rem 0.65rem;
+  align-items: center;
+  color: var(--global-text-color-light);
+  border-color: var(--global-divider-color);
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.post-header:not(.home-header) + article .publications .links a.btn:hover {
+  color: var(--global-theme-color);
+  border-color: var(--global-theme-color);
+  background: var(--accent-wash);
+}
+
+/* CV: keep the profile as one framed surface; sections read as a
+   continuous document instead of a stack of floating cards. */
+.cv {
+  margin-bottom: 2rem;
+}
+
+.cv > .card {
+  margin-top: 0 !important;
+  padding: 1.4rem 0 !important;
+  border: 0;
+  border-bottom: 1px solid var(--global-divider-color);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.cv > .card:last-child {
+  border-bottom: 0;
+}
+
+.cv > .cv-hero {
+  margin-bottom: 0.5rem !important;
+  padding: 1.1rem !important;
+  border: 1px solid var(--global-divider-color);
+  border-left: 3px solid var(--global-theme-color);
+  border-radius: 8px;
+  background: var(--global-card-bg-color);
+}
+
+.cv-hero-name {
+  font-size: 1.55rem;
+  line-height: 1.25;
+  letter-spacing: 0;
+}
+
+.cv-hero-links {
+  display: flex;
+  margin-top: 0.65rem;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+  font-size: 0.82rem;
+}
+
+.cv-hero-links a {
+  display: inline-flex;
+  min-width: 0;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--global-text-color-light);
+  overflow-wrap: anywhere;
+  text-decoration: none;
+}
+
+.cv-hero-links a:hover {
+  color: var(--global-theme-color);
+}
+
+.cv-hero-links i,
+.cv-hero-meta i {
+  width: 1rem;
+  color: var(--global-theme-color);
+  text-align: center;
+}
+
+.cv .card .card-title {
+  margin-bottom: 0.9rem;
+  padding: 0 0 0 0.7rem;
+  border-bottom: 0;
+  font-size: 1.12rem;
+  line-height: 1.35;
+  letter-spacing: 0;
+}
+
+.cv .card .card-title::before {
+  top: 0.16rem;
+  bottom: 0.16rem;
+  width: 3px;
+}
+
+.cv .list-group-item {
+  padding: 1rem 0;
+  border-color: var(--global-divider-color);
+}
+
+.cv .list-group-item:first-child {
+  padding-top: 0.25rem;
+}
+
+.cv .date-column {
+  transform: none;
+}
+
+.cv .badge.danger-color-dark {
+  color: var(--global-theme-color) !important;
+  border: 1px solid color-mix(in srgb, var(--global-theme-color) 35%, transparent);
+  border-radius: 4px;
+  background: var(--accent-tint) !important;
+}
+
+/* Standalone news page; homepage news remains unchanged. */
+.post-header:not(.home-header) + article > .news .table {
+  margin-bottom: 0;
+}
+
+.post-header:not(.home-header) + article > .news .table th[scope="row"] {
+  width: 8.5rem;
+  min-width: 8.5rem;
+  padding-top: 1.2rem;
+  padding-bottom: 1.2rem;
+}
+
+.post-header:not(.home-header) + article > .news .table td {
+  padding-top: 1.15rem;
+  padding-bottom: 1.15rem;
+}
+
+.post-header:not(.home-header) + article > .news .table tbody tr:hover {
+  background: var(--accent-wash);
+}
+
+/* Photography */
+.post-header:not(.home-header) + article .photo-gallery {
+  column-gap: 12px;
+  margin-top: 0;
+}
+
+.post-header:not(.home-header) + article .photo-gallery .photo-item {
+  margin-bottom: 12px;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 8px;
+  background: var(--global-card-bg-color);
+  box-shadow: none;
+}
+
+.post-header:not(.home-header) + article .photo-gallery .photo-item > figure,
+.post-header:not(.home-header) + article .photo-gallery .photo-item picture {
+  display: block;
+  margin: 0;
+}
+
+.post-header:not(.home-header) + article .photo-gallery .photo-item img {
+  border-radius: 7px;
+}
+
+.post-header:not(.home-header) + article .photo-gallery .photo-item:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--global-theme-color) 35%, var(--global-divider-color));
+  box-shadow: 0 12px 28px -22px var(--accent-glow);
+}
+
+/* Project detail media */
+.post-header:not(.home-header) + article > .row {
+  margin-top: 1.5rem;
+  row-gap: 1rem;
+}
+
+.post-header:not(.home-header) + article > figure,
+.post-header:not(.home-header) + article > .row figure {
+  margin: 0;
+}
+
+.post-header:not(.home-header) + article > figure picture,
+.post-header:not(.home-header) + article > .row figure picture {
+  display: block;
+}
+
+.post-header:not(.home-header) + article > figure img,
+.post-header:not(.home-header) + article > .row figure img {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 6px !important;
+  background: var(--global-card-bg-color);
+  box-shadow: 0 10px 26px -22px rgba(20, 22, 45, 0.45);
+}
+
+html[data-theme="dark"] .post-header:not(.home-header) + article > figure img,
+html[data-theme="dark"] .post-header:not(.home-header) + article > .row figure img {
+  box-shadow: 0 10px 26px -22px rgba(0, 0, 0, 0.8);
+}
+
+.post-header:not(.home-header) + article > .caption {
+  margin: 0.65rem 0 1.75rem;
+  padding-left: 0.75rem;
+  color: var(--global-text-color-light);
+  border-left: 2px solid var(--global-theme-color);
+  font-size: 0.78rem;
+  line-height: 1.55;
+  text-align: left;
+}
+
+@media (max-width: 575px) {
+  .post-header:not(.home-header) {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+  }
+
+  .post-header:not(.home-header) .post-title {
+    font-size: 1.85rem;
+    line-height: 1.2;
+  }
+
+  .post-header:not(.home-header) .post-description {
+    font-size: 0.91rem;
+  }
+
+  .post-header:not(.home-header) + article .projects h2.category {
+    margin-top: 1.8rem;
+    font-size: 1.1rem;
+  }
+
+  .post-header:not(.home-header) + article .projects .card img.card-img-top {
+    height: 11rem;
+  }
+
+  .post-header:not(.home-header) + article .project-grid--research .card img.card-img-top,
+  .post-header:not(.home-header) + article .project-grid--coursework .card img.card-img-top,
+  .post-header:not(.home-header) + article .project-grid--robomaster .card img.card-img-top,
+  .post-header:not(.home-header) + article .project-grid--year-project .card img.card-img-top {
+    height: 100%;
+  }
+
+  .post-header:not(.home-header) + article .projects .card .card-body {
+    min-height: 0;
+  }
+
+  .post-header:not(.home-header) + article .publications ol.bibliography > li > .row {
+    display: grid;
+    margin: 0;
+    grid-template-columns: 4.5rem minmax(0, 1fr);
+    gap: 0.9rem;
+  }
+
+  .post-header:not(.home-header) + article .publications .abbr {
+    width: 4.5rem;
+    max-width: 4.5rem;
+    padding: 0;
+  }
+
+  .post-header:not(.home-header) + article .publications [id].col-sm-8,
+  .post-header:not(.home-header) + article .publications [id].col-sm-10 {
+    width: auto;
+    max-width: none;
+    padding: 0;
+  }
+
+  .post-header:not(.home-header) + article .publications .links a.btn {
+    min-height: 2.5rem;
+    padding-right: 0.75rem;
+    padding-left: 0.75rem;
+  }
+
+  .cv > .cv-hero {
+    padding: 0.9rem !important;
+  }
+
+  .cv-hero-name {
+    font-size: 1.3rem;
+  }
+
+  .cv-hero-links {
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .cv .date-column {
+    width: 100%;
+    max-width: none;
+    margin-bottom: 0.45rem;
+    text-align: left !important;
+  }
+
+  .post-header:not(.home-header) + article > .news .table th[scope="row"] {
+    width: 6.25rem;
+    min-width: 6.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .post-header:not(.home-header) + article .project-card-link .card,
+  .post-header:not(.home-header) + article .project-card-link img,
+  .post-header:not(.home-header) + article .photo-gallery .photo-item {
+    transition: none;
+  }
+}

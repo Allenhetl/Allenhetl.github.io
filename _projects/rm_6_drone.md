@@ -19,7 +19,7 @@ The team's aerial support unit — a **13 kg custom quadcopter** that rains fire
 
 <div class="row mt-3">
   <div class="col-sm mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/projects/RoboMaster/6号无人机.JPG" class="img-fluid rounded z-depth-1" zoomable=true %}
+    {% include figure.liquid path="assets/img/projects/RoboMaster/6号无人机.JPG" class="img-fluid rounded z-depth-1" zoomable=true alt="Built custom quadcopter aerial support robot" %}
   </div>
 </div>
 <div class="caption"><span class="lang-en-only">The built quadcopter.</span><span class="lang-zh-only">实机四旋翼。</span></div>

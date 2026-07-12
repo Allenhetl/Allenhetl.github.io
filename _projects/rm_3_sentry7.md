@@ -19,7 +19,7 @@ An earlier single-turret sentry that defends the team's home base on its own. I 
 
 <div class="row mt-3">
   <div class="col-sm mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/projects/RoboMaster/7号哨兵.JPG" class="img-fluid rounded z-depth-1" zoomable=true %}
+    {% include figure.liquid path="assets/img/projects/RoboMaster/7号哨兵.JPG" class="img-fluid rounded z-depth-1" zoomable=true alt="Built Sentry number 7 robot" %}
   </div>
 </div>
 <div class="caption"><span class="lang-en-only">The built sentry.</span><span class="lang-zh-only">实机哨兵。</span></div>

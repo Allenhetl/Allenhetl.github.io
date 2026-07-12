@@ -1,26 +1,40 @@
-<div class="col" data-reveal>
-  <a href="{% if project.redirect %}{{ project.redirect }}{% else %}{{ project.url | relative_url }}{% endif %}">
+{% assign card_layout = project.card_layout | default: 'standard' | slugify %}
+{% assign card_fit = project.card_fit | default: 'cover' | slugify %}
+{% assign card_loading = 'lazy' %}
+{% assign card_sizes = '(min-width: 992px) 30vw, (min-width: 576px) 50vw, 95vw' %}
+{% if card_layout == 'featured' %}
+  {% assign card_loading = 'eager' %}
+  {% assign card_sizes = '(min-width: 1200px) 540px, (min-width: 992px) 52vw, (min-width: 768px) 690px, calc(100vw - 30px)' %}
+{% elsif category == 'research' or category == 'year-project' %}
+  {% assign card_sizes = '(min-width: 1200px) 440px, (min-width: 768px) 46vw, calc(100vw - 30px)' %}
+{% endif %}
+
+<div class="col project-card-col project-card-col--{{ card_layout }}" data-reveal>
+  <a class="project-card-link" href="{% if project.redirect %}{{ project.redirect }}{% else %}{{ project.url | relative_url }}{% endif %}">
     <div class="card h-100 hoverable">
       {% if project.img %}
-        {% assign card_alt = project.title | strip_html | strip %}
+        {% assign card_alt = project.card_alt %}
+        {% unless card_alt %}
+          {% assign card_alt = project.title | regex_replace: '<span class="lang-zh-only">.*?</span>', '' | strip_html | strip %}
+        {% endunless %}
         <div
-          class="card-img-wrap"
+          class="card-img-wrap card-img-wrap--{{ card_fit }}"
           {% if project.card_pos %}
             style="--card-pos: {{ project.card_pos }}"
           {% endif %}
         >
           {%
             include figure.liquid
-            loading="lazy"
+            loading=card_loading
             path=project.img
-            sizes = "(min-width: 992px) 30vw, (min-width: 576px) 50vw, 95vw"
+            sizes=card_sizes
             alt=card_alt
             class="card-img-top"
           %}
         </div>
       {% endif %}
       <div class="card-body">
-        <h2 class="card-title">{{ project.title }}</h2>
+        <h3 class="card-title">{{ project.title }}</h3>
         <p class="card-text">{{ project.description }}</p>
         {% if project.timeframe %}
           <p class="card-meta">{{ project.timeframe }}</p>

@@ -2,7 +2,9 @@
 layout: page
 title: '<span class="lang-en-only">Indoor Semantic Segmentation</span><span class="lang-zh-only">室内结构语义分割</span>'
 description: '<span class="lang-en-only">Point-cloud structural segmentation with Sonata + PTV3, plus a Blender labelling plugin.</span><span class="lang-zh-only">基于 Sonata + PTV3 的点云结构分割，并自研 Blender 标注插件。</span>'
-img: assets/img/projects/research/segmentation.svg
+img: assets/img/projects/research/segmentation-annotation.png
+card_fit: contain
+card_alt: Manually annotated indoor structural point cloud with semantic class colors
 importance: 3
 category: research
 timeframe: 2025–2026

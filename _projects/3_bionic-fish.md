@@ -25,10 +25,10 @@ The compliant tail uses **six 15 mm-spaced ribs** in graded-perforation 1.8 mm P
 
 <div class="row">
     <div class="col-sm">
-        {% include figure.liquid path="assets/img/projects/课设/仿生鱼海报.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid path="assets/img/projects/课设/仿生鱼海报.jpg" class="img-fluid rounded z-depth-1" zoomable=true alt="OpenFish 2.0 bionic fish project poster" %}
     </div>
     <div class="col-sm">
-        {% include figure.liquid path="assets/img/projects/课设/仿生鱼实物.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid path="assets/img/projects/课设/仿生鱼实物.jpg" class="img-fluid rounded z-depth-1" zoomable=true alt="Built OpenFish 2.0 bionic fish prototype" %}
     </div>
 </div>
 <div class="caption"><span class="lang-en-only">Poster (left) and built prototype (right).</span><span class="lang-zh-only">左：项目海报；右：实物样机。</span></div>

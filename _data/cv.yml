@@ -11,7 +11,8 @@ cv:
     (Integrative Systems and Design, Minor in Robotics) — **top 10%** of cohort.
     Embodied-AI researcher focused on **vision-language-action (VLA) models**, **world models**
     for manipulation, and **sim-to-real reinforcement learning**.
-    Co-author of an **ICML 2026** publication. Two-year **Mechanical Lead**
+    Co-author of an **ICML 2026 accepted paper** and currently a **VLA Algorithm Intern**
+    at Mondo Tech. Two-year **Mechanical Lead**
     at HKUST RoboMaster ENTERPRIZE; **RMUC 2024 International Champion**.
 
   social_networks:
@@ -27,17 +28,26 @@ cv:
         studyType: B.Eng., School of Engineering
         start_date: 2023-09
         end_date: 2027-06
-        score: "**Top 10% of cohort** — CGA 3.42 / 4.3, MCGA 3.50 / 4.3"
+        score: "**Top 10% of cohort** — CGA 3.43 / 4.3, MCGA 3.52 / 4.3"
         highlights:
           - "**Major** — Integrative Systems and Design"
           - "**Minor** — Robotics"
           - "**HKSAR Talent Development Scholarship**, 2024/25"
 
     Experience:
+      - company: Mondo Tech (妙动科技)
+        position: VLA Algorithm Intern
+        start_date: 2026-05
+        end_date: present
+        summary: VLA policy training and real-robot deployment for humanoid whole-body control.
+        highlights:
+          - "Trained and deployed upper-level **VLA policies based on GR00T** for humanoid whole-body control, supporting integrated navigation-and-grasp loco-manipulation tasks."
+          - "Designed and implemented an **end-to-end teleoperation data pipeline** (Orin capture → OSS storage → visualisation → training dataset), closing the real-robot data loop for VLA training."
+
       - company: HKUST RoboMaster Team ENTERPRIZE
         position: Head of Mechanical Department
         location: Hong Kong
-        start_date: 2023-11
+        start_date: 2023-09
         end_date: 2025-08
         summary: Mechanical lead for the team representing HKUST in the DJI-organised RoboMaster collegiate robotics championship.
         highlights:
@@ -60,7 +70,7 @@ cv:
 
     Publications:
       - title: "MVISTA-4D: View-Consistent 4D World Model with Test-Time Action Inference for Robotic Manipulation"
-        publisher: ICML 2026
+        publisher: ICML 2026 (Accepted)
         date: 2026-04
         authors: "Jiaxu Wang, Yicheng Jiang, **Tianlun He**, Jingkai Sun, Qiang Zhang, Junhao He, Jiahang Cao, Zesen Gan, Mingyuan Sun, Qiming Shao, Xiangyu Yue"
         url: https://arxiv.org/abs/2602.09878
@@ -77,7 +87,7 @@ cv:
 
       - name: "MVISTA-4D — View-Consistent 4D World Model (ICML 2026)"
         url: https://arxiv.org/abs/2602.09878
-        summary: "*Research assistant, 2025.12 – 2026.02.* Built the physical robot platform, multi-camera calibration / time-sync / cross-view alignment pipeline, and 4D manipulation dataset. Validated *imagine-then-act* on real hardware. Accepted to **ICML 2026**."
+        summary: "*Research assistant, 2026.01 – 2026.02.* Built the physical robot platform, multi-camera calibration / time-sync / cross-view alignment pipeline, and 4D manipulation dataset. Validated *imagine-then-act* on real hardware. Accepted to **ICML 2026**."
 
       - name: "Indoor Structural Semantic Segmentation (Sonata + PTV3)"
         summary: "*Researcher, 2025.12 – 2026.01.* Point-cloud segmentation for ceiling / wall / floor / bay-window / glass classes. Built a Blender-based 3D point-cloud labelling plugin and end-to-end training pipeline (mIoU evaluation, class-imbalance tuning)."

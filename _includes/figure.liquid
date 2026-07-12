@@ -1,6 +1,7 @@
 {% assign img_path = include.path | remove: '.jpg' | remove: '.jpeg' | remove: '.png' | remove: '.tiff' | remove: '.gif' %}
 {% assign parts = include.path | split: '.' %}
 {% assign ext = parts.last %}
+{% assign figure_alt = include.alt | default: include.title | default: '' | strip_html | strip %}
 
 <figure
   {% if include.slot %}
@@ -38,13 +39,9 @@
       {% endif %}
       {% if include.width %}
         width="{{ include.width }}"
-      {% else %}
-        width="100%"
       {% endif %}
       {% if include.height %}
         height="{{ include.height }}"
-      {% else %}
-        height="auto"
       {% endif %}
       {% if include['min-width'] or include['min-height'] or include['max-width'] or include['max-height'] %}
         style="
@@ -62,9 +59,7 @@
           {% endif %}
         "
       {% endif %}
-      {% if include.alt %}
-        alt="{{ include.alt }}"
-      {% endif %}
+      alt="{{ figure_alt | escape }}"
       {% if include.title %}
         title="{{ include.title }}"
       {% endif %}
@@ -76,7 +71,7 @@
       {% elsif site.lazy_loading_images %}
         loading="lazy"
       {% endif %}
-      onerror="this.onerror=null; $('.responsive-img-srcset').remove();"
+      onerror="this.onerror=null;var picture=this.closest('picture');if(picture){picture.querySelectorAll('.responsive-img-srcset').forEach(function(source){source.remove();});}"
     >
   </picture>
 

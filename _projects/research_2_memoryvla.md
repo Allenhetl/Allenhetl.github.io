@@ -2,7 +2,10 @@
 layout: page
 title: '<span class="lang-en-only">Memory-Augmented VLA</span><span class="lang-zh-only">记忆增强 VLA</span>'
 description: '<span class="lang-en-only">Memory-augmented vision-language-action policy for long-horizon manipulation.</span><span class="lang-zh-only">面向长程操作的记忆增强视觉-语言-动作策略。</span>'
-img: assets/img/projects/research/memoryvla.svg
+img: assets/img/projects/research/memoryvla-hindsight-action.png
+card_fit: cover
+card_pos: center center
+card_alt: Hindsight importance-map prototype with a robot gripper grasping a red block
 importance: 2
 category: research
 timeframe: 2026–

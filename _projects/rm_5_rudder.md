@@ -25,6 +25,6 @@ The low-inertia turret runs **DM4310** motors on both axes: a formula-sized sync
 
 <div class="row mt-3">
   <div class="col-sm mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/projects/RoboMaster/舵轮步兵.JPG" class="img-fluid rounded z-depth-1" zoomable=true %}
+    {% include figure.liquid path="assets/img/projects/RoboMaster/舵轮步兵.JPG" class="img-fluid rounded z-depth-1" zoomable=true alt="Built rudder-wheel infantry robot" %}
   </div>
 </div>

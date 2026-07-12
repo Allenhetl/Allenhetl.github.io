@@ -3,7 +3,7 @@ layout: page
 title: Projects
 nav_html: '<span class="lang-en-only">Projects</span><span class="lang-zh-only">项目</span>'
 permalink: /projects/
-description: Selected research and engineering projects.
+description: '<span class="lang-en-only">Selected research and engineering projects.</span><span class="lang-zh-only">精选研究与工程项目。</span>'
 nav: true
 nav_order: 3
 display_categories: [research, robomaster, year-project, coursework]
@@ -47,7 +47,7 @@ horizontal: false
   {% else %}
     {% assign row_classes = "row-cols-1 row-cols-md-2 row-cols-lg-3" %}
   {% endif %}
-  <div class="row {{ row_classes }} project-grid">
+  <div class="row {{ row_classes }} project-grid project-grid--{{ category | slugify }}">
     {% for project in sorted_projects %}
       {% include projects.liquid %}
     {% endfor %}

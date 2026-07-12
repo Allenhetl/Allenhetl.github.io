@@ -23,20 +23,20 @@ timeframe: 2025.08 – 2025.12
 
 <div class="row">
     <div class="col-sm">
-        {% include figure.liquid path="assets/img/projects/课设/潜水器海报.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid path="assets/img/projects/课设/潜水器海报.png" class="img-fluid rounded z-depth-1" zoomable=true alt="Six-degree-of-freedom underwater robot project poster" %}
     </div>
     <div class="col-sm">
-        {% include figure.liquid path="assets/img/projects/课设/潜水器UI设计.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid path="assets/img/projects/课设/潜水器UI设计.png" class="img-fluid rounded z-depth-1" zoomable=true alt="Operator interface for the underwater robot" %}
     </div>
 </div>
 <div class="caption"><span class="lang-en-only">Project poster (left) and operator UI (right).</span><span class="lang-zh-only">左：项目海报；右：上位机 UI。</span></div>
 
 <div class="row">
     <div class="col-sm">
-        {% include figure.liquid path="assets/img/projects/课设/潜水器分解图.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid path="assets/img/projects/课设/潜水器分解图.png" class="img-fluid rounded z-depth-1" zoomable=true alt="Exploded view of the underwater robot mechanical assembly" %}
     </div>
     <div class="col-sm">
-        {% include figure.liquid path="assets/img/projects/课设/潜水器投掷效果.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+        {% include figure.liquid path="assets/img/projects/课设/潜水器投掷效果.jpg" class="img-fluid rounded z-depth-1" zoomable=true alt="Underwater robot being deployed into the water" %}
     </div>
 </div>
 <div class="caption"><span class="lang-en-only">Exploded mechanical view (left) and field deployment (right).</span><span class="lang-zh-only">左：机械分解图；右：投掷部署效果。</span></div>
