@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: project
 title: '<span class="lang-en-only">Omnidirectional Autonomous Wheelchair</span><span class="lang-zh-only">全向自主移动轮椅</span>'
 description: '<span class="lang-en-only">Team-led Year-2 project — rudder-wheel chassis with LiDAR-based autonomous navigation.</span><span class="lang-zh-only">Year 2 团队负责人项目 — 舵轮底盘 + 激光雷达自主导航。</span>'
 img: assets/img/projects/year-project/轮椅展示图.jpg
@@ -9,6 +9,16 @@ card_alt: Completed omnidirectional autonomous wheelchair with its control displ
 importance: 2
 category: year-project
 timeframe: 2024.09 – 2025.06
+project_status: completed
+project_role:
+  en: "Team Lead · Mechanical Designer"
+  zh: "团队负责人 · 机械设计"
+project_focus:
+  en: "Steering modules · Per-wheel kinematics"
+  zh: "舵轮模块 · 逐轮运动学"
+hero_fit: contain
+hero_pos: center center
+hero_width: compact
 ---
 
 <div class="lang-en-only" markdown="1">
@@ -27,13 +37,10 @@ Year 2 项目（ISDN2002，2024.09 – 2025.06）：**全向自主移动轮椅**
 
 <div class="row">
   <div class="col-sm mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/projects/year-project/轮椅展示图.jpg" class="img-fluid rounded z-depth-1" zoomable=true alt="Completed omnidirectional autonomous wheelchair" %}
-  </div>
-  <div class="col-sm mt-3 mt-md-0">
     {% include figure.liquid path="assets/img/projects/year-project/轮组爆炸图.png" class="img-fluid rounded z-depth-1" zoomable=true alt="Exploded CAD view of the steering-wheel module" %}
   </div>
 </div>
-<div class="caption"><span class="lang-en-only">Left: full platform. Right: wheel module exploded view.</span><span class="lang-zh-only">左：轮椅整机；右：轮组爆炸图。</span></div>
+<div class="caption"><span class="lang-en-only">Exploded CAD view of the steering-wheel module.</span><span class="lang-zh-only">舵轮模块 CAD 爆炸图。</span></div>
 
 <div class="row mt-3">
   <div class="col-sm mt-3 mt-md-0">
@@ -43,4 +50,4 @@ Year 2 项目（ISDN2002，2024.09 – 2025.06）：**全向自主移动轮椅**
     {% include figure.liquid path="assets/img/projects/year-project/轮椅舵轮模块.png" class="img-fluid rounded z-depth-1" zoomable=true alt="CAD rendering of a single steering-wheel module" %}
   </div>
 </div>
-<div class="caption"><span class="lang-en-only">Left: the second-generation drive base — four steering-wheel modules, battery, and control board. Right: CAD of a single steering-wheel module.</span><span class="lang-zh-only">左：第二代驱动底盘——四个舵轮模块、电池与控制板；右：单个舵轮模块的 CAD。</span></div>
+<div class="caption"><span class="lang-en-only">Second-generation drive base with four steering modules, battery, and control board; plus the CAD design of one module.</span><span class="lang-zh-only">第二代驱动底盘（四个舵轮模块、电池与控制板）及单模块 CAD 设计。</span></div>

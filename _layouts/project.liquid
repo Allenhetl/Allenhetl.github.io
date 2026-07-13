@@ -1,0 +1,147 @@
+---
+layout: default
+---
+{% if page._styles %}
+  <style type="text/css">
+    {{ page._styles }}
+  </style>
+{% endif %}
+
+{% assign category_en = page.category | capitalize %}
+{% assign category_zh = page.category %}
+{% case page.category %}
+  {% when 'research' %}
+    {% assign category_en = 'Research' %}
+    {% assign category_zh = '研究' %}
+  {% when 'robomaster' %}
+    {% assign category_en = 'RoboMaster' %}
+    {% assign category_zh = 'RoboMaster' %}
+  {% when 'year-project' %}
+    {% assign category_en = 'Year Project' %}
+    {% assign category_zh = '学年项目' %}
+  {% when 'coursework' %}
+    {% assign category_en = 'Coursework' %}
+    {% assign category_zh = '课设' %}
+{% endcase %}
+
+{% assign status_en = '' %}
+{% assign status_zh = '' %}
+{% case page.project_status %}
+  {% when 'completed' %}
+    {% assign status_en = 'Completed' %}
+    {% assign status_zh = '已完成' %}
+  {% when 'accepted' %}
+    {% assign status_en = 'Accepted' %}
+    {% assign status_zh = '已接收' %}
+  {% when 'ongoing' %}
+    {% assign status_en = 'Ongoing' %}
+    {% assign status_zh = '进行中' %}
+  {% when 'tenure-completed' %}
+    {% assign status_en = 'Tenure completed' %}
+    {% assign status_zh = '任期结束' %}
+{% endcase %}
+
+{% assign hero_path = page.hero_img | default: page.img %}
+{% assign hero_fit = page.hero_fit | default: page.card_fit | default: 'cover' %}
+{% assign hero_pos = page.hero_pos | default: page.card_pos | default: 'center center' %}
+{% assign hero_alt = page.hero_alt | default: page.card_alt %}
+{% if hero_alt == blank %}
+  {% assign hero_alt = page.title | regex_replace: '<span class="lang-zh-only">.*?</span>', '' | strip_html | strip %}
+{% endif %}
+{% assign hero_width_class = '' %}
+{% assign hero_sizes = '(min-width: 960px) 930px, calc(100vw - 30px)' %}
+{% case page.hero_width %}
+  {% when 'compact' %}
+    {% assign hero_width_class = ' project-case__hero--compact' %}
+    {% assign hero_sizes = '(min-width: 768px) 672px, calc(100vw - 30px)' %}
+  {% when 'medium' %}
+    {% assign hero_width_class = ' project-case__hero--medium' %}
+    {% assign hero_sizes = '(min-width: 768px) 544px, calc(100vw - 30px)' %}
+  {% when 'narrow' %}
+    {% assign hero_width_class = ' project-case__hero--narrow' %}
+    {% assign hero_sizes = '(min-width: 480px) 320px, calc(100vw - 30px)' %}
+{% endcase %}
+
+<div class="post project-case">
+  <header class="post-header project-case__header">
+    <div class="project-case__eyebrow">
+      <a href="{{ '/projects/' | append: '#' | append: page.category | relative_url }}">
+        <span class="lang-en-only">{{ category_en }}</span><span class="lang-zh-only">{{ category_zh }}</span>
+      </a>
+      {% if status_en != blank %}
+        <span class="project-case__eyebrow-separator" aria-hidden="true">/</span>
+        <span class="project-case__status project-case__status--{{ page.project_status }}">
+          <span class="project-case__status-dot" aria-hidden="true"></span>
+          <span class="lang-en-only">{{ status_en }}</span><span class="lang-zh-only">{{ status_zh }}</span>
+        </span>
+      {% endif %}
+    </div>
+    <h1 class="post-title">{{ page.title }}</h1>
+    <p class="post-description">{{ page.description }}</p>
+  </header>
+
+  <article class="project-case__article project-detail">
+    <div
+      class="project-case__hero project-case__hero--{{ hero_fit }}{{ hero_width_class }}{% if page.hero_ratio == 'wide' %} project-case__hero--wide{% endif %}"
+      style="--project-hero-position: {{ hero_pos }}; --project-hero-scale: {{ page.hero_zoom | default: 1 }};"
+    >
+      {%
+        include figure.liquid
+        path=hero_path
+        class="project-case__hero-image"
+        zoomable=true
+        loading="eager"
+        fetchpriority="high"
+        sizes=hero_sizes
+        alt=hero_alt
+      %}
+    </div>
+
+    <span id="project-overview-label" class="sr-only">
+      <span class="lang-en-only">Project overview</span><span class="lang-zh-only">项目概览</span>
+    </span>
+    <dl class="project-case__facts" aria-labelledby="project-overview-label">
+      <div class="project-case__fact">
+        <dt><span class="lang-en-only">Role</span><span class="lang-zh-only">角色</span></dt>
+        <dd>
+          <span class="lang-en-only">{{ page.project_role.en }}</span><span class="lang-zh-only">{{ page.project_role.zh }}</span>
+        </dd>
+      </div>
+      <div class="project-case__fact">
+        <dt><span class="lang-en-only">Timeline</span><span class="lang-zh-only">时间</span></dt>
+        <dd>{{ page.timeframe }}</dd>
+      </div>
+      <div class="project-case__fact project-case__fact--focus">
+        <dt><span class="lang-en-only">Focus</span><span class="lang-zh-only">技术重点</span></dt>
+        <dd>
+          <span class="lang-en-only">{{ page.project_focus.en }}</span><span class="lang-zh-only">{{ page.project_focus.zh }}</span>
+        </dd>
+      </div>
+    </dl>
+
+    <h2 class="project-case__details-title"><span class="lang-en-only">Project Details</span><span class="lang-zh-only">项目详情</span></h2>
+
+    {{ content }}
+
+    <nav class="project-case__back" aria-labelledby="project-navigation-label">
+      <span id="project-navigation-label" class="sr-only">
+        <span class="lang-en-only">Project navigation</span><span class="lang-zh-only">项目导航</span>
+      </span>
+      <a href="{{ '/projects/' | append: '#' | append: page.category | relative_url }}">
+        <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+        <span class="lang-en-only">Back to {{ category_en }}</span><span class="lang-zh-only">返回{{ category_zh }}</span>
+      </a>
+    </nav>
+  </article>
+
+  {% if page.related_publications %}
+    <h2>References</h2>
+    <div class="publications">
+      {% bibliography --cited_in_order %}
+    </div>
+  {% endif %}
+
+  {% if site.giscus and page.giscus_comments %}
+    {% include giscus.liquid %}
+  {% endif %}
+</div>

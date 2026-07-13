@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: project
 title: '<span class="lang-en-only">Bionic Fish</span><span class="lang-zh-only">仿生鱼</span>'
 description: '<span class="lang-en-only">Course project — biologically-inspired underwater swimmer with built prototype.</span><span class="lang-zh-only">课程项目 — 仿生水下游动机器人，含完整实物样机。</span>'
 img: assets/img/projects/课设/仿生鱼海报.jpg
@@ -7,6 +7,17 @@ card_pos: center 30%
 importance: 2
 category: coursework
 timeframe: 2025
+project_status: completed
+project_role:
+  en: "Team Member"
+  zh: "团队成员"
+project_focus:
+  en: "Pull-cord drive · Compliant tail · Embedded control"
+  zh: "拉线驱动 · 柔顺尾部 · 嵌入式控制"
+hero_img: assets/img/projects/课设/仿生鱼实物.jpg
+hero_fit: cover
+hero_pos: center center
+hero_alt: Built OpenFish 2.0 body and actuation prototype
 ---
 
 <div class="lang-en-only" markdown="1">
@@ -23,12 +34,9 @@ The compliant tail uses **six 15 mm-spaced ribs** in graded-perforation 1.8 mm P
 
 </div>
 
-<div class="row">
+<div class="row project-media--wide">
     <div class="col-sm">
         {% include figure.liquid path="assets/img/projects/课设/仿生鱼海报.jpg" class="img-fluid rounded z-depth-1" zoomable=true alt="OpenFish 2.0 bionic fish project poster" %}
     </div>
-    <div class="col-sm">
-        {% include figure.liquid path="assets/img/projects/课设/仿生鱼实物.jpg" class="img-fluid rounded z-depth-1" zoomable=true alt="Built OpenFish 2.0 bionic fish prototype" %}
-    </div>
 </div>
-<div class="caption"><span class="lang-en-only">Poster (left) and built prototype (right).</span><span class="lang-zh-only">左：项目海报；右：实物样机。</span></div>
+<div class="caption"><span class="lang-en-only">OpenFish 2.0 project poster.</span><span class="lang-zh-only">OpenFish 2.0 项目海报。</span></div>

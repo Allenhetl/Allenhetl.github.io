@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: project
 title: '<span class="lang-en-only">Dual-head Sentry</span><span class="lang-zh-only">双头哨兵</span>'
 description: '<span class="lang-en-only">Twin-turret sentry variant — newest iteration.</span><span class="lang-zh-only">双炮塔哨兵新一代 — 最新迭代。</span>'
 img: assets/img/projects/RoboMaster/24壁纸/壁纸双头哨兵.jpg
@@ -9,6 +9,15 @@ card_alt: Team technical poster showing the dual-head sentry robot and twin-turr
 importance: 4
 category: robomaster
 timeframe: 2025
+project_status: completed
+project_role:
+  en: "Mechanical Gimbal Lead"
+  zh: "机械云台负责人"
+project_focus:
+  en: "Twin-turret redundancy · Reliable loading"
+  zh: "双炮塔冗余 · 可靠供弹"
+hero_fit: contain
+hero_pos: center center
 ---
 
 <div class="lang-en-only" markdown="1">
@@ -25,7 +34,7 @@ A sentry only earns its keep if it never jams under fire. The loader pairs a Mar
 
 </div>
 
-<div class="row mt-3">
+<div class="row mt-3 project-media--portrait-pair">
   <div class="col-sm mt-3 mt-md-0">
     {% include figure.liquid path="assets/img/projects/RoboMaster/双头哨兵.png" class="img-fluid rounded z-depth-1" zoomable=true alt="Built dual-head autonomous sentry robot" %}
   </div>
@@ -33,4 +42,4 @@ A sentry only earns its keep if it never jams under fire. The loader pairs a Mar
     {% include figure.liquid path="assets/img/projects/RoboMaster/双头哨兵渲染.jpg" class="img-fluid rounded z-depth-1" zoomable=true alt="Rendered view of the dual-head sentry robot" %}
   </div>
 </div>
-<div class="caption"><span class="lang-en-only">Left: the built sentry. Right: team render.</span><span class="lang-zh-only">左：实机；右：战队渲染图。</span></div>
+<div class="caption"><span class="lang-en-only">Built dual-head sentry and team render.</span><span class="lang-zh-only">双头哨兵实机与战队渲染图。</span></div>

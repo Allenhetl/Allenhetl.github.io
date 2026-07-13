@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: project
 title: '<span class="lang-en-only">Wheel-leg Infantry</span><span class="lang-zh-only">轮腿步兵</span>'
 description: '<span class="lang-en-only">Wheel-leg infantry I led as mechanical designer — Best Knight, RM2025.</span><span class="lang-zh-only">我主导机械设计的串联腿步兵 — RM2025 最佳骑士奖。</span>'
 img: assets/img/projects/RoboMaster/轮腿定妆照.jpg
@@ -9,6 +9,15 @@ card_alt: Studio photograph of the HKUST wheel-leg infantry robot
 importance: 2
 category: robomaster
 timeframe: 2024 – 2025
+project_status: completed
+project_role:
+  en: "Mechanical Lead"
+  zh: "机械负责人"
+project_focus:
+  en: "Wheel-leg mobility · Turret and feeder"
+  zh: "轮腿运动 · 云台与供弹"
+hero_fit: contain
+hero_pos: center center
 ---
 
 <div class="lang-en-only" markdown="1">
@@ -18,10 +27,6 @@ This was my flagship build — a **wheel-leg infantry robot** I owned end to end
 <div class="lang-zh-only" markdown="1">
 这是我最具代表性的作品——一台由我作为机械负责人端到端完成的**轮腿步兵机器人**，也是为战队赢得 RM2025 赛季 **"最佳骑士"** 奖的项目。它的核心思路是兼顾两种形态：平地上像轮式机器人一样高速平稳行进，需要时则展开关节腿，去攀爬台阶、钻过隧道、冲上让普通底盘望而却步的陡坡。
 </div>
-
-{% include figure.liquid path="assets/img/projects/RoboMaster/轮腿定妆照.jpg" class="img-fluid rounded z-depth-1" zoomable=true alt="Wheel-leg infantry competition robot" %}
-
-<div class="caption"><span class="lang-en-only">The competition unit — goose-neck turret over an articulated wheel-leg chassis.</span><span class="lang-zh-only">参赛整机——鹅颈式云台 + 关节式轮腿底盘。</span></div>
 
 <div class="lang-en-only" markdown="1">
 **How it moves.** The articulated legs are cut from 12 mm glass-fiber-reinforced composite and driven by four MG8016E hip joints, with a controlled 800 mm extension range; the wheels run M3508 motors through a custom 19:1 gearbox (~482 RPM). Holding a ~24 kg robot upright on its legs would normally cook the motors, so I solved the statics in MATLAB and offloaded the weight onto a **300 N air spring** — dropping standing motor output to roughly **2 N·m**. The result clears two-level (20 cm) stairs, tunnels, and **43° slopes**, and rights itself from almost any tip-over with about **80%** success.
@@ -45,4 +50,4 @@ This was my flagship build — a **wheel-leg infantry robot** I owned end to end
     {% include figure.liquid path="assets/img/projects/RoboMaster/轮腿尺寸图.png" class="img-fluid rounded z-depth-1" zoomable=true alt="Orthographic mechanical drawings of the wheel-leg infantry robot" %}
   </div>
 </div>
-<div class="caption"><span class="lang-en-only">Left: the Best Knight award shot. Right: mechanical orthographic drawings.</span><span class="lang-zh-only">左：最佳骑士奖颁奖照；右：机械三视图。</span></div>
+<div class="caption"><span class="lang-en-only">Best Knight award photograph and mechanical orthographic drawings.</span><span class="lang-zh-only">最佳骑士奖颁奖照与机械三视图。</span></div>

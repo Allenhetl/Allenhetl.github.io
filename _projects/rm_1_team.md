@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: project
 title: '<span class="lang-en-only">HKUST RoboMaster ENTERPRIZE</span><span class="lang-zh-only">HKUST RoboMaster Enterprize 战队</span>'
 description: '<span class="lang-en-only">Mechanical Department Lead — RMUC 2024 International Champion · 2025 University League Champion</span><span class="lang-zh-only">机械部门负责人 — RMUC 2024 国际赛区冠军 · 2025 高校联盟赛冠军</span>'
 img: assets/img/projects/RoboMaster/合照.jpg
@@ -7,6 +7,16 @@ card_pos: center 46%
 importance: 1
 category: robomaster
 timeframe: 2023.11 – 2025.08
+project_status: tenure-completed
+project_role:
+  en: "Head of Mechanical Department"
+  zh: "机械部门负责人"
+project_focus:
+  en: "Cross-platform robot mechanical systems"
+  zh: "跨平台机器人机械系统"
+hero_fit: contain
+hero_pos: center 46%
+hero_alt: HKUST RoboMaster ENTERPRIZE team group photograph
 ---
 
 <div class="lang-en-only" markdown="1">

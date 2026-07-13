@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: project
 title: '<span class="lang-en-only">Rudder-wheel Infantry</span><span class="lang-zh-only">舵轮步兵</span>'
 description: '<span class="lang-en-only">Steering-wheel-driven infantry chassis.</span><span class="lang-zh-only">舵轮驱动步兵底盘。</span>'
 img: assets/img/projects/RoboMaster/舵轮步兵.JPG
@@ -7,6 +7,17 @@ card_pos: center 56%
 importance: 5
 category: robomaster
 timeframe: 2024 – 2025
+project_status: completed
+project_role:
+  en: "Mechanical Contributor"
+  zh: "机械设计参与"
+project_focus:
+  en: "Swerve steering · Turret–chassis interface"
+  zh: "舵轮转向 · 云台–底盘接口"
+hero_fit: contain
+hero_pos: center 56%
+hero_zoom: 1.85
+hero_alt: Built rudder-wheel infantry robot
 ---
 
 <div class="lang-en-only" markdown="1">
@@ -21,10 +32,4 @@ The low-inertia turret runs **DM4310** motors on both axes: a formula-sized sync
 
 低惯量云台两轴均用 **DM4310** 电机：Yaw 采用按公式定长的同步带（RA5008 交叉滚子轴承），Pitch **不做重力补偿、消除回差**以保证视觉跟踪的灵敏。云台可通过 6 个 XT30 接头与 6 颗螺丝与底盘快速分离，便于场边维护。我负责舵轮转向系统与云台–底盘接口（已开源）。
 
-</div>
-
-<div class="row mt-3">
-  <div class="col-sm mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/projects/RoboMaster/舵轮步兵.JPG" class="img-fluid rounded z-depth-1" zoomable=true alt="Built rudder-wheel infantry robot" %}
-  </div>
 </div>

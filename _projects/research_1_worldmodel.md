@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: project
 title: '<span class="lang-en-only">4D World Model (MVISTA-4D)</span><span class="lang-zh-only">4D 世界模型 (MVISTA-4D)</span>'
 description: '<span class="lang-en-only">View-consistent 4D world model for robotic manipulation — ICML 2026.</span><span class="lang-zh-only">面向机器人操作的视角一致 4D 世界模型 — ICML 2026。</span>'
 img: assets/img/projects/research/mvista4d-multiview.png
@@ -11,6 +11,15 @@ importance: 1
 category: research
 timeframe: 2025–2026
 github:
+project_status: accepted
+project_role:
+  en: "Research Assistant · Co-author"
+  zh: "研究助理 · 共同作者"
+project_focus:
+  en: "Robot platform · Multi-view data pipeline · Real-robot validation"
+  zh: "机器人平台 · 多视角数据流程 · 真机验证"
+hero_fit: contain
+hero_pos: center center
 ---
 
 <div class="lang-en-only" markdown="1">

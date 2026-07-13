@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: project
 title: '<span class="lang-en-only">Indoor Semantic Segmentation</span><span class="lang-zh-only">室内结构语义分割</span>'
 description: '<span class="lang-en-only">Point-cloud structural segmentation with Sonata + PTV3, plus a Blender labelling plugin.</span><span class="lang-zh-only">基于 Sonata + PTV3 的点云结构分割，并自研 Blender 标注插件。</span>'
 img: assets/img/projects/research/segmentation-annotation.png
@@ -9,6 +9,15 @@ importance: 3
 category: research
 timeframe: 2025–2026
 github:
+project_status: completed
+project_role:
+  en: "Researcher"
+  zh: "研究员"
+project_focus:
+  en: "Point-cloud segmentation · Blender annotation tooling"
+  zh: "点云分割 · Blender 标注工具"
+hero_fit: contain
+hero_pos: center center
 ---
 
 <div class="lang-en-only" markdown="1">

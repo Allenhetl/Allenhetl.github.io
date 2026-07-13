@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: project
 title: '<span class="lang-en-only">Memory-Augmented VLA</span><span class="lang-zh-only">记忆增强 VLA</span>'
 description: '<span class="lang-en-only">Memory-augmented vision-language-action policy for long-horizon manipulation.</span><span class="lang-zh-only">面向长程操作的记忆增强视觉-语言-动作策略。</span>'
 img: assets/img/projects/research/memoryvla-hindsight-action.png
@@ -10,6 +10,16 @@ importance: 2
 category: research
 timeframe: 2026–
 github:
+project_status: ongoing
+project_role:
+  en: "Research Lead"
+  zh: "研究负责人"
+project_focus:
+  en: "Bounded memory · Long-horizon VLA"
+  zh: "有界记忆 · 长程 VLA"
+hero_fit: cover
+hero_pos: center center
+hero_width: narrow
 ---
 
 <div class="lang-en-only" markdown="1">
