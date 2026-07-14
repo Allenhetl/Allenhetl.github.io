@@ -62,6 +62,23 @@ layout: default
     {% assign hero_sizes = '(min-width: 480px) 320px, calc(100vw - 30px)' %}
 {% endcase %}
 
+{% assign category_projects = site.projects | where: 'category', page.category | sort: 'importance' %}
+{% assign previous_project = null %}
+{% assign next_project = null %}
+{% assign previous_candidate = null %}
+{% assign current_project_found = false %}
+{% for sibling in category_projects %}
+  {% if current_project_found %}
+    {% assign next_project = sibling %}
+    {% break %}
+  {% elsif sibling.url == page.url %}
+    {% assign previous_project = previous_candidate %}
+    {% assign current_project_found = true %}
+  {% else %}
+    {% assign previous_candidate = sibling %}
+  {% endif %}
+{% endfor %}
+
 <div class="post project-case">
   <header class="post-header project-case__header">
     <div class="project-case__eyebrow">
@@ -119,18 +136,85 @@ layout: default
       </div>
     </dl>
 
-    <h2 class="project-case__details-title"><span class="lang-en-only">Project Details</span><span class="lang-zh-only">项目详情</span></h2>
+    {% if page.project_toc and page.project_toc.size > 1 %}
+      <nav class="project-case__toc" aria-labelledby="project-toc-label">
+        <span id="project-toc-label" class="project-case__toc-title">
+          <span class="lang-en-only">On this page</span><span class="lang-zh-only">本页目录</span>
+        </span>
+        <ol class="project-case__toc-list">
+          {% for item in page.project_toc %}
+            <li>
+              <a href="#{{ item.id | escape }}">
+                <span class="lang-en-only">{{ item.en }}</span><span class="lang-zh-only">{{ item.zh }}</span>
+              </a>
+            </li>
+          {% endfor %}
+        </ol>
+      </nav>
+    {% endif %}
+
+    <h2 id="project-details" class="project-case__details-title">
+      <span class="lang-en-only">Project Details</span><span class="lang-zh-only">项目详情</span>
+    </h2>
 
     {{ content }}
 
-    <nav class="project-case__back" aria-labelledby="project-navigation-label">
+    <nav
+      class="project-case__footer-nav{% unless previous_project %} project-case__footer-nav--no-previous{% endunless %}{% unless next_project %} project-case__footer-nav--no-next{% endunless %}"
+      aria-labelledby="project-navigation-label"
+    >
       <span id="project-navigation-label" class="sr-only">
         <span class="lang-en-only">Project navigation</span><span class="lang-zh-only">项目导航</span>
       </span>
-      <a href="{{ '/projects/' | append: '#' | append: page.category | relative_url }}">
-        <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
-        <span class="lang-en-only">Back to {{ category_en }}</span><span class="lang-zh-only">返回{{ category_zh }}</span>
+
+      {% if previous_project %}
+        <a
+          class="project-case__footer-segment project-case__footer-segment--previous"
+          href="{% if previous_project.redirect %}{{ previous_project.redirect }}{% else %}{{ previous_project.url | relative_url }}{% endif %}"
+        >
+          <span class="project-case__footer-direction">
+            <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+            <span class="lang-en-only">Previous project</span><span class="lang-zh-only">上一个项目</span>
+          </span>
+          <span class="project-case__footer-title">{{ previous_project.title }}</span>
+        </a>
+      {% else %}
+        <span
+          class="project-case__footer-segment project-case__footer-segment--previous project-case__footer-segment--empty"
+          aria-hidden="true"
+        ></span>
+      {% endif %}
+
+      <a
+        class="project-case__footer-segment project-case__footer-segment--index"
+        href="{{ '/projects/' | append: '#' | append: page.category | relative_url }}"
+      >
+        <span class="project-case__footer-direction">
+          <i class="fa-solid fa-table-cells-large" aria-hidden="true"></i>
+          <span class="lang-en-only">Project index</span><span class="lang-zh-only">项目索引</span>
+        </span>
+        <span class="project-case__footer-title">
+          <span class="lang-en-only">{{ category_en }}</span><span class="lang-zh-only">{{ category_zh }}</span>
+        </span>
       </a>
+
+      {% if next_project %}
+        <a
+          class="project-case__footer-segment project-case__footer-segment--next"
+          href="{% if next_project.redirect %}{{ next_project.redirect }}{% else %}{{ next_project.url | relative_url }}{% endif %}"
+        >
+          <span class="project-case__footer-direction">
+            <span class="lang-en-only">Next project</span><span class="lang-zh-only">下一个项目</span>
+            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </span>
+          <span class="project-case__footer-title">{{ next_project.title }}</span>
+        </a>
+      {% else %}
+        <span
+          class="project-case__footer-segment project-case__footer-segment--next project-case__footer-segment--empty"
+          aria-hidden="true"
+        ></span>
+      {% endif %}
     </nav>
   </article>
 
