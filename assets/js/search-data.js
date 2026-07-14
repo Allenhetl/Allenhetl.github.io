@@ -78,7 +78,7 @@ ninja.data = [{
               window.location.href = "/projects/2_magnetic/";
             },},{id: "projects-bionic-fish仿生鱼",
           title: 'Bionic Fish仿生鱼',
-          description: "Course project — biologically-inspired underwater swimmer with built prototype.课程项目 — 仿生水下游动机器人，含完整实物样机。",
+          description: "Course project - biologically inspired underwater swimmer with a built prototype.课程项目 - 仿生水下游动机器人，含完整实物样机。",
           section: "Projects",handler: () => {
               window.location.href = "/projects/3_bionic-fish/";
             },},{id: "projects-6-dof-underwater-autonomous-robot6-自由度水下自主导航机器人",
@@ -93,12 +93,12 @@ ninja.data = [{
               window.location.href = "/projects/5_rfid-cabinet/";
             },},{id: "projects-omnidirectional-autonomous-wheelchair全向自主移动轮椅",
           title: 'Omnidirectional Autonomous Wheelchair全向自主移动轮椅',
-          description: "Team-led Year-2 project — rudder-wheel chassis with LiDAR-based autonomous navigation.Year 2 团队负责人项目 — 舵轮底盘 + 激光雷达自主导航。",
+          description: "Team-led Year-2 project - rudder-wheel chassis with LiDAR-based autonomous navigation.Year 2 团队负责人项目 - 舵轮底盘与激光雷达自主导航。",
           section: "Projects",handler: () => {
               window.location.href = "/projects/6_wheelchair/";
             },},{id: "projects-4d-world-model-mvista-4d-4d-世界模型-mvista-4d",
           title: '4D World Model (MVISTA-4D)4D 世界模型 (MVISTA-4D)',
-          description: "View-consistent 4D world model for robotic manipulation — ICML 2026.面向机器人操作的视角一致 4D 世界模型 — ICML 2026。",
+          description: "View-consistent 4D world model for robotic manipulation - ICML 2026.面向机器人操作的视角一致 4D 世界模型 - ICML 2026。",
           section: "Projects",handler: () => {
               window.location.href = "/projects/research_1_worldmodel/";
             },},{id: "projects-memory-augmented-vla记忆增强-vla",
@@ -118,7 +118,7 @@ ninja.data = [{
               window.location.href = "/projects/rm_1_team/";
             },},{id: "projects-wheel-leg-infantry轮腿步兵",
           title: 'Wheel-leg Infantry轮腿步兵',
-          description: "Wheel-leg infantry I led as mechanical designer — Best Knight, RM2025.我主导机械设计的串联腿步兵 — RM2025 最佳骑士奖。",
+          description: "Serial-leg infantry mechanical system - RM2025 Best Knight.串联腿步兵机械系统 - RM2025 最佳骑士。",
           section: "Projects",handler: () => {
               window.location.href = "/projects/rm_2_wheelleg/";
             },},{id: "projects-sentry-77-号哨兵",
@@ -128,12 +128,12 @@ ninja.data = [{
               window.location.href = "/projects/rm_3_sentry7/";
             },},{id: "projects-dual-head-sentry双头哨兵",
           title: 'Dual-head Sentry双头哨兵',
-          description: "Twin-turret sentry variant — newest iteration.双炮塔哨兵新一代 — 最新迭代。",
+          description: "2024 autonomous sentry with twin firing chains and a field-serviceable gimbal.2024 双发射链路自主哨兵与可快速维护云台。",
           section: "Projects",handler: () => {
               window.location.href = "/projects/rm_4_dualsentry/";
             },},{id: "projects-rudder-wheel-infantry舵轮步兵",
           title: 'Rudder-wheel Infantry舵轮步兵',
-          description: "Steering-wheel-driven infantry chassis.舵轮驱动步兵底盘。",
+          description: "Steering-wheel-driven infantry chassis with a shared modular turret.采用独立舵轮与共享模块化云台的步兵机器人。",
           section: "Projects",handler: () => {
               window.location.href = "/projects/rm_5_rudder/";
             },},{id: "projects-drone-66-号无人机",
