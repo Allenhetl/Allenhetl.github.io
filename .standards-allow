@@ -1,3 +1,6 @@
 # Files this site deliberately exempts from web-standards drift checking.
 # One filename per line ('#' comments allowed). Keep this list short and
-# say why. Currently: none — this site conforms fully.
+# say why.
+# Keeps public application PDFs out of search-engine crawling/indexing while
+# retaining the shared policy that blocks AI training and dataset crawlers.
+robots.txt
