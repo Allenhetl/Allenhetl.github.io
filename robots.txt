@@ -5,9 +5,11 @@
 # A non-Jekyll site should list robots.txt in .standards-allow and ship a
 # static equivalent, or drop the front-matter + Liquid line.
 
-# Search engines: full access (helps people find this site).
+# Search engines: full access (helps people find this site), except for the
+# applicant materials below. They remain available through a direct link but
+# should not be crawled or indexed.
 User-agent: *
-Disallow:
+Disallow: /assets/pdf/application-materials/
 
 # AI training / dataset crawlers: disallowed. This site's content should
 # not be scraped for model training or commercial datasets. (robots.txt
