@@ -13,6 +13,7 @@ permalink: /robots.txt
 # should not be crawled or indexed.
 User-agent: *
 Disallow: /assets/pdf/application-materials/
+Disallow: /assets/pdf/cv-he-tianlun.pdf
 
 # AI training / dataset crawlers: disallowed. This site's content should
 # not be scraped for model training or commercial datasets. (robots.txt
