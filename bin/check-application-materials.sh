@@ -2,7 +2,6 @@
 set -euo pipefail
 
 readonly documents=(
-  "Tianlun_He_CV.pdf"
   "Tianlun_He_Research_Proposal.pdf"
   "Tianlun_He_Research_Proposal_Chinese.pdf"
   "Tianlun_He_Agentic_Robot_Control_Proposal.pdf"
@@ -16,5 +15,11 @@ for document in "${documents[@]}"; do
   test -s "${path}"
   file --brief --mime-type "${path}" | grep -Fx "application/pdf" >/dev/null
 done
+
+# The CV is intentionally private. Keep this check close to the public
+# application-material checks so a future update cannot silently republish it.
+test ! -e "assets/pdf/cv-he-tianlun.pdf"
+test ! -e "${document_dir}/Tianlun_He_CV.pdf"
+test ! -e "_pages/cv.md"
 
 grep -Fx "Disallow: /assets/pdf/application-materials/" robots.txt >/dev/null
