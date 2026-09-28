@@ -42,8 +42,7 @@
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
 
-# Keep the public CV link usable while excluding the PDF itself from search
-# indexes and cached search previews.
+# Keep any stale CV URL out of search indexes during cache propagation.
 /assets/pdf/cv-he-tianlun.pdf
   X-Robots-Tag: noindex, nofollow, noarchive
 

@@ -37,13 +37,6 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/photography/";
           },
-        },{id: "nav-cv",
-          title: "CV",
-          description: "HE Tianlun (Allen) — academic CV.",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/cv/";
-          },
         },{id: "news-joined-hkust-integrative-systems-and-design-isd-with-a-minor-in-robotics-入读香港科技大学-综合系统与设计-isd-专业-辅修机器人方向",
           title: '🎓 Joined HKUST, Integrative Systems and Design (ISD) with a Minor in Robotics.🎓...',
           description: "",
