@@ -34,7 +34,7 @@
       document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
       // Set <html> background-color inline so the very first paint is the right
       // colour even before main.css finishes loading — kills the white flash on
-      // /cv/ and other content-heavy pages when navigating in dark mode.
+      // content-heavy pages when navigating in dark mode.
       document.documentElement.style.backgroundColor = dark ? '#1c1d1f' : '#ffffff';
     } catch (e) {}
   })();

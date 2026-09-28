@@ -22,4 +22,7 @@ test ! -e "assets/pdf/cv-he-tianlun.pdf"
 test ! -e "${document_dir}/Tianlun_He_CV.pdf"
 test ! -e "_pages/cv.md"
 
-grep -Fx "Disallow: /assets/pdf/application-materials/" robots.txt >/dev/null
+grep -Fx "Allow: /" robots.txt >/dev/null
+! grep -q '^Sitemap:' robots.txt
+grep -Fx "  X-Robots-Tag: noindex, nofollow, noarchive, nosnippet" _headers >/dev/null
+grep -Fx '<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">' _includes/metadata.liquid >/dev/null

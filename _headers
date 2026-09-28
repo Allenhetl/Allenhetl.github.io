@@ -8,6 +8,9 @@
 
 /*
   # --- Security ---------------------------------------------------------
+  # This is a private personal site. Keep it accessible by direct URL while
+  # excluding every page and asset from search indexes.
+  X-Robots-Tag: noindex, nofollow, noarchive, nosnippet
   # Disallow being framed by other origins (clickjacking protection).
   X-Frame-Options: SAMEORIGIN
   # Don't let browsers MIME-sniff a response away from the declared type.
@@ -41,10 +44,6 @@
 # Fingerprinted assets (the theme appends ?v=hash) can be cached hard.
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
-
-# Keep any stale CV URL out of search indexes during cache propagation.
-/assets/pdf/cv-he-tianlun.pdf
-  X-Robots-Tag: noindex, nofollow, noarchive
 
 # HTML should always revalidate so content updates show up promptly.
 /*.html
