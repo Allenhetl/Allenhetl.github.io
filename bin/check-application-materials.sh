@@ -21,6 +21,7 @@ done
 test ! -e "assets/pdf/cv-he-tianlun.pdf"
 test ! -e "${document_dir}/Tianlun_He_CV.pdf"
 test ! -e "_pages/cv.md"
+test ! -e "_data/cv.yml"
 
 grep -Fx "Allow: /" robots.txt >/dev/null
 ! grep -q '^Sitemap:' robots.txt
