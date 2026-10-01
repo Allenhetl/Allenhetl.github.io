@@ -2,7 +2,7 @@
 layout: project
 title: '<span class="lang-en-only">Dual-head Sentry</span><span class="lang-zh-only">双头哨兵</span>'
 description: '<span class="lang-en-only">2024 autonomous sentry with twin firing chains and a field-serviceable gimbal.</span><span class="lang-zh-only">2024 双发射链路自主哨兵与可快速维护云台。</span>'
-img: assets/img/projects/RoboMaster/24壁纸/壁纸双头哨兵.jpg
+img: assets/img/projects/RoboMaster/双头哨兵.png
 card_fit: contain
 card_pos: center center
 card_alt: Team technical poster for the 2024 dual-head sentry robot
