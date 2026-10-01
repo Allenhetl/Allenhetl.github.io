@@ -15,10 +15,11 @@
 <script>
   (function () {
     try {
-      // Language
+      // Language — English is the site default when the visitor has never
+      // chosen; an explicit toggle choice is still kept in localStorage.
       var lang = localStorage.getItem('site-lang');
       if (!lang) {
-        lang = (navigator.language || '').toLowerCase().indexOf('zh') === 0 ? 'zh' : 'en';
+        lang = 'en';
       }
       if (lang === 'zh') document.documentElement.classList.add('is-zh');
 
