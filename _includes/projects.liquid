@@ -45,7 +45,16 @@
         {% if project.card_links %}
           <div class="card-link-btns">
             {% for link in project.card_links %}
-              <a class="card-link-btn" href="{{ link.url }}" target="_blank" rel="noopener" onclick="event.stopPropagation()">{{ link.label }}</a>
+              <span
+                class="card-link-btn"
+                role="link"
+                tabindex="0"
+                data-href="{{ link.url }}"
+                onclick="event.stopPropagation(); window.open(this.dataset.href, '_blank', 'noopener')"
+                onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();event.stopPropagation();window.open(this.dataset.href, '_blank', 'noopener')}"
+              >
+                {{- link.label -}}
+              </span>
             {% endfor %}
           </div>
         {% endif %}
