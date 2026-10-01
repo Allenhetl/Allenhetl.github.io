@@ -84,7 +84,7 @@ ninja.data = [{
               window.location.href = "/projects/4_submarine/";
             },},{id: "projects-rfid-smart-reagent-cabinet智能-rfid-试剂柜",
           title: 'RFID Smart Reagent Cabinet智能 RFID 试剂柜',
-          description: "Year project — RFID-based smart-weighing system for laboratory reagent management.学年项目 — 基于 RFID 的实验室药剂智能称重管理系统。",
+          description: "Year project — RFID smart reagent cabinet for automated laboratory inventory.学年项目 — 基于 RFID 的智能试剂柜，实现实验室药剂自动盘点。",
           section: "Projects",handler: () => {
               window.location.href = "/projects/5_rfid-cabinet/";
             },},{id: "projects-omnidirectional-autonomous-wheelchair全向自主移动轮椅",
