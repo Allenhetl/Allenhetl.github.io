@@ -94,11 +94,6 @@ ninja.data = [{
           description: "View-consistent 4D world model for robotic manipulation - ICML 2026.面向机器人操作的视角一致 4D 世界模型 - ICML 2026。",
           section: "Projects",handler: () => {
               window.location.href = "/projects/research_1_worldmodel/";
-            },},{id: "projects-memory-augmented-vla记忆增强-vla",
-          title: 'Memory-Augmented VLA记忆增强 VLA',
-          description: "Memory-augmented vision-language-action policy for long-horizon manipulation.面向长程操作的记忆增强视觉-语言-动作策略。",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/research_2_memoryvla/";
             },},{id: "projects-indoor-semantic-segmentation室内结构语义分割",
           title: 'Indoor Semantic Segmentation室内结构语义分割',
           description: "Point-cloud structural segmentation with Sonata + PTV3, plus a Blender labelling plugin.基于 Sonata + PTV3 的点云结构分割，并自研 Blender 标注插件。",
