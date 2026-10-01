@@ -45,11 +45,11 @@ As a research assistant and co-author, I built the physical robot platform and t
 <h3 id="system"><span class="lang-en-only">System</span><span class="lang-zh-only">系统</span></h3>
 
 <div class="lang-en-only" markdown="1">
-MVISTA-4D conditions on a **single RGB-D view** and predicts geometry-consistent futures across four or more synchronized cameras. A masked-completion strategy allows a model trained with 2-3 views to generalize to 4-5 views, supporting an *imagine-then-act* manipulation pipeline. This work was completed with collaborators from CUHK MMLab, HKUST, HKU, Tsinghua, and X-Humanoid ([arXiv](https://arxiv.org/abs/2602.09878)).
+MVISTA-4D conditions on a **single RGB-D view** and predicts geometry-consistent futures across four or more synchronized cameras. A masked-completion strategy allows a model trained with 2-3 views to generalize to 4-5 views, supporting an *imagine-then-act* manipulation pipeline. This work was completed with collaborators from CUHK MMLab, HKUST, HKU, Tsinghua, and X-Humanoid ([arXiv](https://arxiv.org/abs/2602.09878) · [Project Page](https://mercerai.github.io/MVISTA-4D/)).
 </div>
 
 <div class="lang-zh-only" markdown="1">
-MVISTA-4D 以**单视角 RGB-D** 为条件，预测跨四路以上同步相机的几何一致未来。模型通过掩码补全策略，在 2-3 视角训练后泛化到 4-5 视角，从而支持 *imagine-then-act*（先想象后执行）操作流程。该工作由 CUHK MMLab、香港科技大学、香港大学、清华与 X-Humanoid 合作完成（[arXiv](https://arxiv.org/abs/2602.09878)）。
+MVISTA-4D 以**单视角 RGB-D** 为条件，预测跨四路以上同步相机的几何一致未来。模型通过掩码补全策略，在 2-3 视角训练后泛化到 4-5 视角，从而支持 *imagine-then-act*（先想象后执行）操作流程。该工作由 CUHK MMLab、香港科技大学、香港大学、清华与 X-Humanoid 合作完成（[arXiv](https://arxiv.org/abs/2602.09878) · [项目主页](https://mercerai.github.io/MVISTA-4D/)）。
 </div>
 
 <h3 id="validation"><span class="lang-en-only">Validation</span><span class="lang-zh-only">验证</span></h3>

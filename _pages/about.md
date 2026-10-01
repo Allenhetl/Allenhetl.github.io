@@ -49,7 +49,7 @@ latest_posts:
 
 ## 👋 About Me
 
-Hi! I'm **HE Tianlun (Allen)**, a Year-3 undergraduate at **The Hong Kong University of Science and Technology (HKUST)** (expected graduation **June 2027**), majoring in **Integrative Systems and Design** with a **Minor in Robotics**.
+Hi! I'm **HE Tianlun (Allen)**, a Year-4 undergraduate at **The Hong Kong University of Science and Technology (HKUST)** (expected graduation **June 2027**), majoring in **Integrative Systems and Design** with a **Minor in Robotics**.
 
 My research interests center on **Embodied AI** — particularly **vision-language-action (VLA) models, memory-augmented policies, world models for robotic manipulation, and sim-to-real reinforcement learning**. I am currently working on _Memory-Augmented VLA_, and interning as a **VLA Algorithm Intern** at **Mondo Tech (妙动科技)**, where I train and deploy VLA policies for humanoid whole-body control.
 
@@ -63,7 +63,7 @@ Outside research, I build **LEGO Technic** sets, take photos, and travel when I 
 
 ## 👋 关于我 {#about-me-zh}
 
-你好！我是 **贺天伦（Allen）**，**香港科技大学**大三学生（预计 **2027 年 6 月**毕业），主修**综合系统与设计**，辅修**机器人方向**。
+你好！我是 **贺天伦（Allen）**，**香港科技大学**大四学生（预计 **2027 年 6 月**毕业），主修**综合系统与设计**，辅修**机器人方向**。
 
 我的研究方向集中在**具身智能（Embodied AI）**，包括**视觉-语言-动作（VLA）模型、记忆增强策略、机器人操作的世界模型，以及 sim-to-real 强化学习**。目前在做 _Memory-Augmented VLA_；同时在 **妙动科技（Mondo Tech）**担任 **VLA 算法实习生**，负责面向人形机器人全身控制的 VLA 策略训练与真机部署。
 
