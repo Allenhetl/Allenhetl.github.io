@@ -41,6 +41,9 @@
 
       .preview {
         display: inline-block;
+        max-width: 200px;
+        width: 100%;
+        height: auto;
       }
 
       .abbr {
