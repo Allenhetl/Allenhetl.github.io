@@ -114,8 +114,8 @@ ninja.data = [{
           description: "Serial-leg infantry mechanical system - RM2025 Best Knight.串联腿步兵机械系统 - RM2025 最佳骑士。",
           section: "Projects",handler: () => {
               window.location.href = "/projects/rm_2_wheelleg/";
-            },},{id: "projects-sentry-77-号哨兵",
-          title: 'Sentry #77 号哨兵',
+            },},{id: "projects-sentry哨兵",
+          title: 'Sentry哨兵',
           description: "Auto-targeting sentry robot — mechanical design.自动瞄准哨兵机器人 — 机械设计。",
           section: "Projects",handler: () => {
               window.location.href = "/projects/rm_3_sentry7/";
@@ -129,8 +129,8 @@ ninja.data = [{
           description: "Steering-wheel-driven infantry chassis with a shared modular turret.采用独立舵轮与共享模块化云台的步兵机器人。",
           section: "Projects",handler: () => {
               window.location.href = "/projects/rm_5_rudder/";
-            },},{id: "projects-drone-66-号无人机",
-          title: 'Drone #66 号无人机',
+            },},{id: "projects-drone无人机",
+          title: 'Drone无人机',
           description: "Quadcopter aerial unit for combat support.作战支援四旋翼无人机。",
           section: "Projects",handler: () => {
               window.location.href = "/projects/rm_6_drone/";
