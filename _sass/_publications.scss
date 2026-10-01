@@ -41,9 +41,15 @@
 
       .preview {
         display: inline-block;
-        max-width: 200px;
-        width: 100%;
-        height: auto;
+        width: 200px;
+        max-width: 100%;
+        aspect-ratio: 4 / 3;
+        object-fit: contain;
+        background: var(--global-card-bg-color);
+        border: 1px solid var(--global-divider-color);
+        border-radius: 6px;
+        padding: 4px;
+        box-sizing: border-box;
       }
 
       .abbr {
