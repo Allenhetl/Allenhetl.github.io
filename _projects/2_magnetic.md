@@ -9,9 +9,6 @@ importance: 1
 category: coursework
 timeframe: 2024
 project_status: completed
-project_role:
-  en: "Mechanism Designer & Prototyper"
-  zh: "机构设计与原型开发"
 project_focus:
   en: "Magnetic actuation · Physical and simulated validation"
   zh: "磁力执行 · 实物与仿真验证"

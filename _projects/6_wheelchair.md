@@ -10,9 +10,6 @@ importance: 2
 category: year-project
 timeframe: 2024.09 – 2025.06
 project_status: completed
-project_role:
-  en: "Team Lead · Mechanical Designer"
-  zh: "团队负责人 · 机械设计"
 project_focus:
   en: "Steering modules · Per-wheel kinematics"
   zh: "舵轮模块 · 逐轮运动学"
@@ -31,14 +28,14 @@ A mobility chair must turn in confined indoor spaces while carrying a much large
 移动轮椅需要在狭窄室内空间转向，同时承受远高于小型机器人的载荷与载荷变化。常规差速底盘存在转弯半径与轮胎拖磨问题，因此 Year 2 项目探索了独立舵轮与自主导航的组合方案。
 </div>
 
-<h3 id="role-system"><span class="lang-en-only">Role &amp; System</span><span class="lang-zh-only">职责与系统</span></h3>
+<h3 id="system"><span class="lang-en-only">System</span><span class="lang-zh-only">系统</span></h3>
 
 <div class="lang-en-only" markdown="1">
-As team lead and mechanical designer, I developed the steering-wheel modules and the per-wheel kinematics solver. Given a target chair velocity, the solver resolves each wheel's steering angle and speed while reducing unnecessary steering motion and tire wear. Optical-gate feedback closes the steering loop, and the mechanical structure was topology-optimized around the wheel load. I integrated this work with the navigation team's LiDAR obstacle-avoidance stack.
+The chair runs on custom steering-wheel modules with a per-wheel kinematics solver: given a target chair velocity, the solver resolves each wheel's steering angle and speed while reducing unnecessary steering motion and tire wear. Optical-gate feedback closes the steering loop, and the mechanical structure was topology-optimized around the wheel load. The chassis integrates with a LiDAR obstacle-avoidance stack for autonomous navigation.
 </div>
 
 <div class="lang-zh-only" markdown="1">
-作为团队负责人和机械设计，我开发了舵轮模块与逐轮运动学解算器。解算器根据轮椅目标速度求解各轮的转角与速度，同时减少不必要的转向动作和轮胎磨损。舵向闭环采用光电门反馈，机械结构围绕轮载进行拓扑优化；随后我将底盘工作与导航组的激光雷达避障系统完成集成。
+轮椅采用自研舵轮模块与逐轮运动学解算器：解算器根据目标速度求解各轮的转角与速度，同时减少不必要的转向动作和轮胎磨损。舵向闭环采用光电门反馈，机械结构围绕轮载进行拓扑优化；底盘与激光雷达避障系统集成，实现自主导航。
 </div>
 
 <h3 id="iteration-evidence"><span class="lang-en-only">Iteration Evidence</span><span class="lang-zh-only">迭代证据</span></h3>

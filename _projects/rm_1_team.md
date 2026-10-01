@@ -8,15 +8,17 @@ importance: 1
 category: robomaster
 timeframe: 2023.11 – 2025.08
 project_status: tenure-completed
-project_role:
-  en: "Head of Mechanical Department"
-  zh: "机械部门负责人"
 project_focus:
   en: "Cross-platform robot mechanical systems"
   zh: "跨平台机器人机械系统"
 hero_fit: contain
 hero_pos: center 46%
 hero_alt: HKUST RoboMaster ENTERPRIZE team group photograph
+card_links:
+  - label: "GitHub"
+    url: https://github.com/hkustenterprize
+  - label: "Open Source"
+    url: https://opensource.hkustenterprize.com/
 ---
 
 <div class="lang-en-only" markdown="1">

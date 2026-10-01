@@ -8,9 +8,6 @@ importance: 3
 category: coursework
 timeframe: 2025.08 – 2025.12
 project_status: completed
-project_role:
-  en: "Mechanical & Controls Developer"
-  zh: "机械与控制开发"
 project_focus:
   en: "6-DOF mechanics · Cascade PID · YOLO integration"
   zh: "六自由度机械 · 串级 PID · YOLO 集成"

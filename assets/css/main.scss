@@ -508,6 +508,38 @@ html.transition *::after {
   letter-spacing: 0.01em;
 }
 
+/* ---------- 10b. Card link buttons --------------------------- */
+/* Small pill buttons on project cards linking to external evidence
+   (open-source releases, videos, project pages). Nested inside the
+   card anchor, so stop the click from bubbling to the card link. */
+.projects .card .card-link-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.25rem;
+}
+
+.projects .card .card-link-btn {
+  display: inline-block;
+  font-size: 0.76rem;
+  font-weight: 600;
+  line-height: 1.4;
+  padding: 0.12rem 0.65rem;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 999px;
+  color: var(--global-theme-color);
+  text-decoration: none !important;
+  background: transparent;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.projects .card .card-link-btn:hover {
+  background: var(--global-theme-color);
+  color: var(--global-card-bg-color);
+}
+
 /* ---------- 10. News list ------------------------------------ */
 /* The date is a small uppercase letterspaced label in the accent
    colour — editorial, not a rigid monospace column. Tabular figures

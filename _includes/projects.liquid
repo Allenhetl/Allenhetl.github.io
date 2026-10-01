@@ -42,6 +42,13 @@
         {% if project.timeframe %}
           <p class="card-meta">{{ project.timeframe }}</p>
         {% endif %}
+        {% if project.card_links %}
+          <div class="card-link-btns">
+            {% for link in project.card_links %}
+              <a class="card-link-btn" href="{{ link.url }}" target="_blank" rel="noopener" onclick="event.stopPropagation()">{{ link.label }}</a>
+            {% endfor %}
+          </div>
+        {% endif %}
         <div class="row ml-1 mr-1 p-0">
           {% if project.github %}
             <div class="github-icon">

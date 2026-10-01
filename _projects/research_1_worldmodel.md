@@ -12,14 +12,16 @@ category: research
 timeframe: 2025–2026
 github:
 project_status: accepted
-project_role:
-  en: "Research Assistant · Co-author"
-  zh: "研究助理 · 共同作者"
 project_focus:
   en: "Robot platform · Multi-view data pipeline · Real-robot validation"
   zh: "机器人平台 · 多视角数据流程 · 真机验证"
 hero_fit: contain
 hero_pos: center center
+card_links:
+  - label: "arXiv"
+    url: https://arxiv.org/abs/2602.09878
+  - label: "Project Page"
+    url: https://mercerai.github.io/MVISTA-4D/
 ---
 
 <h3 id="problem"><span class="lang-en-only">Problem</span><span class="lang-zh-only">问题</span></h3>

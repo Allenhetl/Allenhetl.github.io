@@ -10,14 +10,16 @@ importance: 2
 category: robomaster
 timeframe: 2024 – 2025
 project_status: completed
-project_role:
-  en: "Mechanical Lead"
-  zh: "机械负责人"
 project_focus:
   en: "Serial-leg mobility · Turret · Central feeder"
   zh: "串联腿运动 · 云台 · 中心供弹"
 hero_fit: contain
 hero_pos: center center
+card_links:
+  - label: "Open Source"
+    url: https://bbs.robomaster.com/article/764738
+  - label: "Video"
+    url: https://www.bilibili.com/video/BV1ZqbjzAEpd/
 project_toc:
   - id: project-details
     en: Overview
@@ -25,9 +27,6 @@ project_toc:
   - id: problem
     en: Problem
     zh: 问题
-  - id: role
-    en: My Role
-    zh: 我的职责
   - id: system
     en: System
     zh: 系统
@@ -44,16 +43,6 @@ RM2025 introduced a 20 cm road step, consecutive two-level steps, a tunnel, and 
 
 <div class="lang-zh-only" markdown="1">
 RM2025 新增了 20 cm 公路台阶、连续两级台阶、隧道和 43° 斜坡，同时将每队步兵数量从三台减为两台而不减少总载弹量。战队原有的并联五连杆轮腿难以适应新的台阶，因此需要一台同时兼顾地形通过性、大载弹量和赛场可维护性的机器人。
-</div>
-
-<h3 id="role"><span class="lang-en-only">My Role</span><span class="lang-zh-only">我的职责</span></h3>
-
-<div class="lang-en-only" markdown="1">
-I led the mechanical development across the serial-leg chassis, goose-neck turret, and central feeder, then integrated those subsystems with the embedded and vision teams. The team's open-source report assigns me 30% of the recorded contribution and identifies these three mechanical systems as my responsibility. The work covered architecture selection, CAD, component sizing, packaging, assembly, iteration, and release documentation.
-</div>
-
-<div class="lang-zh-only" markdown="1">
-我负责串联腿底盘、鹅颈云台和中心供弹三部分的机械开发，并与嵌入式、视觉团队完成系统集成。战队开源报告将这三套机械系统明确列为我的职责，并记录我的贡献度为 30%。工作覆盖构型选择、CAD、元件选型与尺寸设计、空间布局、装配迭代和开源文档整理。
 </div>
 
 <h3 id="system"><span class="lang-en-only">System</span><span class="lang-zh-only">系统</span></h3>

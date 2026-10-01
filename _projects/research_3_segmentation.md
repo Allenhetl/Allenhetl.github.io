@@ -10,9 +10,6 @@ category: research
 timeframe: 2025–2026
 github:
 project_status: completed
-project_role:
-  en: "Researcher"
-  zh: "研究员"
 project_focus:
   en: "Point-cloud segmentation · Blender annotation tooling"
   zh: "点云分割 · Blender 标注工具"
@@ -21,7 +18,7 @@ hero_pos: center center
 ---
 
 <div class="lang-en-only" markdown="1">
-*Researcher, 2025.12 – 2026.01.*
+*2025.12 – 2026.01.*
 
 Point-cloud semantic segmentation for indoor structural classes — **ceiling / wall / floor / bay-window / glass**.
 
@@ -30,7 +27,7 @@ Point-cloud semantic segmentation for indoor structural classes — **ceiling / 
 </div>
 
 <div class="lang-zh-only" markdown="1">
-*研究员，2025.12 – 2026.01。*
+*2025.12 – 2026.01。*
 
 面向室内结构类别的点云语义分割——**天花板 / 墙面 / 地面 / 飘窗 / 玻璃**。
 

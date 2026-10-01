@@ -10,9 +10,6 @@ importance: 1
 category: year-project
 timeframe: 2024.10 – 2025.01
 project_status: completed
-project_role:
-  en: "Mechanical Design Lead"
-  zh: "机械设计负责人"
 project_focus:
   en: "Enclosure · Hardware selection · Rapid prototyping"
   zh: "柜体结构 · 硬件选型 · 快速原型"
@@ -24,14 +21,14 @@ hero_width: compact
 <div class="lang-en-only" markdown="1">
 A year project (Oct 2024 – Jan 2025). The product is an **RFID-based smart tool cabinet**: each tool carries an RFID tag, so the cabinet auto-tracks inventory the moment a tool is taken out or returned, eliminating manual stocktaking.
 
-I led the **mechanical structure design**, **hardware component selection**, and **rapid prototyping** for the cabinet enclosure and reader-antenna mounts.
+The work covered **mechanical structure design**, **hardware component selection**, and **rapid prototyping** for the cabinet enclosure and reader-antenna mounts.
 
 </div>
 
 <div class="lang-zh-only" markdown="1">
 学年项目（2024.10 – 2025.01）。作品是一款 **RFID 智能工具柜**：每件工具贴有 RFID 标签，取放时柜体即时自动盘点，免去人工清点环节。
 
-我负责**机械结构设计**、**硬件选型**与**快速原型制作**，覆盖柜体外壳与读卡天线安装支架。
+工作涵盖**机械结构设计**、**硬件选型**与**快速原型制作**，覆盖柜体外壳与读卡天线安装支架。
 
 </div>
 

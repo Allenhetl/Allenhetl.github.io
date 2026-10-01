@@ -11,9 +11,6 @@ category: research
 timeframe: 2026–
 github:
 project_status: ongoing
-project_role:
-  en: "Research Lead"
-  zh: "研究负责人"
 project_focus:
   en: "Bounded memory · Long-horizon VLA"
   zh: "有界记忆 · 长程 VLA"
@@ -32,14 +29,14 @@ Long-horizon manipulation requires a policy to retain completed subtasks, scene 
 长程操作要求策略记住已经完成的子任务、场景变化和早期决策，同时又不能让上下文无限增长。许多 VLA 策略仍主要依赖当前观测，数步之后仍然需要的信息容易被稀释或遗忘。
 </div>
 
-<h3 id="role-system"><span class="lang-en-only">Role &amp; System</span><span class="lang-zh-only">职责与系统</span></h3>
+<h3 id="system"><span class="lang-en-only">System</span><span class="lang-zh-only">系统</span></h3>
 
 <div class="lang-en-only" markdown="1">
-I lead the project and am building the PyTorch research pipeline around four connected components: VLM-guided task decomposition, subtask-boundary detection, Perceiver-style compression into a fixed-budget memory bank, and cross-attention reads from memory into the action expert. The current work also includes training infrastructure and an evaluation harness for controlled memory ablations.
+The project builds a PyTorch research pipeline around four connected components: VLM-guided task decomposition, subtask-boundary detection, Perceiver-style compression into a fixed-budget memory bank, and cross-attention reads from memory into the action expert. Current work also includes training infrastructure and an evaluation harness for controlled memory ablations.
 </div>
 
 <div class="lang-zh-only" markdown="1">
-我负责该项目，并围绕四个相互衔接的模块搭建 PyTorch 研究流程：VLM 引导的任务分解、子任务边界检测、基于 Perceiver 的压缩与固定预算记忆库，以及动作专家对记忆的交叉注意力读取。当前工作还包括训练基础设施和用于受控记忆消融的评测框架。
+项目围绕四个相互衔接的模块搭建 PyTorch 研究流程：VLM 引导的任务分解、子任务边界检测、基于 Perceiver 的压缩与固定预算记忆库，以及动作专家对记忆的交叉注意力读取。当前工作还包括训练基础设施和用于受控记忆消融的评测框架。
 </div>
 
 <h3 id="evaluation-status"><span class="lang-en-only">Evaluation Status</span><span class="lang-zh-only">评测状态</span></h3>
