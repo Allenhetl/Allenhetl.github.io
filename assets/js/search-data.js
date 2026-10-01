@@ -79,9 +79,9 @@ ninja.data = [{
           description: "Full-stack — mechanical, embedded cascade PID, and YOLO-based underwater perception.全栈开发 — 机械结构、嵌入式级联 PID 控制、基于 YOLO 的水下感知。",
           section: "Projects",handler: () => {
               window.location.href = "/projects/4_submarine/";
-            },},{id: "projects-rfid-smart-reagent-cabinet智能-rfid-试剂柜",
-          title: 'RFID Smart Reagent Cabinet智能 RFID 试剂柜',
-          description: "Year project — RFID smart reagent cabinet for automated laboratory inventory.学年项目 — 基于 RFID 的智能试剂柜，实现实验室药剂自动盘点。",
+            },},{id: "projects-rfid-smart-tool-cabinet智能-rfid-工具柜",
+          title: 'RFID Smart Tool Cabinet智能 RFID 工具柜',
+          description: "Year project — RFID smart tool cabinet for automated tool inventory.学年项目 — 基于 RFID 的智能工具柜，实现工具自动盘点。",
           section: "Projects",handler: () => {
               window.location.href = "/projects/5_rfid-cabinet/";
             },},{id: "projects-omnidirectional-autonomous-wheelchair全向自主移动轮椅",
