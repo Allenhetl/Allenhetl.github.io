@@ -32,16 +32,6 @@ Single-view video prediction can look plausible from its source camera while dri
 单视角视频预测可能在原相机中看起来合理，却在切换视角后出现深度与几何漂移。对机器人操作而言，这类不一致会直接影响动作决策：只有预测结果在 RGB、深度和三维视角间保持兼容，机器人才能可靠地依据“想象出的未来”行动。
 </div>
 
-<h3 id="role"><span class="lang-en-only">My Role</span><span class="lang-zh-only">我的职责</span></h3>
-
-<div class="lang-en-only" markdown="1">
-As a research assistant and co-author, I built the physical robot platform and the multi-camera **calibration, time synchronization, and cross-view alignment** pipeline. I also contributed the 4D manipulation data workflow and real-hardware validation, connecting sensor capture and reconstruction to model training and evaluation.
-</div>
-
-<div class="lang-zh-only" markdown="1">
-作为研究助理与共同作者，我搭建了实体机器人平台和多相机**标定、时间同步、跨视角对齐**流程，并参与构建 4D 操作数据流程与真机验证，将传感器采集、多视角重建、模型训练和评测连接成完整链路。
-</div>
-
 <h3 id="system"><span class="lang-en-only">System</span><span class="lang-zh-only">系统</span></h3>
 
 <div class="lang-en-only" markdown="1">
