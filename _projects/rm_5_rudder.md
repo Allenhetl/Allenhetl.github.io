@@ -49,3 +49,15 @@ Six XT30 connectors and six screws separate the turret from the chassis, making 
 <div class="lang-zh-only" markdown="1">
 拔下 6 个 XT30 接头并拆除 6 颗螺丝即可分离云台与底盘，使同一模块可在两种步兵构型上维护和复用。接口与相关机械设计已随战队开源包发布。项目记录了完整平台集成，但没有受控机动性基准，因此本页不添加缺乏依据的速度或精度数据。
 </div>
+
+<h3 id="links"><span class="lang-en-only">Links</span><span class="lang-zh-only">相关链接</span></h3>
+
+<div class="lang-en-only" markdown="1">
+- [RM2024 CNC-free swerve-drive open-source release — RoboMaster forum](https://bbs.robomaster.com/article/54153)
+- [RM2025 swerve-module and gearbox drawings — RoboMaster forum](https://bbs.robomaster.com/article/760969)
+</div>
+
+<div class="lang-zh-only" markdown="1">
+- [RM2024 无 CNC 舵轮机械开源帖 — RoboMaster 论坛](https://bbs.robomaster.com/article/54153)
+- [RM2025 舵轮组与减速箱图纸开源帖 — RoboMaster 论坛](https://bbs.robomaster.com/article/760969)
+</div>

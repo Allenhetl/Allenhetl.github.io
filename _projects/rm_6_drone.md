@@ -26,3 +26,15 @@ The team's aerial support unit — a **13 kg custom quadcopter** that rains fire
 <div class="lang-zh-only" markdown="1">
 战队的空中支援单元——一台 **13 kg 自研四旋翼**，从空中倾泻火力。我负责机架、**两轴云台**载荷接口，以及可携带并精确投射 **约 1,600 发 17 mm 弹丸**的发射结构。难点在于平衡取舍：既要有足够的结构与载荷形成真实威胁，又要在满载时保持轻量与配平，以实现快速机动。
 </div>
+
+<h3 id="links"><span class="lang-en-only">Links</span><span class="lang-zh-only">相关链接</span></h3>
+
+<div class="lang-en-only" markdown="1">
+- [RM2024 low-cost aerial robot open-source release — RoboMaster forum](https://bbs.robomaster.com/article/54119)
+- [Drone gimbal lightweighting design notes — team archive](https://opensource.hkustenterprize.com/post-55593)
+</div>
+
+<div class="lang-zh-only" markdown="1">
+- [RM2024 低成本空中机器人开源帖 — RoboMaster 论坛](https://bbs.robomaster.com/article/54119)
+- [无人机云台轻量化设计分享 — 战队开源档案库](https://opensource.hkustenterprize.com/post-55593)
+</div>
