@@ -565,6 +565,28 @@ html.transition *::after {
   letter-spacing: 0.01em;
 }
 
+.experience-logo {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  margin-top: 0.1rem;
+  background: #ffffff;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.experience-logo img {
+  max-width: 2rem;
+  max-height: 2rem;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
 .experience-title {
   font-weight: 600;
   line-height: 1.35;
